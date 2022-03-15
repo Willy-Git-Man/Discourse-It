@@ -36,19 +36,17 @@ function App() {
 
 
         <Route path="/" exact={true}>
-          {/* <LoginForm /> */}
           <LoginFormModal />
           <h1>gap</h1>
           <SignupModal />
-          {/* <SignUpForm /> */}
         </Route>
 
 
 
         <ProtectedRoute path="/home" exact={true}>
           <NavBar />
-          <h1>My Home Page</h1>
           <LogoutButton />
+          <h1>My Home Page</h1>
         </ProtectedRoute>
 
         <ProtectedRoute path="/users" exact={true}>
