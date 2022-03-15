@@ -1,14 +1,13 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 
 const NavBar = () => {
   return (
     <nav>
       <ul>
         <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
+          <NavLink to='/home' exact={true} activeClassName='active'>
             Home
           </NavLink>
         </li>

@@ -1,4 +1,3 @@
-import { csrfFetch } from "./csrf";
 
 const GET_ALL_CHANNELS = "channels/GET_ALL_CHANNELS";
 const POST_CHANNELS = "channels/POST_CHANNELS";
@@ -13,8 +12,9 @@ const postChannel = (channel) => ({
   payload: channel,
 });
 
-const getAllChannelsThunk = () => async (dispatch) => {
-  const response = await csrfFetch("/api/channels");
+export const getAllChannelsThunk = () => async (dispatch) => {
+  const response = await fetch("/api/channels");
+  console.log('response:', response)
 
   if (response.ok) {
     const channels = await response.json();
@@ -23,8 +23,8 @@ const getAllChannelsThunk = () => async (dispatch) => {
   return response;
 };
 
-const postChannelThunk = (channel) => async (dispatch) => {
-  const response = await csrfFetch("/api/channels", {
+export const postChannelThunk = (channel) => async (dispatch) => {
+  const response = await fetch("/api/channels", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(channel),
@@ -38,7 +38,7 @@ const postChannelThunk = (channel) => async (dispatch) => {
 
 const initialState = { channels: {} };
 
-const channelReducer = (state = initialState, action) => {
+const channelsReducer = (state = initialState, action) => {
   let newState;
 
   switch (action.type) {
@@ -59,3 +59,5 @@ const channelReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default channelsReducer

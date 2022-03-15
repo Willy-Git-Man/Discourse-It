@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import LoginForm from "./components/auth/LoginModal/LoginForm";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
 import SignupModal from "./components/auth/SignupModal/index"
 
 import LogoutButton from "../src/components/auth/LogoutButton";
 
-import SignUpForm from "./components/auth/SignupModal/SignUpForm";
 import NavBar from "./components/Nav/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
+import UserChannels from "./components/Channels/userChannels";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +55,7 @@ function App() {
 
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
+          <UserChannels />
         </ProtectedRoute>
 
       </Switch>
