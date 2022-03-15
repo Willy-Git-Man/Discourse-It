@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginModal/LoginForm';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import LoginForm from "./components/auth/LoginModal/LoginForm";
 
-import LoginFormModal from './components/auth/LoginModal/LoginForm';
+import LoginFormModal from "./components/auth/LoginModal/LoginForm";
 
-import LogoutButton from '../src/components/auth/LogoutButton'
+import LogoutButton from "../src/components/auth/LogoutButton";
 
-import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
-import { authenticate } from './store/session';
+import SignUpForm from "./components/auth/SignUpForm";
+import NavBar from "./components/Nav/NavBar";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import UsersList from "./components/UsersList";
+import User from "./components/User";
+import { authenticate } from "./store/session";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -31,25 +31,33 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
-        <Route path='/login' exact={true}>
+
+
+        <Route path="/login" exact={true}>
           {/* <LoginForm /> */}
           <LoginFormModal />
           <h1>gap</h1>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/' exact={true} >
+
+
+
+        <ProtectedRoute path="/" exact={true}>
+          <NavBar />
           <h1>My Home Page</h1>
           <LogoutButton />
         </ProtectedRoute>
-       
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+
+        <ProtectedRoute path="/users" exact={true}>
+          <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+
+
+        <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
+        
       </Switch>
     </BrowserRouter>
   );

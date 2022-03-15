@@ -23,6 +23,7 @@ function UsersList() {
 
   return (
     <>
+    <NavLink to={`/`}>Home</NavLink>
       <h1>User List: </h1>
       <ul>{userComponents}</ul>
     </>
