@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
-import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
 
 import './index.css'
 
@@ -10,11 +10,11 @@ function LoginFormModal() {
 
   return (
     <>
-      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Login</button>
+      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Signup</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 
-          <LoginForm />
+          <SignUpForm />
         </Modal>
       )}
     </>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import LoginForm from "./components/auth/LoginModal/LoginForm";
+// import LoginForm from "./components/auth/LoginModal/LoginForm";
 
-import LoginFormModal from "./components/auth/LoginModal/LoginForm";
+import LoginFormModal from "./components/auth/LoginModal/index";
+import SignupModal from "./components/auth/SignupModal/index"
 
 import LogoutButton from "../src/components/auth/LogoutButton";
 
-import SignUpForm from "./components/auth/SignUpForm";
+import SignUpForm from "./components/auth/SignupModal/SignUpForm";
 import NavBar from "./components/Nav/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
@@ -38,7 +39,8 @@ function App() {
           {/* <LoginForm /> */}
           <LoginFormModal />
           <h1>gap</h1>
-          <SignUpForm />
+          <SignupModal />
+          {/* <SignUpForm /> */}
         </Route>
 
 
