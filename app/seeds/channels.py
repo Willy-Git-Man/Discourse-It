@@ -1,8 +1,4 @@
-class ChannelForm(FlaskForm):
-  user_id = IntegerField("user_id", validators=[DataRequired()])
-  channel_name = StringField("channel_name", validators=[DataRequired()])
-  channel_picture = StringField("channel_picture", validators=[DataRequired()])
-from app.models import db, Channel
+from app.models.channel import db, Channel
 
 def seed_channels():
   test = Channel(
