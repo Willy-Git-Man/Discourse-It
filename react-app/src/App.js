@@ -34,7 +34,7 @@ function App() {
       <Switch>
 
 
-        <Route path="/login" exact={true}>
+        <Route path="/" exact={true}>
           {/* <LoginForm /> */}
           <LoginFormModal />
           <h1>gap</h1>
@@ -43,7 +43,7 @@ function App() {
 
 
 
-        <ProtectedRoute path="/" exact={true}>
+        <ProtectedRoute path="/home" exact={true}>
           <NavBar />
           <h1>My Home Page</h1>
           <LogoutButton />
@@ -57,7 +57,7 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
         </ProtectedRoute>
-        
+
       </Switch>
     </BrowserRouter>
   );

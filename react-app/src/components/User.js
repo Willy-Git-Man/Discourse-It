@@ -22,7 +22,7 @@ function User() {
 
   return (
     <div>
-      <NavLink to={`/`}>Home</NavLink>
+      <NavLink to={`/home`}>Home</NavLink>
       <ul>
         <li>
           <strong>User Id</strong> {userId}
