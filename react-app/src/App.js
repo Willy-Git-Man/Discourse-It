@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
+import LoginForm from './components/auth/LoginModal/LoginForm';
+
+import LoginFormModal from './components/auth/LoginModal/LoginForm';
+
+import LogoutButton from '../src/components/auth/LogoutButton'
+
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -29,19 +34,21 @@ function App() {
       <NavBar />
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
+          {/* <LoginForm /> */}
+          <LoginFormModal />
+          <h1>gap</h1>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/' exact={true} >
+          <h1>My Home Page</h1>
+          <LogoutButton />
+        </ProtectedRoute>
+       
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
-        </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
