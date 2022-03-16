@@ -14,6 +14,7 @@ import User from "./components/User";
 import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
 import PostChannelForm from "./components/Channels/postChannel";
+import Footer from "./components/Footer/footer";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,8 +36,9 @@ function App() {
       <Switch>
         <Route path="/" exact={true}>
           <LoginFormModal />
-          <h1>gap</h1>
+          {/* <h1>gap</h1> */}
           <SignupModal />
+          <Footer />
         </Route>
 
         <ProtectedRoute path="/home" exact={true}>
