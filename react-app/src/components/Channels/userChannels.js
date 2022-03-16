@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { deleteChannelThunk, getAllChannelsThunk, updateChannelThunk } from "../../store/channels";
+import {
+  deleteChannelThunk,
+  getAllChannelsThunk,
+  updateChannelThunk,
+} from "../../store/channels";
 import EditChannelForm from "./editChannel";
+import './index.css'
 
 export default function UserChannels() {
   const dispatch = useDispatch();
@@ -34,23 +39,21 @@ export default function UserChannels() {
       channelName,
       channelPicture,
     };
-    dispatch(updateChannelThunk(newChannel))
-  }
+    dispatch(updateChannelThunk(newChannel));
+  };
 
   return (
     <>
       {/* {channelArray.filter((channel) => channel.user_id === currentUser.id).map((channel) => ( */}
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
-          <NavLink
+          Link: to this channel page:     <NavLink
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
           >
             {channel.channel_name}
           </NavLink>
-          <h1>
-            Channel ID: {channel.id} Channel Name: {channel.channel_name}
-          </h1>
+          <h3>Channel Name: {channel.channel_name}, Channel ID: {channel.id}</h3>
           <button
             className="deleteChannelButton"
             onClick={() => handleDelete(channel.id)}
@@ -58,14 +61,7 @@ export default function UserChannels() {
             Delete Channel
           </button>
 
-
-
-
-
-
-          <EditChannelForm channelId={channel.id}/>
-
-
+          <EditChannelForm channelId={channel.id} />
         </div>
       ))}
     </>

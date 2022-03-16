@@ -1,4 +1,9 @@
 .eachUserChannelDiv {
   outline: black solid 5px;
   margin-top: 10px;
+  /* background-color: black; */
+}
+
+.deleteChannelButton {
+  margin-bottom: 10px;
 }
