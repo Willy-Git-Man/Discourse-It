@@ -14,13 +14,13 @@ export default function UserChannels() {
 
   const channelState = useSelector((state) => state.channels.channels);
   const channelArray = Object.values(channelState);
-  const sessionUser = useSelector((state) => state.session.user);
+  // const sessionUser = useSelector((state) => state.session.user);
 
-  const [channelName, setChannelName] = useState("");
-  const [channelPicture, setChannelPicture] = useState("");
+  // const [channelName, setChannelName] = useState("");
+  // const [channelPicture, setChannelPicture] = useState("");
 
-  const newChannelName = (e) => setChannelName(e.target.value);
-  const newChannelPicture = (e) => setChannelPicture(e.target.value);
+  // const newChannelName = (e) => setChannelName(e.target.value);
+  // const newChannelPicture = (e) => setChannelPicture(e.target.value);
 
   useEffect(() => {
     dispatch(getAllChannelsThunk());
@@ -30,17 +30,17 @@ export default function UserChannels() {
     dispatch(deleteChannelThunk(id));
   };
 
-  const handleUpdate = async (id) => {
-    // console.log('handle update id:', id)
+  // const handleUpdate = async (id) => {
+  //   // console.log('handle update id:', id)
 
-    const newChannel = {
-      id: 58,
-      user_id: sessionUser.id,
-      channelName,
-      channelPicture,
-    };
-    dispatch(updateChannelThunk(newChannel));
-  };
+  //   const newChannel = {
+  //     id: 58,
+  //     user_id: sessionUser.id,
+  //     channelName,
+  //     channelPicture,
+  //   };
+  //   dispatch(updateChannelThunk(newChannel));
+  // };
 
   return (
     <>
