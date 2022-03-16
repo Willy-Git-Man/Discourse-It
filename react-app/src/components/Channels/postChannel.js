@@ -23,6 +23,8 @@ const PostChannelForm = () => {
       channelPicture,
     };
     dispatch(postChannelThunk(newChannel));
+    setChannelName("")
+    setChannelPicture("")
   };
 
   return (
