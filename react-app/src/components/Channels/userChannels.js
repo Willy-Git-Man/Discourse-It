@@ -31,7 +31,7 @@ export default function UserChannels() {
           {/* <NavLink to={`/users/${user.id}`}>{user.username}</NavLink> */}
           <NavLink key={channel.id} to={`/users/${channel.user_id}/${channel.id}`}>{channel.channel_name}</NavLink>
           <h1>Channel ID: {channel.id} Channel Name: {channel.channel_name}</h1>
-          <button className="deleteChannelButton" onClick={() => handleDelete()}>
+          <button className="deleteChannelButton" onClick={() => handleDelete(channel.id)}>
             Delete Channel
           </button>
         </div>

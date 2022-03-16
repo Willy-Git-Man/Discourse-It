@@ -54,7 +54,7 @@ export const postChannelThunk = (channel) => async(dispatch) => {
 
 export const deleteChannelThunk = (id) => async(dispatch) => {
   console.log('id:', id)
-  id = 34
+  // id = 34
   const response = await fetch(`/api/channels/${id}`, {
     method: "DELETE",
     headers: {'Content-Type': 'application/json'}
