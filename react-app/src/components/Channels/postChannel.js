@@ -34,7 +34,7 @@ const PostChannelForm = () => {
           name="channelName"
           value={channelName}
           onChange={newChannelName}
-          required
+          // required
         />
 
         <label htmlFor="channelPicture">Channel Picture: </label>
@@ -43,7 +43,7 @@ const PostChannelForm = () => {
           name="channelPicture"
           value={channelPicture}
           onChange={newChannelPicture}
-          required
+          // required
         />
 
         <button className="postChannelButton" type="submit">

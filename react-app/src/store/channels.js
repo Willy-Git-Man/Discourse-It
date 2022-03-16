@@ -32,14 +32,21 @@ export const getAllChannelsThunk = () => async(dispatch) => {
 };
 
 export const postChannelThunk = (channel) => async(dispatch) => {
+  const {channelName, channelPicture, user_id} = channel
+  const form = new FormData()
+  form.append("user_id", user_id )
+  form.append("channel_name", channelName )
+  form.append("channel_picture", channelPicture )
+
   const response = await fetch("/api/channels/", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(channel),
+    // headers: { "Content-Type": "application/json" },
+    body: form
   });
   // console.log('response:', response)
   if (response.ok) {
     const newChannel = await response.json();
+    console.log('newChannel:', newChannel)
     dispatch(postChannel(newChannel));
     return newChannel;
   }

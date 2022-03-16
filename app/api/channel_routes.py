@@ -13,22 +13,33 @@ def channels():
   channels = Channel.query.all()
   return {'channels': [channel.to_dict() for channel in channels]}
 
+# @channel_routes.route('/<int:id>')
+# @login_required
+# def channels():
+#   channels = Channel.query.get(id)
+#   return {'channels': [channel.to_dict() for channel in channels]}
 
-@channel_routes.route('', methods=["POST"])
+
+@channel_routes.route('/', methods=["POST"])
 @login_required
 def create_channel():
   form = ChannelForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
+    print("@@@@@")
     channel = Channel(
       # id = form.data['id'],
+      # user_id = current_user,
+      # id = form.data['id'],
       user_id = form.data['user_id'],
+
       channel_name = form.data['channel_name'],
       channel_picture = form.data["channel_picture"]
     )
   # print('channel:', channel)
     db.session.add(channel)
     db.session.commit()
+    print("**************************",channel.to_dict)
     return channel.to_dict()
 
 
