@@ -21,11 +21,20 @@ def create_channel():
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
     channel = Channel(
+      id = form.data['id'],
       user_id = form.data['user_id'],
       channel_name = form.data['channel_name'],
       channel_picture = form.data["channel_picture"]
     )
-
+  # print('channel:', channel)
     db.session.add(channel)
     db.session.commit()
+    return channel.to_dict()
+
+
+@channel_routes.route('/<int:id>', methods=["DELETE"])
+def delete_channel():
+  channel = Channel.query.get(id)
+  db.session.delete(channel)
+  db.session.commit()
   return channel.to_dict()

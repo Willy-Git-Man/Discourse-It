@@ -13,6 +13,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
+import PostChannelForm from "./components/Channels/postChannel";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +57,7 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
           <UserChannels />
+          <PostChannelForm />
         </ProtectedRoute>
 
       </Switch>
