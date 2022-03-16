@@ -1,6 +1,3 @@
-
-
-
 const GET_ALL_CHANNELS = "channels/GET_ALL_CHANNELS";
 const POST_CHANNELS = "channels/POST_CHANNELS";
 const DELETE_CHANNELS = "channels/DELETE_CHANNELS";
@@ -43,7 +40,6 @@ export const postChannelThunk = (channel) => async(dispatch) => {
     // headers: { "Content-Type": "application/json" },
     body: form
   });
-  // console.log('response:', response)
   if (response.ok) {
     const newChannel = await response.json();
     console.log('newChannel:', newChannel)
@@ -53,8 +49,6 @@ export const postChannelThunk = (channel) => async(dispatch) => {
 };
 
 export const deleteChannelThunk = (id) => async(dispatch) => {
-  console.log('id:', id)
-  // id = 34
   const response = await fetch(`/api/channels/${id}`, {
     method: "DELETE",
     headers: {'Content-Type': 'application/json'}
@@ -87,11 +81,7 @@ const channelsReducer = (state = initialState, action) => {
       const id = action.channel.id
       console.log('id:', id)
       delete newState.channels[id]
-
       return newState
-
-
-
 
 
     default:

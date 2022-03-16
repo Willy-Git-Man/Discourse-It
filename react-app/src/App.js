@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
-import SignupModal from "./components/auth/SignupModal/index"
+import SignupModal from "./components/auth/SignupModal/index";
 
 import LogoutButton from "../src/components/auth/LogoutButton";
 
@@ -33,15 +33,11 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-
-
         <Route path="/" exact={true}>
           <LoginFormModal />
           <h1>gap</h1>
           <SignupModal />
         </Route>
-
-
 
         <ProtectedRoute path="/home" exact={true}>
           <NavBar />
@@ -53,20 +49,15 @@ function App() {
           <UsersList />
         </ProtectedRoute>
 
-
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
           <UserChannels />
           <PostChannelForm />
         </ProtectedRoute>
 
-
-
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
           <h1>Hello</h1>
         </ProtectedRoute>
-
-
       </Switch>
     </BrowserRouter>
   );
