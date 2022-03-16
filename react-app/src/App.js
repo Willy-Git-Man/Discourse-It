@@ -51,8 +51,8 @@ function App() {
 
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
-          <UserChannels />
           <PostChannelForm />
+          <UserChannels />
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
