@@ -33,8 +33,8 @@ const EditChannelForm = ({channelId}) => {
 
 
   return (
-    <div className="postChannelFormDiv">
-      <form className="postChannelForm" onSubmit={handleSubmit}>
+    <div className="editChannelFormDiv">
+      <form className="editChannelForm" onSubmit={handleSubmit}>
         <label htmlFor="channelName">Channel Name: </label>
         <input
           type="text"

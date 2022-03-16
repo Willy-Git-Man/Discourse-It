@@ -1,9 +1,47 @@
 .eachUserChannelDiv {
   outline: black solid 5px;
-  margin-top: 10px;
+  margin-top: 3.5%;
+  margin-right: 5%;
+  margin-left: 5%;
+
+  width: 40%;
   /* background-color: black; */
 }
 
 .deleteChannelButton {
   margin-bottom: 10px;
+}
+
+.userChannelMainDiv {
+  /* background-color: black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 80vh;
+  width: 80vw;
+  margin-left: 10vw;
+  background-color: rgba(0, 0, 0, .3);
+  overflow: hidden scroll;
+}
+
+.eachChannelTitle {
+  margin: 0;
+}
+
+.editChannelForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.postChannelFormDiv {
+  display: flex;
+  justify-content: center;
+  /* width: 50vw; */
+  /* background-color: black; */
+}
+
+.postChannelForm {
+  display: flex;
+  flex-direction: column;
+  /* width: 25vw; */
 }

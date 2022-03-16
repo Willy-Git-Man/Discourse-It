@@ -26,7 +26,7 @@ export default function UserChannels() {
 
 
   return (
-    <>
+    <div className="userChannelMainDiv">
       {/* {channelArray.filter((channel) => channel.user_id === currentUser.id).map((channel) => ( */}
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
@@ -36,7 +36,7 @@ export default function UserChannels() {
           >
             {channel.channel_name}
           </NavLink>
-          <h3>Channel Name: {channel.channel_name}, Channel ID: {channel.id}</h3>
+          <h1 className="eachChannelTitle">Channel Name: {channel.channel_name}, Channel ID: {channel.id}</h1>
           <button
             className="deleteChannelButton"
             onClick={() => handleDelete(channel.id)}
@@ -47,7 +47,7 @@ export default function UserChannels() {
           <EditChannelForm channelId={channel.id} />
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
