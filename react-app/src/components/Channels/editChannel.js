@@ -20,7 +20,7 @@ const EditChannelForm = () => {
     e.preventDefault();
 
     const newChannel = {
-      id: 56,
+      id: 58,
       user_id: sessionUser.id,
       channelName,
       channelPicture,
