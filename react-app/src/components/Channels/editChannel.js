@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postChannelThunk, updateChannelThunk } from "../../store/channels";
 import "./index.css";
 
-const EditChannelForm = () => {
+const EditChannelForm = ({channelId}) => {
   const dispatch = useDispatch();
   // const [errors, setErrors] = useState([]);
   const [channelName, setChannelName] = useState("");
@@ -20,11 +20,12 @@ const EditChannelForm = () => {
     e.preventDefault();
 
     const newChannel = {
-      id: 58,
+      id: channelId,
       user_id: sessionUser.id,
       channelName,
       channelPicture,
     };
+
     dispatch(updateChannelThunk(newChannel));
     setChannelName("")
     setChannelPicture("")

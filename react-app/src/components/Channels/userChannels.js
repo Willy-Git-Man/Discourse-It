@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk, updateChannelThunk } from "../../store/channels";
@@ -8,8 +8,14 @@ export default function UserChannels() {
   const dispatch = useDispatch();
 
   const channelState = useSelector((state) => state.channels.channels);
-
   const channelArray = Object.values(channelState);
+  const sessionUser = useSelector((state) => state.session.user);
+
+  const [channelName, setChannelName] = useState("");
+  const [channelPicture, setChannelPicture] = useState("");
+
+  const newChannelName = (e) => setChannelName(e.target.value);
+  const newChannelPicture = (e) => setChannelPicture(e.target.value);
 
   useEffect(() => {
     dispatch(getAllChannelsThunk());
@@ -20,7 +26,15 @@ export default function UserChannels() {
   };
 
   const handleUpdate = async (id) => {
-    dispatch(updateChannelThunk(id))
+    // console.log('handle update id:', id)
+
+    const newChannel = {
+      id: 58,
+      user_id: sessionUser.id,
+      channelName,
+      channelPicture,
+    };
+    dispatch(updateChannelThunk(newChannel))
   }
 
   return (
@@ -43,19 +57,15 @@ export default function UserChannels() {
           >
             Delete Channel
           </button>
-          <EditChannelForm />
 
 
 
 
 
 
-          {/* <button
-            className="deleteChannelButton"
-            onClick={() => handleUpdate(channel.id)}
-          >
-            update
-          </button> */}
+          <EditChannelForm channelId={channel.id}/>
+
+
         </div>
       ))}
     </>
