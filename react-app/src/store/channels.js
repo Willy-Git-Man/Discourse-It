@@ -42,7 +42,6 @@ export const postChannelThunk = (channel) => async(dispatch) => {
   });
   if (response.ok) {
     const newChannel = await response.json();
-    console.log('newChannel:', newChannel)
     dispatch(postChannel(newChannel));
     return newChannel;
   }
@@ -71,7 +70,6 @@ const channelsReducer = (state = initialState, action) => {
       return newState
 
       case POST_CHANNELS:
-      console.log('action.channel:', action.channel)
       newState = {...state, channels: {...state.channels} }
       newState.channels[action.channel.id] = {...action.channel}
       return newState
@@ -79,7 +77,6 @@ const channelsReducer = (state = initialState, action) => {
     case DELETE_CHANNELS:
       newState = {...state, channels: {...state.channels}}
       const id = action.channel.id
-      console.log('id:', id)
       delete newState.channels[id]
       return newState
 
