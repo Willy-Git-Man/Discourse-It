@@ -27,6 +27,7 @@ const PostChannelForm = () => {
     setChannelPicture("")
   };
 
+
   return (
     <div className="postChannelFormDiv">
       <form className="postChannelForm" onSubmit={handleSubmit}>

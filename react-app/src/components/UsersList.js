@@ -15,7 +15,7 @@ function UsersList() {
       setUsers(responseData.users);
     }
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   const userComponents = users.map((user) => {
     return (
