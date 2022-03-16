@@ -1,4 +1,7 @@
 .eachUserChannelDiv {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
   outline: black solid 5px;
   margin-top: 3.5%;
   margin-right: 5%;
@@ -31,6 +34,7 @@
 .editChannelForm {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .postChannelFormDiv {

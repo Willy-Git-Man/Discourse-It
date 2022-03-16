@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postChannelThunk } from "../../store/channels";
 import "./index.css";
@@ -13,14 +13,6 @@ const PostChannelForm = () => {
   const newChannelPicture = (e) => setChannelPicture(e.target.value);
 
   const sessionUser = useSelector((state) => state.session.user);
-//
-  // useEffect(() => {
-  //   const validationErrors = []
-
-  //   if (channelName.length === 0) validationErrors.push("Channel Name is required")
-
-  //   setErrors(validationErrors)
-  // }, [channelName])
 
   const handleSubmit = (e) => {
     e.preventDefault();
