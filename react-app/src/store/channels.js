@@ -65,11 +65,17 @@ export const deleteChannelThunk = (id) => async(dispatch) => {
   }
 }
 
-export const updateChannelThunk = (id) => async(dispatch) => {
-  console.log('update id:', id)
-  const response = await fetch(`/api/channels/${id.id}`, {
+export const updateChannelThunk = (updateChannelInfo) => async(dispatch) => {
+  console.log('update id:', updateChannelInfo.id)
+  const {channelName, channelPicture, user_id} = updateChannelInfo
+  const form = new FormData()
+  form.append("user_id", user_id )
+  form.append("channel_name", channelName )
+  form.append("channel_picture", channelPicture )
+  const response = await fetch(`/api/channels/${updateChannelInfo.id}`, {
     method: "POST",
-    headers: {'Content-Type': 'application/json'}
+    // headers: {'Content-Type': 'application/json'},
+    body: form
   })
   if (response.ok) {
     const updatedChannelRequest = await response.json()
