@@ -62,9 +62,9 @@ function App() {
 
 
 
-        {/* <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+        <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
           <h1>Hello</h1>
-        </ProtectedRoute> */}
+        </ProtectedRoute>
 
 
       </Switch>
