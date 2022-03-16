@@ -20,7 +20,7 @@ const PostChannelForm = () => {
     e.preventDefault()
 
     const newChannel = {
-      id: 2,
+      
       user_id: sessionUser.id,
       channel_name: "test2",
       channel_icture: "test3"

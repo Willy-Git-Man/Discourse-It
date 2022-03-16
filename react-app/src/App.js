@@ -60,6 +60,13 @@ function App() {
           <PostChannelForm />
         </ProtectedRoute>
 
+
+
+        {/* <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+          <h1>Hello</h1>
+        </ProtectedRoute> */}
+
+
       </Switch>
     </BrowserRouter>
   );
