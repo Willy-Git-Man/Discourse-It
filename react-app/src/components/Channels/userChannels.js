@@ -18,8 +18,8 @@ export default function UserChannels() {
   }, [dispatch]);
 
 
-  const handleDelete = async () => {
-    dispatch(deleteChannelThunk(1));
+  const handleDelete = async (id) => {
+    dispatch(deleteChannelThunk(id));
   };
 
   return (
@@ -27,9 +27,9 @@ export default function UserChannels() {
       {/* {channelArray.filter((channel) => channel.user_id === currentUser.id).map((channel) => ( */}
       {channelArray.map((channel) => (
 
-          <div className="eachUserChannelDiv">
+          <div key={channel.id} className="eachUserChannelDiv">
           {/* <NavLink to={`/users/${user.id}`}>{user.username}</NavLink> */}
-          {/* <NavLink key={channel.id} to={`/users/${channel.user_id}/${channel.id}}`}>{channel.channel_name}</NavLink> */}
+          <NavLink key={channel.id} to={`/users/${channel.user_id}/${channel.id}`}>{channel.channel_name}</NavLink>
           <h1>Channel ID: {channel.id} Channel Name: {channel.channel_name}</h1>
           <button className="deleteChannelButton" onClick={() => handleDelete()}>
             Delete Channel
