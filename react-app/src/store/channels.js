@@ -23,7 +23,6 @@ const deleteChannel = (channel) => ({
 
 export const getAllChannelsThunk = () => async(dispatch) => {
   const response = await fetch("/api/channels/");
-  // console.log('getThuunk response:', response)
 
   if (response.ok) {
     const channelsRes = await response.json();
@@ -62,17 +61,14 @@ const initialState = { channels: {} };
 const channelsReducer = (state = initialState, action) => {
   let newState;
 
-  console.log('action.channel:', action.channel)
   switch (action.type) {
     case GET_ALL_CHANNELS:
       newState = {...state}
-      // console.log('action:', action)
       action.channel.channels.forEach((chan) => newState.channels[chan.id] = chan)
-      // newState = action.channel.channels[0]
-
       return newState
 
-    case POST_CHANNELS:
+      case POST_CHANNELS:
+      console.log('action.channel:', action.channel)
       newState = {...state, channels: {...state.channels} }
       newState.channels[action.channel.id] = {...action.channel}
       return newState
@@ -80,6 +76,7 @@ const channelsReducer = (state = initialState, action) => {
     case DELETE_CHANNELS:
       newState = {...state, channels: {...state.channels}}
       const id = action.channel.id
+      console.log('id:', id)
       delete newState.channels[id]
 
       return newState
