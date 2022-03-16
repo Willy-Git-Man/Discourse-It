@@ -66,7 +66,6 @@ export const deleteChannelThunk = (id) => async(dispatch) => {
 }
 
 export const updateChannelThunk = (updateChannelInfo) => async(dispatch) => {
-  console.log('update id:', updateChannelInfo.id)
   const {channelName, channelPicture, user_id, id} = updateChannelInfo
   const form = new FormData()
   form.append("id", id )

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postChannelThunk, updateChannelThunk } from "../../store/channels";
+import { updateChannelThunk } from "../../store/channels";
 import "./index.css";
 
 const EditChannelForm = ({channelId}) => {
