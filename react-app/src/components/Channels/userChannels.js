@@ -1,28 +1,52 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { getAllChannelsThunk } from "../../store/channels";
 
 
 export default function UserChannels() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  const channelState = useSelector((state) => state.channels.channels)
+  // const channelState = useSelector((state) => state.channels.channels)
   const sessionUser = useSelector((state) => state.session.user)
   console.log('sessionUser:', sessionUser)
 
-console.log('channelState:', channelState)
+// console.log('channelState:', channelState)
 
-  useEffect(() => {
-    dispatch(getAllChannelsThunk())
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getAllChannelsThunk())
+  // }, [dispatch])
 
+const [channels, setChannels] = useState([]);
 
+useEffect(() => {
+  async function fetchData() {
+    const response = await fetch('/api/channels/');
+    const responseData = await response.json();
+    setChannels(responseData.channels);
+  }
+  fetchData();
+}, []);
 
+const channelComponents = channels.map((channel) => {
+  console.log(channel)
   return (
-    <div>
-      Hello
-    </div>
-  )
+    <li key={channel.id}>
+      {/* <NavLink to={`/users/${user.id}`}>{user.username}</NavLink> */}
+      <h1>{channel.channel_name}</h1>
+    </li>
+  );
+});
+
+
+return (
+  <>
+  <NavLink to={`/home`}>Home</NavLink>
+    <h1>User List: </h1>
+    <ul>{channelComponents}</ul>
+  </>
+);
+
 
 
 

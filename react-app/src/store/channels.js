@@ -2,9 +2,9 @@
 const GET_ALL_CHANNELS = "channels/GET_ALL_CHANNELS";
 const POST_CHANNELS = "channels/POST_CHANNELS";
 
-const getAllChannels = (channels) => ({
+const getAllChannels = (channel) => ({
   type: GET_ALL_CHANNELS,
-  payload: channels,
+  payload: channel,
 });
 
 const postChannel = (channel) => ({
@@ -17,8 +17,8 @@ export const getAllChannelsThunk = () => async (dispatch) => {
   console.log('response:', response)
 
   if (response.ok) {
-    const channels = await response.json();
-    dispatch(getAllChannels(channels));
+    const channelsRes = await response.json();
+    dispatch(getAllChannels(channelsRes));
   }
   return response;
 };
@@ -44,6 +44,7 @@ const channelsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_CHANNELS:
       newState = {...state}
+      console.log('action:', action)
       action.payload.forEach((channel) => newState.channels[channel.id] = channel)
       return newState
 
