@@ -21,7 +21,7 @@ const deleteChannel = (channel) => ({
 })
 
 const updateChannel = (channel) => ({
-  type: DELETE_CHANNELS,
+  type: UPDATE_CHANNELS,
   channel
 })
 
