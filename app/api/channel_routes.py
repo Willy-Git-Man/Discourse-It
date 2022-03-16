@@ -32,9 +32,9 @@ def create_channel():
     return channel.to_dict()
 
 
-@channel_routes.route('/<int:id>', methods=["DELETE"])
+@channel_routes.route('<int:id>', methods=["DELETE"])
 def delete_channel():
-  channel = Channel.query.get(id)
+  channel = Channel.query.get()
   db.session.delete(channel)
   db.session.commit()
   return channel.to_dict()

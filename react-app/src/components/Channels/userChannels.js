@@ -10,7 +10,7 @@ export default function UserChannels() {
   // const currentUser = useSelector((state) => state.session.user)
 
   const channelArray = Object.values(channelState)
-  // console.log("channelState:", channelState);
+  console.log("channelState:", channelState);
   // console.log('channelArray:', channelArray)
 
   useEffect(() => {
