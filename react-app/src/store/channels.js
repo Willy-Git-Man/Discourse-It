@@ -1,6 +1,8 @@
 const GET_ALL_CHANNELS = "channels/GET_ALL_CHANNELS";
 const POST_CHANNELS = "channels/POST_CHANNELS";
 const DELETE_CHANNELS = "channels/DELETE_CHANNELS";
+const UPDATE_CHANNELS = "channels/UPDATE_CHANNELS";
+
 
 
 const getAllChannels = (channel) => ({
@@ -14,6 +16,11 @@ const postChannel = (channel) => ({
 });
 
 const deleteChannel = (channel) => ({
+  type: DELETE_CHANNELS,
+  channel
+})
+
+const updateChannel = (channel) => ({
   type: DELETE_CHANNELS,
   channel
 })
@@ -58,6 +65,18 @@ export const deleteChannelThunk = (id) => async(dispatch) => {
   }
 }
 
+export const updateChannelThunk = (id) => async(dispatch) => {
+  console.log('update id:', id)
+  const response = await fetch(`/api/channels/${id.id}`, {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'}
+  })
+  if (response.ok) {
+    const updatedChannelRequest = await response.json()
+    dispatch(updateChannel(updatedChannelRequest))
+  }
+}
+
 const initialState = { channels: {} };
 
 const channelsReducer = (state = initialState, action) => {
@@ -78,6 +97,11 @@ const channelsReducer = (state = initialState, action) => {
       newState = {...state, channels: {...state.channels}}
       const id = action.channel.id
       delete newState.channels[id]
+      return newState
+
+    case UPDATE_CHANNELS:
+      newState = {...state, channels: {...state.channels}}
+      newState.channels[action.channel.id] = {...action.channel}
       return newState
 
 
