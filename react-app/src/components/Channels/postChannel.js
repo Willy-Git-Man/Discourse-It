@@ -13,7 +13,7 @@ const PostChannelForm = () => {
   const newChannelPicture = (e) => setChannelPicture(e.target.value);
 
   const sessionUser = useSelector((state) => state.session.user);
-
+//
   // useEffect(() => {
   //   const validationErrors = []
 
