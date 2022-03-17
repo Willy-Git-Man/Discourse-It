@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { postChannelThunk } from "../../store/channels";
 import "./index.css";
 
@@ -14,6 +15,8 @@ const PostChannelForm = () => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
+  const {id} = useParams()
+  console.log('id:', id)
   const handleSubmit = (e) => {
     e.preventDefault();
 
