@@ -15,6 +15,7 @@ import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
 import PostChannelForm from "./components/Channels/postChannel";
 import Footer from "./components/Footer/footer";
+import ChannelPosts from "./components/Posts/channelPosts";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,7 +59,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
-          <h1>Hello</h1>
+          <ChannelPosts />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
