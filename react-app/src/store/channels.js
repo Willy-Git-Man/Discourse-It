@@ -93,6 +93,8 @@ const channelsReducer = (state = initialState, action) => {
     case GET_ALL_CHANNELS:
       newState = {...state}
       action.channel.channels.forEach((chan) => newState.channels[chan.id] = chan)
+      // action.channel.channels.filter((chan) => newState.channels[chan.id] === id)
+
       return newState
 
       case POST_CHANNELS:

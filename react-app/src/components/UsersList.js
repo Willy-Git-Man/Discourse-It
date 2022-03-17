@@ -8,7 +8,7 @@ function UsersList() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    dispatch(getAllChannelsThunk())
+    // dispatch(getAllChannelsThunk())
     async function fetchData() {
       const response = await fetch('/api/users/');
       const responseData = await response.json();
