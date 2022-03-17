@@ -7,10 +7,11 @@ import "./index.css";
 
 export default function UserChannels() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+  // const sessionUser = useSelector((state) => state.session.user);
   const channelState = useSelector((state) => state.channels.channels);
   const channelArray = Object.values(channelState);
   // console.log('channelArray:', channelArray)
+  console.log('channelArray:', channelArray[0])
 
   const id = useParams()
 console.log(id)
@@ -43,6 +44,7 @@ console.log(id)
         // {channelArray.filter((channelPost) => channelPost.user_id = sessionUser.id).map((channel) => (
 
         <div key={channel.id} className="eachUserChannelDiv">
+          <img className="channelPicture" src={channel.channel_picture} alt="Broken Img URL"/>
           Link: to this channel page:{" "}
           <NavLink
             key={channel.id}

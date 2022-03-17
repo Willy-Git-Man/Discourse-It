@@ -1,6 +1,7 @@
 from .db import db
 
 
+
 class Channel(db.Model):
   __tablename__ = "channels"
 
@@ -8,6 +9,8 @@ class Channel(db.Model):
   user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
   channel_name = db.Column(db.Text, nullable = False)
   channel_picture = db.Column(db.Text)
+
+  user = db.relationship("User", back_populates = "channels")
 
 
 

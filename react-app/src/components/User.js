@@ -33,7 +33,9 @@ function User() {
         <li>
           <strong>Email</strong> {user.email}
         </li>
+
       </ul>
+        <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
     </div>
   );
 }
