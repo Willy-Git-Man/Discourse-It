@@ -11,6 +11,8 @@ class Channel(db.Model):
   channel_picture = db.Column(db.Text)
 
   user = db.relationship("User", back_populates = "channels")
+  posts = db.relationship("Post", back_populates="channels")
+
 
 
 

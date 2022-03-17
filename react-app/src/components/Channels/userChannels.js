@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import EditChannelForm from "./editChannel";
+import EditChannelModal from "./EditModal";
 import "./index.css";
 
 export default function UserChannels() {
@@ -10,17 +11,27 @@ export default function UserChannels() {
   // const sessionUser = useSelector((state) => state.session.user);
   const channelState = useSelector((state) => state.channels.channels);
   const channelArray = Object.values(channelState);
+  const channelKeysArray = Object.keys(channelState);
+
+
   // console.log('channelArray:', channelArray)
   console.log('channelArray:', channelArray[0])
 
-  const id = useParams()
-console.log(id)
+  const {id} = useParams()
+  console.log(id)
   const channelArrayUserIds = channelArray.filter(
 
     (channelPost) => (channelPost.user_id === id)
 
 
-  );
+    );
+
+
+    const test = channelKeysArray
+    ?.filter((key) => channelState[key]?.user_id === 5)
+    console.log('test:', test)
+
+
   console.log("channelArrayUserIds:", channelArrayUserIds);
 
   useEffect(() => {
@@ -40,7 +51,16 @@ console.log(id)
   return (
     <div className="userChannelMainDiv">
       {/* {channelArray.filter((channel) => channel.user_id === currentUser.id).map((channel) => ( */}
+
+
+
+      {/* {channelKeysArray
+          ?.filter((channel) => channelState[channel]?.userId === 5)
+          .map((channel) => ( */}
       {channelArray.map((channel) => (
+
+
+
         // {channelArray.filter((channelPost) => channelPost.user_id = sessionUser.id).map((channel) => (
 
         <div key={channel.id} className="eachUserChannelDiv">
@@ -52,10 +72,10 @@ console.log(id)
           >
             {channel.channel_name}
           </NavLink>
-          <h1 className="eachChannelTitle">
+          <p className="eachChannelTitle">
             Oops {channel.user_id}--
             Channel Name: {channel.channel_name}, Channel ID: {channel.id}
-          </h1>
+          </p>
           <button
             className="deleteChannelButton"
             onClick={() => handleDelete(channel.id)}
@@ -63,6 +83,7 @@ console.log(id)
             Delete Channel
           </button>
           <EditChannelForm channelId={channel.id} />
+          <EditChannelModal />
         </div>
       ))}
     </div>

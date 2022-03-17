@@ -13,6 +13,8 @@ class User(db.Model, UserMixin):
     profile_picture = db.Column(db.Text)
 
     channels = db.relationship("Channel", back_populates="user")
+    posts = db.relationship("Post", back_populates="user")
+
 
     @property
     def password(self):

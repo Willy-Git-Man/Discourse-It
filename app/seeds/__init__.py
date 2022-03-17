@@ -1,6 +1,8 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .channels import seed_channels
+from .posts import seed_posts
+
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -12,6 +14,7 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_channels()
+    seed_posts()
     # Add other seed functions here
 
 

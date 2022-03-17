@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { updateChannelThunk } from "../../store/channels";
 import "./index.css";
 
@@ -14,6 +15,7 @@ const EditChannelForm = ({channelId}) => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
+  // const {userid} = useParams()
 
 
   const handleSubmit = (e) => {
