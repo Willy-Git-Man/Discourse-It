@@ -25,11 +25,12 @@ const updateChannel = (channel) => ({
   channel
 })
 
-export const getAllChannelsThunk = () => async(dispatch) => {
-  const response = await fetch("/api/channels/");
+export const getAllChannelsThunk = (id) => async(dispatch) => {
+  const response = await fetch(`/api/channels/${id}`);
 
   if (response.ok) {
     const channelsRes = await response.json();
+    console.log('response:', channelsRes)
     dispatch(getAllChannels(channelsRes));
   }
   return response;

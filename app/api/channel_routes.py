@@ -7,10 +7,11 @@ from app.models.db import db
 
 channel_routes = Blueprint('channels', __name__)
 
-@channel_routes.route('/')
+@channel_routes.route('/<int:id>')
 @login_required
-def channels():
-  channels = Channel.query.all()
+def channels(id):
+  channels = Channel.query.filter(Channel.user_id == id).all()
+  print("@@@@", channels)
   return {'channels': [channel.to_dict() for channel in channels]}
 
 

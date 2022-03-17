@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
-from .channels import seed_channels
-from .posts import seed_posts
+from .channels import seed_channels, undo_channels
+from .posts import seed_posts, undo_posts
 
 
 # Creates a seed group to hold our commands
@@ -22,4 +22,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users()
+    undo_channels(),
+    undo_posts()
     # Add other undo functions here

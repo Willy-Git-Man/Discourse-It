@@ -18,3 +18,7 @@ def seed_channels():
 
 
   db.session.commit()
+
+def undo_channels():
+  db.session.execute('TRUNCATE channels RESTART IDENTITY CASCADE;')
+  db.session.commit()
