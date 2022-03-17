@@ -1,13 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
+import { getAllChannelsThunk } from "../../store/channels";
 import "./index.css";
 
 export default function ChannelPosts() {
   const dispatch = useDispatch();
-  const id = useParams();
-
   const sessionUser = useSelector((state) => state.session.user);
+
+  const {channelId, userId} = useParams();
+  console.log('channelId:', channelId, 'userId', userId)
+
+  
+
+
+
 
 
 
