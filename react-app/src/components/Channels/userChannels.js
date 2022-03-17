@@ -13,7 +13,7 @@ export default function UserChannels() {
   useEffect(() => {
       dispatch(getAllChannelsThunk(ID));
     }, [dispatch, ID]);
-    // const sessionUser = useSelector((state) => state.session.user);
+    const sessionUser = useSelector((state) => state.session.user);
 
   const channelArray = useSelector((state) => Object.values(state.channels.channels));
 
@@ -42,14 +42,22 @@ export default function UserChannels() {
               Oops {channel.user_id}-- Channel Name: {channel.channel_name},
               Channel ID: {channel.id}
             </p>
+
+            {channel.user_id === sessionUser.id &&
+            <div>
+
             <button
               className="deleteChannelButton"
               onClick={() => handleDelete(channel.id)}
             >
               Delete Channel
+
             </button>
             <EditChannelForm channelId={channel.id} />
-            {/* <EditChannelModal /> */}
+</div>
+}
+
+
           </div>
           // : null}
         ))}
