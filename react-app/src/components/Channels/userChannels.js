@@ -13,36 +13,14 @@ export default function UserChannels() {
   useEffect(() => {
       dispatch(getAllChannelsThunk(ID));
     }, [dispatch, ID]);
-    const sessionUser = useSelector((state) => state.session.user);
-    // const user_id = sessionUser.id;
-    // console.log('user_id:', user_id)
-    console.log("id:", ID);
+    // const sessionUser = useSelector((state) => state.session.user);
 
-    // const yes =dispatch(getAllChannelsThunk(ID))
-
-  // const channelState = useSelector((state) => Object.values(state.channels.channels));
-  // console.log('channelState[ID]:', channelState[8].user_id)
   const channelArray = useSelector((state) => Object.values(state.channels.channels));
-  // console.log('channelArray:', channelArray)
-  // console.log("channelState:", channelState);
-  // const channelKeysArray = Object.keys(channelState);
-  // console.log("channelKeysArray:", channelKeysArray);
-  // const hello = channelKeysArray.filter((key) => channelState[key].user_id === 1 )
-
-  // const hello2 = channelKeysArray.filter((key) => {
-  //   channelState[key].user_id = 1
-  // })
-  // console.log('hello:', hello)
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
   };
 
-
-
-    // {/* {channelKeysArray
-    //   ?.filter((channel) => channelState[channel]?.user_id === ID)
-    //   .map((channel) => ( */}
   return (
     <div className="userChannelMainDiv">
       {channelArray.map((channel) => (
