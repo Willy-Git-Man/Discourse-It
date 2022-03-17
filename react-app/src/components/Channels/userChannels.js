@@ -8,24 +8,25 @@ import "./index.css";
 
 export default function UserChannels() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  // const user_id = sessionUser.id;
-  // console.log('user_id:', user_id)
   const id = useParams();
   const ID = id.userId;
-  console.log("id:", ID);
-
   useEffect(() => {
-    dispatch(getAllChannelsThunk(ID));
-  }, [dispatch]);
+      dispatch(getAllChannelsThunk(ID));
+    }, [dispatch, ID]);
+    const sessionUser = useSelector((state) => state.session.user);
+    // const user_id = sessionUser.id;
+    // console.log('user_id:', user_id)
+    console.log("id:", ID);
 
-  const channelState = useSelector((state) => state.channels.channels);
+    // const yes =dispatch(getAllChannelsThunk(ID))
+
+  // const channelState = useSelector((state) => Object.values(state.channels.channels));
   // console.log('channelState[ID]:', channelState[8].user_id)
-  const channelArray = Object.values(channelState);
+  const channelArray = useSelector((state) => Object.values(state.channels.channels));
   // console.log('channelArray:', channelArray)
-  console.log("channelState:", channelState);
-  const channelKeysArray = Object.keys(channelState);
-  console.log("channelKeysArray:", channelKeysArray);
+  // console.log("channelState:", channelState);
+  // const channelKeysArray = Object.keys(channelState);
+  // console.log("channelKeysArray:", channelKeysArray);
   // const hello = channelKeysArray.filter((key) => channelState[key].user_id === 1 )
 
   // const hello2 = channelKeysArray.filter((key) => {

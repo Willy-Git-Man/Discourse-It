@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { getAllChannelsThunk } from '../store/channels';
+import { Link, NavLink } from 'react-router-dom';
+import { getAllChannelsThunk, getAllChannelsThunkTotal } from '../store/channels';
 
 function UsersList() {
   const dispatch = useDispatch()
@@ -21,6 +21,10 @@ function UsersList() {
     return (
       <li key={user.id}>
         <NavLink to={`/users/${user.id}`}>{user.username}</NavLink>
+        {/* <Link to={`/users/${user.id}`}>{user.username}</Link> */}
+
+        {/* <a href={`/users/${user.id}`}>{user.username}</a> */}
+
       </li>
     );
   });

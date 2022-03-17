@@ -36,6 +36,25 @@ export const getAllChannelsThunk = (id) => async(dispatch) => {
   return response;
 };
 
+
+
+
+export const getAllChannelsThunkTotal = (id) => async(dispatch) => {
+  const response = await fetch(`/api/channels/`);
+
+  if (response.ok) {
+    const channelsRes = await response.json();
+    console.log('response:', channelsRes)
+    dispatch(getAllChannels(channelsRes));
+  }
+  return response;
+};
+
+
+
+
+
+
 export const postChannelThunk = (channel) => async(dispatch) => {
   const {channelName, channelPicture, user_id} = channel
   const form = new FormData()
