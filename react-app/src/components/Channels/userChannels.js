@@ -11,6 +11,7 @@ export default function UserChannels() {
   const dispatch = useDispatch();
   const id = useParams();
   const ID = id.userId;
+  console.log("ID:", ID);
   useEffect(() => {
     dispatch(getAllChannelsThunk(ID));
   }, [dispatch, ID]);
@@ -25,20 +26,27 @@ export default function UserChannels() {
   };
 
   return (
-
     <div className="userChannelMainDiv">
+        {+ID === sessionUser.id && (
+      <div className="eachUserChannelDiv">
+          <div>
+            <PostChannelForm />
+          </div>
+      </div>
+        )}
+
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
           <img
             className="channelPicture"
             src={channel.channel_picture}
             alt="Broken Img URL"
-            />
+          />
           Link: to this channel page:{" "}
           <NavLink
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
-            >
+          >
             {channel.channel_name}
           </NavLink>
           <p className="eachChannelTitle">
@@ -50,7 +58,7 @@ export default function UserChannels() {
               <button
                 className="deleteChannelButton"
                 onClick={() => handleDelete(channel.id)}
-                >
+              >
                 Delete Channel
               </button>
               <EditChannelForm channelId={channel.id} />
@@ -58,7 +66,7 @@ export default function UserChannels() {
           )}
         </div>
         // : null}
-        ))}
+      ))}
     </div>
   );
 }

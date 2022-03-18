@@ -15,8 +15,10 @@ const PostChannelForm = () => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  const {id} = useParams()
-  console.log('id:', id)
+  // const id = useParams()
+  // const ID = id.userId;
+  // console.log(' post id:', id.userId)
+  // console.log('id:', id)
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -34,6 +36,7 @@ const PostChannelForm = () => {
 
   return (
     <div className="postChannelFormDiv">
+
       <form className="postChannelForm" onSubmit={handleSubmit}>
         <label htmlFor="channelName">Channel Name: </label>
         <input
@@ -42,7 +45,7 @@ const PostChannelForm = () => {
           value={channelName}
           onChange={newChannelName}
           required
-        />
+          />
 
         <label htmlFor="channelPicture">Channel Picture: </label>
         <input
@@ -57,6 +60,7 @@ const PostChannelForm = () => {
           Create Channel
         </button>
       </form>
+
     </div>
   );
 };

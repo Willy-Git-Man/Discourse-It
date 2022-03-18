@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
@@ -20,6 +20,8 @@ import ChannelPosts from "./components/Posts/channelPosts";
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+
+
 
   useEffect(() => {
     (async () => {
@@ -54,7 +56,7 @@ function App() {
 
         <ProtectedRoute path="/users/:userId" exact={true}>
           <User />
-          <PostChannelForm />
+          {/* <PostChannelForm /> */}
           <UserChannels />
         </ProtectedRoute>
 
