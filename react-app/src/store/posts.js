@@ -1,5 +1,5 @@
 const GET_ALL_POSTS = "posts/GET_ALL_POSTS";
-// const POST_POSTS = "posts/POST_POSTS";
+const CREATE_POSTS = "posts/CREATE_POSTS";
 // const DELETE_POSTS = "posts/DELETE_POSTS";
 // const UPDATE_POSTS = "posts/UPDATE_POSTS";
 
@@ -8,10 +8,10 @@ const getAllPosts = (post) => ({
   post,
 });
 
-// const createPost = (post) => ({
-//   type: POST_POSTS,
-//   post,
-// });
+const createPost = (post) => ({
+  type: CREATE_POSTS,
+  post,
+});
 
 // const deletePost = (post) => ({
 //   type: DELETE_POSTS,
@@ -34,6 +34,28 @@ export const getAllPostsThunk = (id) => async (dispatch) => {
   return response;
 };
 
+
+export const createPostThunk = (post) => async(dispatch) => {
+  const {user_id, channel_id, post_title, post_picture} = post
+  const form = new FormData()
+  form.append('user_id', user_id)
+  form.append('channel_id', channel_id)
+  form.append('post_title', post_title)
+  form.append('post_picture', post_picture)
+
+  const response = await fetch("/api/posts/", {
+    method: "POST",
+    body: form
+  })
+  if (response.ok) {
+    const newPost = await response.json()
+    dispatch(createPost(newPost))
+    return newPost
+  }
+}
+
+
+
 const initialState = { posts: {} };
 
 const postsReducer = (state = initialState, action) => {
@@ -47,10 +69,13 @@ const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_POSTS:
       newState = { ...state };
-      // action.post.channels.forEach((pos) => newState.channels[pos.id] = pos);
       action.post.channels.forEach((pos) => newState.posts[pos.id] = pos);
-
       return newState;
+
+    case CREATE_POSTS:
+      newState = {...state, posts: {...state.posts}}
+      newState.posts[action.post.id] = {...action.post}
+      return newState
 
     default:
       return state;

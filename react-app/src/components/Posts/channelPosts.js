@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { getAllChannelsThunk } from "../../store/channels";
 import { getAllPostsThunk } from "../../store/posts";
+import CreatePostForm from "./createPost";
 import "./index.css";
 
 export default function ChannelPosts() {
@@ -65,6 +66,7 @@ export default function ChannelPosts() {
     <div className="channelPostsMainDiv">
       <h1>{object[channelId].channel_name}</h1>
       <NavLink to={`/home`}>home</NavLink>
+      <CreatePostForm />
       {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">
         {post.channel_id === +channelId && (
