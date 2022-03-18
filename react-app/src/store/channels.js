@@ -30,7 +30,6 @@ export const getAllChannelsThunk = (id) => async(dispatch) => {
 
   if (response.ok) {
     const channelsRes = await response.json();
-    console.log('response:', channelsRes)
     dispatch(getAllChannels(channelsRes));
   }
   return response;
@@ -44,7 +43,6 @@ export const getAllChannelsThunkTotal = (id) => async(dispatch) => {
 
   if (response.ok) {
     const channelsRes = await response.json();
-    console.log('response:', channelsRes)
     dispatch(getAllChannels(channelsRes));
   }
   return response;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
@@ -13,7 +13,6 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
-import PostChannelForm from "./components/Channels/postChannel";
 import Footer from "./components/Footer/footer";
 import ChannelPosts from "./components/Posts/channelPosts";
 
@@ -48,6 +47,8 @@ function App() {
           <NavBar />
           <LogoutButton />
           <h1>My Home Page</h1>
+          <UsersList />
+
         </ProtectedRoute>
 
         <ProtectedRoute path="/users" exact={true}>

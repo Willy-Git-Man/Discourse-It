@@ -39,11 +39,17 @@ const initialState = { posts: {} };
 const postsReducer = (state = initialState, action) => {
   let newState;
   console.log('action:', action)
+  console.log('action post:', action.post)
+  // console.log('action post channels:', action.post.channels)
+
+
 
   switch (action.type) {
     case GET_ALL_POSTS:
       newState = { ...state };
       // action.post.channels.forEach((pos) => newState.channels[pos.id] = pos);
+      action.post.channels.forEach((pos) => newState.posts[pos.id] = pos);
+
       return newState;
 
     default:

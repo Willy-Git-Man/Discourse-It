@@ -11,7 +11,6 @@ export default function UserChannels() {
   const dispatch = useDispatch();
   const id = useParams();
   const ID = id.userId;
-  console.log("ID:", ID);
   useEffect(() => {
     dispatch(getAllChannelsThunk(ID));
   }, [dispatch, ID]);
@@ -27,13 +26,13 @@ export default function UserChannels() {
 
   return (
     <div className="userChannelMainDiv">
-        {+ID === sessionUser.id && (
-      <div className="eachUserChannelDiv">
+      {+ID === sessionUser.id && (
+        <div className="eachUserChannelDiv">
           <div>
             <PostChannelForm />
           </div>
-      </div>
-        )}
+        </div>
+      )}
 
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { postChannelThunk } from "../../store/channels";
 import "./index.css";
 
@@ -15,13 +14,8 @@ const PostChannelForm = () => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  // const id = useParams()
-  // const ID = id.userId;
-  // console.log(' post id:', id.userId)
-  // console.log('id:', id)
   const handleSubmit = (e) => {
     e.preventDefault();
-
 
     const newChannel = {
       user_id: sessionUser.id,
@@ -29,14 +23,12 @@ const PostChannelForm = () => {
       channelPicture,
     };
     dispatch(postChannelThunk(newChannel));
-    setChannelName("")
-    setChannelPicture("")
+    setChannelName("");
+    setChannelPicture("");
   };
-
 
   return (
     <div className="postChannelFormDiv">
-
       <form className="postChannelForm" onSubmit={handleSubmit}>
         <label htmlFor="channelName">Channel Name: </label>
         <input
@@ -45,7 +37,7 @@ const PostChannelForm = () => {
           value={channelName}
           onChange={newChannelName}
           required
-          />
+        />
 
         <label htmlFor="channelPicture">Channel Picture: </label>
         <input
@@ -60,7 +52,6 @@ const PostChannelForm = () => {
           Create Channel
         </button>
       </form>
-
     </div>
   );
 };
