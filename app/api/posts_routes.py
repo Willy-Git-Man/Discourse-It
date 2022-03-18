@@ -15,7 +15,7 @@ def posts(id):
   return {'channels': [post.to_dict() for post in posts]}
 
 
-@post_routes.route('/<int:id>')
+@post_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
   form = PostForm()

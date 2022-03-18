@@ -24,7 +24,7 @@ const createPost = (post) => ({
 // });
 
 export const getAllPostsThunk = (id) => async (dispatch) => {
-  const response = await fetch(`/api/posts/${1}`);
+  const response = await fetch(`/api/posts/21`);
 
   if (response.ok) {
     const postRes = await response.json();
