@@ -19,6 +19,7 @@ export default function UserChannels() {
   const channelArray = useSelector((state) =>
     Object.values(state.channels.channels)
   );
+  // console.log('channelArray:', channelArray)
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
