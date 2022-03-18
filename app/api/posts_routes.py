@@ -6,7 +6,7 @@ from app.models.db import db
 
 
 post_routes = Blueprint('posts', __name__)
-
+# d
 @post_routes.route('/<int:id>')
 @login_required
 def posts(id):
