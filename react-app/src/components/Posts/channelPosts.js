@@ -15,35 +15,40 @@ export default function ChannelPosts() {
     dispatch(getAllPostsThunk(channelId));
   }, [dispatch, channelId]);
 
-  useEffect(() => {
-    dispatch(getAllChannelsThunk(channelId));
-  }, [dispatch, channelId]);
-
-  const channelKeysArray = useSelector((state) =>
-    Object.keys(state.channels.channels)
-  );
-
-  const channelArray = useSelector((state) =>
-    Object.values(state.channels.channels)
-  );
-
-  const object = {};
-
-  const test = channelKeysArray.forEach((key, i) => {
-    object[key] = channelArray[i];
-  });
-
-  const currentChannelKey = channelKeysArray[+channelId];
-
   const postArray = useSelector((state) => Object.values(state.posts.posts));
   const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
+  console.log('postsArray:', postArray)
+
+  // useEffect(() => {
+  //   dispatch(getAllChannelsThunk(channelId));
+  // }, [dispatch, channelId]);
+
+  // const channelKeysArray = useSelector((state) =>
+  //   Object.keys(state.channels.channels)
+  // );
+
+  // const channelArray = useSelector((state) =>
+  //   Object.values(state.channels.channels)
+  // );
+
+  // const object = {};
+
+  // const test = channelKeysArray.forEach((key, i) => {
+  //   object[key] = channelArray[i];
+  // });
+
+  // const currentChannelKey = channelKeysArray[+channelId];
 
 
-  const object2 = {}
-  const test2 = postKeysArray.forEach((key, i) => {
-    object2[key] = postArray[i];
-  });
+
+
+  // const object2 = {}
+  // const test2 = postKeysArray.forEach((key, i) => {
+  //   object2[key] = postArray[i];
+  // });
+
+  // console.log('test2:', object2)
 
 
   return (
@@ -51,7 +56,7 @@ export default function ChannelPosts() {
       {/* <h1>{object[channelId].channel_name}</h1> */}
       <NavLink to={`/home`}>home</NavLink>
       <CreatePostForm />
-      {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
+      {/* {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">
         {post.channel_id === +channelId && (
           <div>
@@ -69,6 +74,13 @@ export default function ChannelPosts() {
           {post.post_title}
         </p>
       </div>
+      ))} */}
+
+      {postArray.map((post) => (
+        <div>
+        <h1>Hello</h1>
+        <h1>{post.post_title}</h1>
+        </div>
       ))}
 
       {/* {postArray.map((post) => ( */}
