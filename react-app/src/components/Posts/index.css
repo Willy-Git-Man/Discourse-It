@@ -10,3 +10,53 @@
   align-items: center;
   outline: solid black 5px;
 }
+
+.eachPostDiv {
+  width: 50%;
+  outline: black solid 5px;
+  margin-top: 1vh;
+  background-color: white;
+  display: flex;
+  height: 20vh;
+  margin-top: 2.5vh;
+  /* display: inline-block; */
+  display: flex;
+}
+
+
+.postPicture {
+  display: inline-block;
+    height:100%;
+    width: 34%;
+
+}
+
+.postTitle {
+  width: 33%;
+  background-color: lightgoldenrodyellow;
+  height: 100%;
+  margin: 0;
+}
+
+.postDeleteUpdateButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 34%;
+}
+
+.editPostForm {
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+}
+
+.deletePostButton {
+  height: 5vh;
+  background-color: cornflowerblue;
+}
+
+.editPostButton {
+  height: 5vh;
+  background-color: cornflowerblue;
+}

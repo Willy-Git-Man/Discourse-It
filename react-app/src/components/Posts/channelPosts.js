@@ -81,25 +81,24 @@ export default function ChannelPosts() {
       ))} */}
 
       {postArray.map((post) => (
-        <div key={post.id}>
-        <h1>{post.post_title}</h1>
-        <h1>{post.id}</h1>
+        <div className="eachPostDiv" key={post.id}>
 
 
         <img
-            className="channelPicture"
+            className="postPicture"
             src={post.post_picture}
             alt="Broken Img URL"
-          />
+            />
 
+            <h2 className="postTitle">{post.post_title}: {post.id}</h2>
 
         {post.user_id === sessionUser.id && (
-            <div>
+            <div className="postDeleteUpdateButtons">
               <button
-                className="deleteChannelButton"
+                className="deletePostButton"
                 onClick={() => handleDelete(post.id)}
               >
-                Delete Channel
+                Delete Post
               </button>
 
               <EditPostForm postId={post.id}/>
