@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 // import { useParams } from "react-router-dom";
-import { updateChannelThunk } from "../../store/channels";
 import { updatePostThunk } from "../../store/posts";
 import "./index.css";
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
+// import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import CreatePostForm from "./createPost";
 import EditPostForm from "./editPost";
@@ -17,7 +17,7 @@ export default function ChannelPosts() {
   }, [dispatch, channelId]);
 
   const postArray = useSelector((state) => Object.values(state.posts.posts));
-  const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
+  // const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
   const handleDelete = async (id) => {
     dispatch(deletePostThunk(id));
@@ -81,8 +81,7 @@ export default function ChannelPosts() {
       ))} */}
 
       {postArray.map((post) => (
-        <div>
-        {/* <h1>Hello</h1> */}
+        <div key={post.id}>
         <h1>{post.post_title}</h1>
         <h1>{post.id}</h1>
 

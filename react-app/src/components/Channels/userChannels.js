@@ -15,8 +15,8 @@ export default function UserChannels() {
 
   console.log('sessionUser:', sessionUser)
   useEffect(() => {
-    dispatch(getAllChannelsThunk(+ID));
-  }, [dispatch, +ID]);
+    dispatch(getAllChannelsThunk(ID));
+  }, [dispatch, ID]);
 
   const channelArray = useSelector((state) =>
     Object.values(state.channels.channels)
@@ -45,7 +45,6 @@ export default function UserChannels() {
 
         <div key={channel.id} className="eachUserChannelDiv">
 
-        <h1>Hello</h1>
 
           <img
             className="channelPicture"
