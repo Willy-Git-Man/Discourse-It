@@ -82,8 +82,16 @@ export default function ChannelPosts() {
 
       {postArray.map((post) => (
         <div>
-        <h1>Hello</h1>
+        {/* <h1>Hello</h1> */}
         <h1>{post.post_title}</h1>
+        <h1>{post.id}</h1>
+
+
+        <img
+            className="channelPicture"
+            src={post.post_picture}
+            alt="Broken Img URL"
+          />
 
 
         {post.user_id === sessionUser.id && (
@@ -95,7 +103,7 @@ export default function ChannelPosts() {
                 Delete Channel
               </button>
 
-              <EditPostForm />
+              <EditPostForm postId={post.id}/>
             </div>
           )}
 

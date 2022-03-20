@@ -55,6 +55,7 @@ export const getAllChannelsThunkTotal = (id) => async(dispatch) => {
 
 export const postChannelThunk = (channel) => async(dispatch) => {
   const {channelName, channelPicture, user_id} = channel
+  console.log('channel:', channel)
   const form = new FormData()
   form.append("user_id", user_id )
   form.append("channel_name", channelName )

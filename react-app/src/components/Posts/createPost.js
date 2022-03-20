@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postChannelThunk } from "../../store/channels";
 import { NavLink, useParams } from "react-router-dom";
 
 import "./index.css";
@@ -24,8 +23,8 @@ const CreatePostForm = () => {
     const newPost = {
       user_id: sessionUser.id,
       channel_id: +channelId,
-      postTitle,
-      postPicture
+      post_title: postTitle,
+      post_picture: postPicture
     };
     dispatch(createPostThunk(newPost))
     setPostTitle("")

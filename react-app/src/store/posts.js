@@ -36,6 +36,7 @@ export const getAllPostsThunk = (id) => async (dispatch) => {
 
 export const createPostThunk = (post) => async(dispatch) => {
   const {user_id, channel_id, post_title, post_picture} = post
+  console.log('post:', post)
   const form = new FormData()
   form.append('user_id', user_id)
   form.append('channel_id', channel_id)
@@ -67,9 +68,10 @@ export const deletePostThunk = (id) => async(dispatch) => {
 
 
 export const updatePostThunk = (updatePostInfo) => async(dispatch) => {
-  const {post_title, post_picture, user_id, id, channel_id} = updatePostInfo
+  const {post_title, post_picture, user_id, channel_id} = updatePostInfo
+  console.log('updatePostInfo:', post_title)
   const form = new FormData()
-  form.append("id", id )
+  // form.append("id", id )
   form.append("user_id", user_id )
   form.append("channel_id", channel_id )
   form.append("channel_name", post_title )

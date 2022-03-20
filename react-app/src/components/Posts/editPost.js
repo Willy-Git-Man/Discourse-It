@@ -6,7 +6,7 @@ import { updateChannelThunk } from "../../store/channels";
 import { updatePostThunk } from "../../store/posts";
 import "./index.css";
 
-const EditPostForm = () => {
+const EditPostForm = ({postId}) => {
   const dispatch = useDispatch();
   const { channelId, userId } = useParams();
 
@@ -27,11 +27,11 @@ const EditPostForm = () => {
     e.preventDefault();
 
     const editedPost = {
-      id: sessionUser.id,
-      channel_id: channelId,
+      id: postId,
+      channel_id: +channelId,
       user_id: sessionUser.id,
-      postTitle,
-      postPicture,
+      post_title: postTitle,
+      post_picture: postPicture,
     };
 
     dispatch(updatePostThunk(editedPost));
@@ -48,7 +48,7 @@ const EditPostForm = () => {
         <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
-          name="postTitle"
+          name="postTitleName"
           value={postTitle}
           onChange={newPostTitle}
           // required
@@ -57,13 +57,13 @@ const EditPostForm = () => {
         <label htmlFor="postPicture">Post Picture: </label>
         <input
           type="text"
-          name="postPicture"
+          name="postPictureName"
           value={postPicture}
           onChange={newPostPicture}
           // required
         />
 
-        <button className="postChannelButton" type="submit">
+        <button className="editPostButton" type="submit">
           Update
         </button>
       </form>
