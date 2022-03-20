@@ -37,3 +37,16 @@ def delete_channel(id):
   db.session.delete(post)
   db.session.commit()
   return post.to_dict()
+
+
+@post_routes.route('/<int:id>', methods=["POST"])
+def edit_post(id):
+  form = PostForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+
+  post = Post.query.get(id)
+  post.post_title = form.post_title.data
+  post.post_picture = form.post_picture.data
+
+  db.session.commit()
+  return post.to_dict()

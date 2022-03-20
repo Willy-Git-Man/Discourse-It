@@ -1,7 +1,7 @@
 const GET_ALL_POSTS = "posts/GET_ALL_POSTS";
 const CREATE_POSTS = "posts/CREATE_POSTS";
 const DELETE_POSTS = "posts/DELETE_POSTS";
-// const UPDATE_POSTS = "posts/UPDATE_POSTS";
+const UPDATE_POSTS = "posts/UPDATE_POSTS";
 
 const getAllPosts = (post) => ({
   type: GET_ALL_POSTS,
@@ -18,10 +18,10 @@ const deletePost = (post) => ({
   post,
 });
 
-// const updateUpdate = (post) => ({
-//   type: UPDATE_POSTS,
-//   post,
-// });
+const updatePost = (post) => ({
+  type: UPDATE_POSTS,
+  post,
+});
 
 export const getAllPostsThunk = (id) => async (dispatch) => {
   const response = await fetch(`/api/posts/${id}`);
@@ -66,6 +66,26 @@ export const deletePostThunk = (id) => async(dispatch) => {
 }
 
 
+export const updatePostThunk = (updatePostInfo) => async(dispatch) => {
+  const {post_title, post_picture, user_id, id, channel_id} = updatePostInfo
+  const form = new FormData()
+  form.append("id", id )
+  form.append("user_id", user_id )
+  form.append("channel_id", channel_id )
+  form.append("channel_name", post_title )
+  form.append("channel_picture", post_picture )
+  const response = await fetch(`/api/posts/${updatePostInfo.id}`, {
+    method: "POST",
+    // headers: {'Content-Type': 'application/json'},
+    body: form
+  })
+  if (response.ok) {
+    const updatedPostRequest = await response.json()
+    dispatch(updatePost(updatedPostRequest))
+  }
+}
+
+
 
 const initialState = { posts: {} };
 
@@ -87,6 +107,11 @@ const postsReducer = (state = initialState, action) => {
       newState = {...state, posts: {...state.posts}}
       const id = action.post.id
       delete newState.posts[id]
+      return newState
+
+    case UPDATE_POSTS:
+      newState = {...state, posts: {...state.posts}}
+      newState.posts[action.post.id] = {...action.post}
       return newState
 
     default:

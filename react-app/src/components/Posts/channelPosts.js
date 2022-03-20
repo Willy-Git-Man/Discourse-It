@@ -4,6 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import CreatePostForm from "./createPost";
+import EditPostForm from "./editPost";
 import "./index.css";
 
 export default function ChannelPosts() {
@@ -93,6 +94,8 @@ export default function ChannelPosts() {
               >
                 Delete Channel
               </button>
+
+              <EditPostForm />
             </div>
           )}
 
