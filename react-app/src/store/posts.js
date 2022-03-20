@@ -24,12 +24,10 @@ const createPost = (post) => ({
 // });
 
 export const getAllPostsThunk = (id) => async (dispatch) => {
-  console.log("$$$$$$$$$$$$$$", id)
   const response = await fetch(`/api/posts/${id}`);
 
   if (response.ok) {
     const postRes = await response.json();
-    console.log("postRes:", postRes);
     dispatch(getAllPosts(postRes));
   }
   return response;
@@ -61,11 +59,6 @@ const initialState = { posts: {} };
 
 const postsReducer = (state = initialState, action) => {
   let newState;
-  console.log('action:', action)
-  console.log('action post:', action.post)
-  // console.log('action post channels:', action.post.channels)
-
-
 
   switch (action.type) {
     case GET_ALL_POSTS:

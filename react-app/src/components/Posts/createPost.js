@@ -11,7 +11,6 @@ const CreatePostForm = () => {
   const sessionUser = useSelector((state) => state.session.user);
 
   const {userId, channelId} = useParams();
-  console.log("userID:", userId, "channelId:", channelId);
 
   const [postTitle, setPostTitle] = useState("");
   const [postPicture, setPostPicture] = useState("");

@@ -11,7 +11,6 @@ post_routes = Blueprint('posts', __name__)
 @login_required
 def posts(id):
   posts = Post.query.filter(Post.channel_id == id).all()
-  print("@@@@", posts)
   return {'channels': [post.to_dict() for post in posts]}
 
 

@@ -9,17 +9,21 @@ import PostChannelForm from "./postChannel";
 
 export default function UserChannels() {
   const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
   const id = useParams();
   const ID = id.userId;
+
+  console.log('sessionUser:', sessionUser)
   useEffect(() => {
-    dispatch(getAllChannelsThunk(ID));
-  }, [dispatch, ID]);
-  const sessionUser = useSelector((state) => state.session.user);
+    dispatch(getAllChannelsThunk(+ID));
+  }, [dispatch, +ID]);
 
   const channelArray = useSelector((state) =>
     Object.values(state.channels.channels)
   );
-  // console.log('channelArray:', channelArray)
+
+  console.log('channelArray:', channelArray)
+
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
@@ -36,23 +40,26 @@ export default function UserChannels() {
       )}
 
       {channelArray.map((channel) => (
+
+
+
         <div key={channel.id} className="eachUserChannelDiv">
+
+        <h1>Hello</h1>
+
           <img
             className="channelPicture"
             src={channel.channel_picture}
             alt="Broken Img URL"
           />
-          Link: to this channel page:{" "}
           <NavLink
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
           >
             {channel.channel_name}
           </NavLink>
-          <p className="eachChannelTitle">
-            Oops {channel.user_id}-- Channel Name: {channel.channel_name},
-            Channel ID: {channel.id}
-          </p>
+
+
           {channel.user_id === sessionUser.id && (
             <div>
               <button
@@ -64,8 +71,11 @@ export default function UserChannels() {
               <EditChannelForm channelId={channel.id} />
             </div>
           )}
+
+
+
+
         </div>
-        // : null}
       ))}
     </div>
   );

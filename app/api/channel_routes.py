@@ -11,7 +11,6 @@ channel_routes = Blueprint('channels', __name__)
 @login_required
 def channels(id):
   channels = Channel.query.filter(Channel.user_id == id).all()
-  print("@@@@", channels)
   return {'channels': [channel.to_dict() for channel in channels]}
 
 
@@ -33,7 +32,6 @@ def create_channel():
 
 @channel_routes.route('/<int:id>', methods=["DELETE"])
 def delete_channel(id):
-  print('idRoute:', id)
   channel = Channel.query.get(id)
   db.session.delete(channel)
   db.session.commit()

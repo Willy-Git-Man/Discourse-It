@@ -22,7 +22,6 @@ export default function ChannelPosts() {
   const channelKeysArray = useSelector((state) =>
     Object.keys(state.channels.channels)
   );
-  console.log("channelKeysArray:", channelKeysArray);
 
   const channelArray = useSelector((state) =>
     Object.values(state.channels.channels)
@@ -33,14 +32,8 @@ export default function ChannelPosts() {
   const test = channelKeysArray.forEach((key, i) => {
     object[key] = channelArray[i];
   });
-  console.log("object:", object);
-
-  console.log("test:", test);
 
   const currentChannelKey = channelKeysArray[+channelId];
-  console.log("currentChannelKey:", currentChannelKey);
-  console.log("channelArray:", channelArray);
-  console.log("channelKeysArray at channel Id:", channelKeysArray[+channelId]);
 
   const postArray = useSelector((state) => Object.values(state.posts.posts));
   const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
@@ -52,15 +45,6 @@ export default function ChannelPosts() {
     object2[key] = postArray[i];
   });
 
-  console.log("Test Two:", object2)
-
-
-
-  console.log('postKeysArray:', postKeysArray)
-  console.log("postArray:", postArray);
-  // const ID = channelId;
-
-  console.log("Channel Name:");
 
   return (
     <div className="channelPostsMainDiv">
