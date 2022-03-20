@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-import { getAllChannelsThunk } from "../../store/channels";
-import { getAllPostsThunk } from "../../store/posts";
+import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
+import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import CreatePostForm from "./createPost";
 import "./index.css";
 
@@ -18,7 +18,10 @@ export default function ChannelPosts() {
   const postArray = useSelector((state) => Object.values(state.posts.posts));
   const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
-  console.log('postsArray:', postArray)
+  const handleDelete = async (id) => {
+    dispatch(deletePostThunk(id));
+  };
+
 
   // useEffect(() => {
   //   dispatch(getAllChannelsThunk(channelId));
@@ -80,6 +83,23 @@ export default function ChannelPosts() {
         <div>
         <h1>Hello</h1>
         <h1>{post.post_title}</h1>
+
+
+        {post.user_id === sessionUser.id && (
+            <div>
+              <button
+                className="deleteChannelButton"
+                onClick={() => handleDelete(post.id)}
+              >
+                Delete Channel
+              </button>
+            </div>
+          )}
+
+
+
+
+
         </div>
       ))}
 
