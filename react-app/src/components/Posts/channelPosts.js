@@ -107,6 +107,10 @@ export default function ChannelPosts() {
 </div>
 ))} */}
 
+{postArray.length < 1 && (
+    <h1 className="emptyChannelsMessage">Create Posts to Discourse-It!</h1>
+  )}
+
       {postArray.map((post) => (
         <div className="eachPostDiv" key={post.id}>
           <img
