@@ -63,6 +63,23 @@
 
 }
 
+.activeUserListLink {
+  color: black;
+}
+
+.sessionUserListLink:active {
+  font-size: 2em;
+  list-style: none;
+  color: black;
+  margin-left: 2vw;
+
+
+}
+
+.activeUserNavTag {
+  color: black;
+}
+
 
 .userPageHeader {
   display: flex;

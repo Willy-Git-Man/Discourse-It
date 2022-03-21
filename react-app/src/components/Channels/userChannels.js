@@ -28,7 +28,7 @@ export default function UserChannels() {
 
   return (
     <div className="userChannelMainDiv">
-      <User />
+      {/* <User /> */}
 {/*
       <div className="createChannelButtonDiv">
 
@@ -48,7 +48,7 @@ export default function UserChannels() {
             src={channel.channel_picture}
             alt="Broken Img URL"
           />
-          <NavLink className="channelNavTag"
+          <NavLink className="channelNavTag" activeClassName='activeChannelNavTag'
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
           >
@@ -69,6 +69,12 @@ export default function UserChannels() {
           )}
         </div>
       ))}
+
+<div className="userChannelProfileDiv">
+
+<User />
+</div>
+
     </div>
   );
 }

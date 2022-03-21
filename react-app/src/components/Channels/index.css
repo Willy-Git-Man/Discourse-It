@@ -5,7 +5,7 @@
   outline: black solid 5px;
   display: inline-block;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-start;
   align-items: center;
   height: 10vh;
   /* justify-content: center; */
@@ -25,6 +25,11 @@
   width: 100%;
 
 }
+
+/* .userChannelProfileDiv {
+  position: absolute;
+  z-index: 1000;
+} */
 
 .editChannelButton {
   width: 100%;
@@ -125,4 +130,13 @@
 .channelNavTag {
   color: white;
   font-size: 2.5em;
+}
+
+.channelNavTag:active {
+  color: black;
+  font-size: 2.5em;
+}
+
+.activeChannelNavTag {
+  color: black;
 }
