@@ -30,7 +30,7 @@ const EditPostForm = ({postId}) => {
       channel_id: +channelId,
       user_id: sessionUser.id,
       post_title: postTitle,
-      postPicture,
+      post_picture: postPicture,
     };
 
     console.log('editedPost:', editedPost)
