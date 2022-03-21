@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import './homePage.css'
 // import { getAllChannelsThunk, getAllChannelsThunkTotal } from '../store/channels';
@@ -7,6 +7,8 @@ import './homePage.css'
 function UsersList() {
   const dispatch = useDispatch()
   const [users, setUsers] = useState([]);
+
+  const sessionUser = useSelector((state) => state.session.user)
 
   useEffect(() => {
     // dispatch(getAllChannelsThunk())
@@ -19,6 +21,8 @@ function UsersList() {
   }, [dispatch]);
 
   const userComponents = users.map((user) => {
+
+    if (user.id !== sessionUser.id)
     return (
       <li className="eachUserLi" key={user.id}>
         <img className="userListPicture" src={user.profile_picture} alt="Broken Img URL"/>
@@ -33,7 +37,23 @@ function UsersList() {
 
   return (
     <div className="sideBarUsers">
-      <ul className="homePageUserList">{userComponents}</ul>
+      <ul className="homePageUserList">
+
+
+      <li className="eachUserLi" key={sessionUser.id}>
+        <img className="userListPicture" src={sessionUser.profile_picture} alt="Broken Img URL"/>
+        NavLink:<NavLink className="" to={`/users/${sessionUser.id}`}>{sessionUser.username}</NavLink>
+
+        A-Tag :<a href={`/users/${sessionUser.id}`}>{sessionUser.username}</a>
+
+
+      </li>
+
+
+        {userComponents}
+
+
+        </ul>
     </div>
   );
 }
