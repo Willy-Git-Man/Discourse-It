@@ -68,14 +68,13 @@ export const deletePostThunk = (id) => async(dispatch) => {
 
 
 export const updatePostThunk = (updatePostInfo) => async(dispatch) => {
-  const {post_title, post_picture, user_id, channel_id} = updatePostInfo
+  const {post_title, post_picture, user_id, channel_id, id} = updatePostInfo
   console.log('updatePostInfo:', post_title)
   const form = new FormData()
-  // form.append("id", id )
-  form.append("user_id", user_id )
-  form.append("channel_id", channel_id )
-  form.append("post_title", post_title )
-  form.append("post_picture", post_picture )
+  form.append('user_id', user_id)
+  form.append('channel_id', channel_id)
+  form.append('post_title', post_title)
+  form.append('post_picture', post_picture)
   const response = await fetch(`/api/posts/${updatePostInfo.id}`, {
     method: "POST",
     // headers: {'Content-Type': 'application/json'},

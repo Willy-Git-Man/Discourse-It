@@ -49,7 +49,7 @@ def edit_post(id):
   post.post_picture = form.post_picture.data
 
 
-  print("post route:", post)
+  print("post . post picture:", post.post_picture)
 
   db.session.commit()
   return post.to_dict()
