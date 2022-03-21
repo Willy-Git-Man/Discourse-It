@@ -90,7 +90,7 @@ export default function ChannelPosts() {
         </p>
       </div>
       ))} */}
-
+{/*
 {channelsArray.filter((channel) => channel.user_id === +userId).map((channel) =>(
   <div key={channel.id} className="eachUserChannelDiv">
   <img
@@ -117,7 +117,7 @@ export default function ChannelPosts() {
     </div>
   )}
 </div>
-))}
+))} */}
 
 
       {postArray.map((post) => (

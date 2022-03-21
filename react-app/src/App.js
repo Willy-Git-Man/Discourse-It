@@ -68,6 +68,7 @@ function App() {
         <LogoutProfile />
 
         <UsersList />
+          <UserChannels />
 
           <ChannelPosts />
         </ProtectedRoute>

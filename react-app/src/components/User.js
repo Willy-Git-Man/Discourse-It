@@ -24,7 +24,7 @@ function User() {
   return (
     <div className="userPageHeader">
         <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
-     <h1>{user.username}</h1>
+     <h1 className="userPageName">{user.username}</h1>
     </div>
   );
 }

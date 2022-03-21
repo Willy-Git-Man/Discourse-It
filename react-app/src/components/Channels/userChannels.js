@@ -56,13 +56,13 @@ export default function UserChannels() {
 
           {channel.user_id === sessionUser.id && (
             <div>
+              <EditChannelForm channelId={channel.id} />
               <button
                 className="deleteChannelButton"
                 onClick={() => handleDelete(channel.id)}
               >
                 Delete Channel
               </button>
-              <EditChannelForm channelId={channel.id} />
             </div>
           )}
         </div>
