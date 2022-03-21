@@ -3,17 +3,21 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 0;
+  right: 1.75%;
   /* background-color: rgb(0, 208, 255); */
-  padding: 2.5%;
+  /* padding: 2.5%; */
   /* outline: solid black 10px; */
-  bottom: 0;
-  height: 10vh;
-  font-size: 57px;
-  color: white;
-  width: 10vw;
+  top: 1.75%;
+  /* height: 5vh; */
+  /* font-size: 57px; */
+  background-color: black;
+  width: 75px;
+  height: 70px;
+  /* width: 10vw; */
   z-index: 1;
-  border-radius: 50%;
+  border-radius: 999px;
+  /* height: 10px; */
+  /* border-radius: 50%; */
 }
 
 
@@ -23,7 +27,7 @@
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  bottom: 0;
+  top: 112.5px;
   height: 17.5vh;
   margin: 0;
   margin-bottom: 1.25vh;
@@ -32,26 +36,25 @@
   z-index: 1  ;
   background-color: darkslategray;
   outline: 5px white solid;
-  left: 27.5%;
-  width: 50%;
+  right: 5%;
+  right: 1.75%;
+  width: 15%;
+  height: 240px;
 }
 
 .profileButtonPicture {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 0;
-  /* background-color: rgb(0, 208, 255); */
-  padding: 2.5%;
-  outline: solid black 10px;
-  bottom: 0;
-  height: 10vh;
-  font-size: 57px;
-  color: white;
-  width: 10vw;
+  height: 5vh;
   z-index: 1;
   border-radius: 50%;
+  width: 100%;
+  width: 25px;
+  width: 75px;
+  opacity: .75;
+  height: 70px;
+
 
 
 }
@@ -80,4 +83,7 @@
     object-fit: cover;
     z-index: -999;
     left: 0;
+    opacity: .5;
+  height: 240px;
+
 }
