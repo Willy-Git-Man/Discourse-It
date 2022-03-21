@@ -4,6 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import User from "../User";
 import EditChannelForm from "./editChannel";
+import EditChannelModal from "./EditModal";
 // import EditChannelModal from "./EditModal";
 import "./index.css";
 import PostChannelForm from "./postChannel";
@@ -56,7 +57,8 @@ export default function UserChannels() {
 
           {channel.user_id === sessionUser.id && (
             <div>
-              <EditChannelForm channelId={channel.id} />
+              {/* <EditChannelForm channelId={channel.id} /> */}
+              <EditChannelModal channelId={channel.id}/>
               <button
                 className="deleteChannelButton"
                 onClick={() => handleDelete(channel.id)}

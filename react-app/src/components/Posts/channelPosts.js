@@ -7,6 +7,7 @@ import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import EditChannelForm from "../Channels/editChannel";
 import CreatePostForm from "./createPost";
 import EditPostForm from "./editPost";
+import EditPostModal from "./EditPostModal";
 import "./index.css";
 
 export default function ChannelPosts() {
@@ -141,7 +142,9 @@ export default function ChannelPosts() {
                 Delete Post
               </button>
 
-              <EditPostForm postId={post.id}/>
+              {/* <EditPostForm postId={post.id}/> */}
+              <EditPostModal postId={post.id}/>
+
             </div>
           )}
 

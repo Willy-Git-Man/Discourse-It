@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 
-import './index.css'
-import EditChannelForm from '../editChannel';
+// import './index.css'
+import EditPostForm from '../editPost';
 
-function EditChannelModal({channelId}) {
+function EditPostModal({postId}) {
   const [showModal, setShowModal] = useState(false);
 
 
@@ -14,11 +14,11 @@ function EditChannelModal({channelId}) {
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 
-          <EditChannelForm channelId={channelId} />
+          <EditPostForm postId={postId} />
         </Modal>
       )}
     </>
   );
 }
 
-export default EditChannelModal;
+export default EditPostModal;
