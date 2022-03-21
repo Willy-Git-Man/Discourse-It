@@ -65,6 +65,8 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+        <UsersList />
+
           <ChannelPosts />
         </ProtectedRoute>
       </Switch>

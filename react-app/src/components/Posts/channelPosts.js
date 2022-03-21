@@ -59,7 +59,6 @@ export default function ChannelPosts() {
     <div className="channelPostsMainDiv">
       {/* <h1>{object[channelId].channel_name}</h1> */}
       <NavLink to={`/users/${+userId}`}>Return to User</NavLink>
-      <CreatePostForm />
       {/* {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">
         {post.channel_id === +channelId && (
@@ -133,6 +132,9 @@ export default function ChannelPosts() {
           </p>
         </div>
       ))} */}
+
+<CreatePostForm />
+
     </div>
   );
 }

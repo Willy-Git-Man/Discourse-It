@@ -9,6 +9,10 @@
   flex-direction: column;
   align-items: center;
   outline: solid black 5px;
+  margin-left: 30%;
+  width: 50%;
+  height: 80vh;
+  overflow-y: scroll ;
 }
 
 .eachPostDiv {
@@ -59,4 +63,10 @@
 .editPostButton {
   height: 5vh;
   background-color: cornflowerblue;
+}
+
+
+.createPostForm {
+  display: flex;
+  /* flex-direction: column; */
 }
