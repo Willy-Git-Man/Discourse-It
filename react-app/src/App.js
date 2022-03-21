@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
@@ -21,8 +21,6 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
-
-
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
@@ -36,7 +34,6 @@ function App() {
 
   return (
     <BrowserRouter>
-    
       <Switch>
         <Route path="/" exact={true}>
           <LoginFormModal />
@@ -47,21 +44,23 @@ function App() {
 
         <ProtectedRoute path="/home" exact={true}>
           <NavBar />
-          <LogoutButton />
-          {/* <h1>My Home Page</h1> */}
+          {/* <LogoutButton /> */}
           <UsersList />
+          <LogoutProfile />
 
         </ProtectedRoute>
 
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
-          {/* <LogoutButton /> */}
           <LogoutProfile />
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-          {/* <PostChannelForm /> */}
+          {/* <User /> */}
+          <LogoutProfile />
+
+          <UsersList />
+
           <UserChannels />
         </ProtectedRoute>
 

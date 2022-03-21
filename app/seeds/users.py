@@ -6,9 +6,9 @@ def seed_users():
     demo = User(
         username='Demo-lition', email='demo@aa.io', password='password', profile_picture="https://m.media-amazon.com/images/I/81aCJakI4DL._AC_SL1500_.jpg")
     marnie = User(
-        username='marnie', email='marnie@aa.io', password='password', profile_picture="https://m.media-amazon.com/images/I/81aCJakI4DL._AC_SL1500_.jpg")
+        username='marnie', email='marnie@aa.io', password='password', profile_picture="https://images.theconversation.com/files/378097/original/file-20210111-23-bqsfwl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop")
     bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password', profile_picture="https://m.media-amazon.com/images/I/81aCJakI4DL._AC_SL1500_.jpg")
+        username='bobbie', email='bobbie@aa.io', password='password', profile_picture="https://www.jamiesale-cartoonist.com/wp-content/uploads/dog-12.png")
 
     db.session.add(demo)
     db.session.add(marnie)

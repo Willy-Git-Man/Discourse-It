@@ -58,7 +58,7 @@ export default function ChannelPosts() {
   return (
     <div className="channelPostsMainDiv">
       {/* <h1>{object[channelId].channel_name}</h1> */}
-      <NavLink to={`/home`}>home</NavLink>
+      <NavLink to={`/users/${+userId}`}>Return to User</NavLink>
       <CreatePostForm />
       {/* {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">

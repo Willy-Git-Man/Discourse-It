@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
+import User from "../User";
 import EditChannelForm from "./editChannel";
 // import EditChannelModal from "./EditModal";
 import "./index.css";
@@ -31,6 +32,7 @@ export default function UserChannels() {
 
   return (
     <div className="userChannelMainDiv">
+      <User />
       {+ID === sessionUser.id && (
         <div className="eachUserChannelDiv">
           <div>

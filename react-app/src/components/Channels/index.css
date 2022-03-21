@@ -21,9 +21,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border: 5px black solid;
   height: 80vh;
-  width: 80vw;
-  margin-left: 10vw;
+  width: 50%;
+  margin-left: 30%;
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
 }

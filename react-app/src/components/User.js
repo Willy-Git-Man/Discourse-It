@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import './homePage.css'
 
 function User() {
   const [user, setUser] = useState({});
@@ -21,9 +22,9 @@ function User() {
   }
 
   return (
-    <div>
-      <NavLink to={`/home`}>Home</NavLink>
-      <ul>
+    <div className="userPageHeader">
+        <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
+      <ul className="userHeaderUl">
         <li>
           <strong>User Id</strong> {userId}
         </li>
@@ -33,11 +34,9 @@ function User() {
         <li>
           <strong>Email</strong> {user.email}
         </li>
-        <li>
-        <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
 
-        </li>
       </ul>
+      <NavLink to={`/home`}>Home</NavLink>
     </div>
   );
 }

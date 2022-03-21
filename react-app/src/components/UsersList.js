@@ -21,9 +21,10 @@ function UsersList() {
   const userComponents = users.map((user) => {
     return (
       <li className="eachUserLi" key={user.id}>
-        <NavLink to={`/users/${user.id}`}>{user.username}</NavLink> navLink -------
+        <img className="userListPicture" src={user.profile_picture} alt="Broken Img URL"/>
+        NavLink:<NavLink className="" to={`/users/${user.id}`}>{user.username}</NavLink>
 
-        <a href={`/users/${user.id}`}>{user.username}</a> a tag
+        A-Tag :<a href={`/users/${user.id}`}>{user.username}</a>
 
 
       </li>
@@ -32,8 +33,7 @@ function UsersList() {
 
   return (
     <div className="sideBarUsers">
-    <NavLink to={`/home`}>Home</NavLink>
-      <ul className="homePageUserList">User List:{userComponents}</ul>
+      <ul className="homePageUserList">{userComponents}</ul>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import * as sessionActions from "../../store/session";
+import LogoutButton from "../auth/LogoutButton";
 
 import './index.css'
 
@@ -49,9 +50,13 @@ function LogoutProfile({ user }) {
             <h1 className="email">{sessionUser.email}</h1>
             <li>
               <button className={"logoutButton"} onClick={logout}>
-                Log Out
+                Old Log Out
               </button>
             </li>
+
+
+
+            New Logout: <LogoutButton />
           </ul>
         )}
       </div>
