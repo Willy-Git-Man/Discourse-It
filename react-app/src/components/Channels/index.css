@@ -8,6 +8,7 @@
   align-items: flex-start;
   align-items: center;
   height: 10vh;
+  min-height: 25px;
   /* justify-content: center; */
   /* align-items: center; */
   /* align-items: center; */
@@ -57,6 +58,8 @@
   overflow: hidden scroll;
   outline: white solid 5px;
   min-width: 200px;
+  min-height: 700px;
+
 }
 
 .userChannelMainDiv::-webkit-scrollbar {

@@ -48,18 +48,14 @@ function LogoutProfile({ user }) {
           <ul className="profileDropdown">
             <li className="userName">{sessionUser.username}</li>
             <li className="email">{sessionUser.email}</li>
-            <li>
-              <button className={"logoutButton"} onClick={logout}>
-                Old Log Out
-              </button>
-            </li>
+
             <li className="profileDropdownPictureLi">
               <img className="profileDropdownPicture" src={sessionUser.profile_picture} alt="Falty Img Url" />
             </li>
 
 
 
-            New Logout: <LogoutButton />
+           <LogoutButton />
           </ul>
         )}
       </div>
