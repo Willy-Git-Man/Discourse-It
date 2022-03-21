@@ -34,18 +34,17 @@ export default function UserChannels() {
   return (
     <div className="userChannelMainDiv">
       <User />
-
+{/* 
       <div className="createChannelButtonDiv">
 
       {+ID === sessionUser.id && (
         <div className="createChannelModalDiv">
           <div className="createChannelModalSmallerDiv">
-            {/* <PostChannelForm /> */}
             <CreateChannelModal />
           </div>
         </div>
       )}
-      </div>
+      </div> */}
 
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
