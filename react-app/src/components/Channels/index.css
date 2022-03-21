@@ -31,10 +31,10 @@
   position: absolute;
   justify-content: center;
   /* border: 5px black solid; */
-  height: 67.5%;
+  height: 70vh;
   width: 25%;
   /* margin-left: 30%; */
-  margin-top: 32.5%;
+  margin-top: 30vh;
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
 }
