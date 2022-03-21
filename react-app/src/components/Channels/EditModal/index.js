@@ -9,7 +9,7 @@ function EditChannelModal({channelId}) {
 
 
   return (
-    <>
+    <div className="editDeleteChannelDiv">
       <button className={'editChannelButton'} onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
@@ -17,7 +17,7 @@ function EditChannelModal({channelId}) {
           <EditChannelForm channelId={channelId} />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 

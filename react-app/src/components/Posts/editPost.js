@@ -9,7 +9,6 @@ const EditPostForm = ({postId}) => {
   const dispatch = useDispatch();
   const { channelId, userId } = useParams();
 
-  console.log('channelId:', channelId)
 
   const [postTitle, setPostTitle] = useState("");
   const [postPicture, setPostPicture] = useState("");
@@ -33,7 +32,6 @@ const EditPostForm = ({postId}) => {
       post_picture: postPicture,
     };
 
-    console.log('editedPost:', editedPost)
 
     dispatch(updatePostThunk(editedPost));
     setPostTitle("")

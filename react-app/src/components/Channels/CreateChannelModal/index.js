@@ -12,7 +12,6 @@ function CreateChannelModal() {
   const id = useParams();
   const ID = id.userId;
 
-  console.log('ID:', ID)
 
   if (+ID === sessionUser.id)
   return (

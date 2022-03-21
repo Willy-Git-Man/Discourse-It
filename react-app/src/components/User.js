@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import CreateChannelModal from "./Channels/CreateChannelModal";
 import './homePage.css'
 

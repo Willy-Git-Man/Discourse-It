@@ -10,13 +10,14 @@
   align-items: center;
   outline: solid black 5px;
   margin-left: 27.5%;
+  /* margin-top: 10vh; */
   width: 50%;
   height: 80vh;
   overflow-y: scroll ;
 }
 
 .eachPostDiv {
-  width: 50%;
+  width: 75%;
   outline: black solid 5px;
   margin-top: 1vh;
   background-color: white;

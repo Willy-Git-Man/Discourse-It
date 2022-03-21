@@ -3,12 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import User from "../User";
-import CreateChannelModal from "./CreateChannelModal";
-import EditChannelForm from "./editChannel";
 import EditChannelModal from "./EditModal";
 // import EditChannelModal from "./EditModal";
 import "./index.css";
-import PostChannelForm from "./postChannel";
 
 export default function UserChannels() {
   const dispatch = useDispatch();
@@ -16,7 +13,6 @@ export default function UserChannels() {
   const id = useParams();
   const ID = id.userId;
 
-  console.log("sessionUser:", sessionUser);
   useEffect(() => {
     dispatch(getAllChannelsThunk(ID));
   }, [dispatch, ID]);
@@ -25,7 +21,6 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
-  console.log("channelArray:", channelArray);
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));

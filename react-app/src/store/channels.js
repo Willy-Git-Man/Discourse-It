@@ -55,7 +55,6 @@ export const getAllChannelsThunkTotal = (id) => async(dispatch) => {
 
 export const postChannelThunk = (channel) => async(dispatch) => {
   const {channelName, channelPicture, user_id} = channel
-  console.log('channel:', channel)
   const form = new FormData()
   form.append("user_id", user_id )
   form.append("channel_name", channelName )
@@ -109,7 +108,7 @@ const channelsReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case GET_ALL_CHANNELS:
-      newState = {...state}
+      newState = {...state, channels: {}}
       action.channel.channels.forEach((chan) => newState.channels[chan.id] = chan)
       // action.channel.channels.filter((chan) => newState.channels[chan.id] === id)
 

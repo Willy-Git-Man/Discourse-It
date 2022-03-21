@@ -1,13 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { getAllChannelsThunk } from "../../store/channels";
 // import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
-import EditChannelForm from "../Channels/editChannel";
-import CreatePostForm from "./createPost";
 import CreatePostModal from "./CreatePostModal";
-import EditPostForm from "./editPost";
 import EditPostModal from "./EditPostModal";
 import "./index.css";
 
@@ -36,11 +33,10 @@ export default function ChannelPosts() {
   //   Object.keys(state.channels.channels)
   // );
 
-  const channelsArray = useSelector((state) =>
-    Object.values(state.channels.channels)
-  );
+  // const channelsArray = useSelector((state) =>
+  //   Object.values(state.channels.channels)
+  // );
 
-  console.log('channelsArray:', channelsArray)
 
 
 
@@ -64,7 +60,7 @@ export default function ChannelPosts() {
   //   object2[key] = postArray[i];
   // });
 
-  // console.log('test2:', object2)
+  // ('test2:', object2)
 
 
 

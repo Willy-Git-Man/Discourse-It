@@ -5,12 +5,10 @@ import { useDispatch } from "react-redux";
 import LoginFormModal from "./components/auth/LoginModal/index";
 import SignupModal from "./components/auth/SignupModal/index";
 
-import LogoutButton from "../src/components/auth/LogoutButton";
 
 import NavBar from "./components/Nav/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
-import User from "./components/User";
 import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
 import Footer from "./components/Footer/footer";
