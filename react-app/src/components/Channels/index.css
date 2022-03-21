@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center; */
   outline: black solid 5px;
-  display: flex;
+  display: inline;
   flex-direction: column;
   justify-content: flex-end;
   height: 10vh;
@@ -39,6 +39,7 @@
   margin-top: 30vh;
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
+  outline: white solid 5px;
 }
 
 .userChannelMainDiv::-webkit-scrollbar {

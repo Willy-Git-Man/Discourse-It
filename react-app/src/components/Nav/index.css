@@ -24,14 +24,15 @@
   align-items: center;
   position: absolute;
   bottom: 0;
-  height: 25%;
+  height: 17.5vh;
   margin: 0;
+  margin-bottom: 1.25vh;
   padding: 0;
   list-style: none;
   z-index: 1  ;
   background-color: darkslategray;
-  outline: 10px white solid;
-  left: 25%;
+  outline: 5px white solid;
+  left: 27.5%;
   width: 50%;
 }
 
