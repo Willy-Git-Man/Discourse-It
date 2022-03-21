@@ -71,10 +71,14 @@
 .createPostForm {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
-  width: 17.5%;
+  right: 0; */
+  /* width: 17.5%; */
   /* height: 80%; */
   /* flex-direction: column; */
+}
+
+.createPostFormDiv {
+  width: 100%;
 }

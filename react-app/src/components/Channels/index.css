@@ -14,8 +14,8 @@
   /* margin-left: 5%; */
 
   width: 100%;
-  height: 25%;
-  margin-top: 5%;
+  /* height: 25%; */
+  /* margin-top: 5%; */
   /* background-color: black; */
 }
 
@@ -41,6 +41,17 @@
 
 .userChannelMainDiv::-webkit-scrollbar {
   display: none;
+}
+.createChannelModalDiv {
+  height: 10px;
+}
+
+.createChannelModalSmallerDiv {
+  height: 10px;
+}
+
+.createChannelButtonDiv {
+  height: 10px;
 }
 
 .eachChannelTitle {

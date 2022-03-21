@@ -6,6 +6,7 @@ import { getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import EditChannelForm from "../Channels/editChannel";
 import CreatePostForm from "./createPost";
+import CreatePostModal from "./CreatePostModal";
 import EditPostForm from "./editPost";
 import EditPostModal from "./EditPostModal";
 import "./index.css";
@@ -71,7 +72,9 @@ export default function ChannelPosts() {
   return (
     <div className="channelPostsMainDiv">
       {/* <h1>{object[channelId].channel_name}</h1> */}
-      <NavLink to={`/users/${+userId}`}>Return to User</NavLink>
+      {/* <NavLink to={`/users/${+userId}`}>Return to User</NavLink> */}
+
+      <CreatePostModal />
       {/* {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">
         {post.channel_id === +channelId && (
@@ -177,7 +180,7 @@ export default function ChannelPosts() {
         </div>
       ))} */}
 
-<CreatePostForm />
+{/* <CreatePostForm /> */}
 
     </div>
   );

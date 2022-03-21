@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import User from "../User";
+import CreateChannelModal from "./CreateChannelModal";
 import EditChannelForm from "./editChannel";
 import EditChannelModal from "./EditModal";
 // import EditChannelModal from "./EditModal";
@@ -33,13 +34,18 @@ export default function UserChannels() {
   return (
     <div className="userChannelMainDiv">
       <User />
+
+      <div className="createChannelButtonDiv">
+
       {+ID === sessionUser.id && (
-        <div className="eachUserChannelDiv">
-          <div>
-            <PostChannelForm />
+        <div className="createChannelModalDiv">
+          <div className="createChannelModalSmallerDiv">
+            {/* <PostChannelForm /> */}
+            <CreateChannelModal />
           </div>
         </div>
       )}
+      </div>
 
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">

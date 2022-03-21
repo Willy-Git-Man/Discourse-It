@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import CreateChannelModal from "./Channels/CreateChannelModal";
 import './homePage.css'
 
 function User() {
@@ -25,6 +26,8 @@ function User() {
     <div className="userPageHeader">
         <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
      <h1 className="userPageName">{user.username}</h1>
+     <CreateChannelModal />
+
     </div>
   );
 }
