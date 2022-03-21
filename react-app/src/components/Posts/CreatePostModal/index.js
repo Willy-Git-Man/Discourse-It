@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 import CreatePostForm from '../createPost';
 
+import '../index.css'
+
 
 function CreatePostModal() {
   const [showModal, setShowModal] = useState(false);
@@ -9,7 +11,7 @@ function CreatePostModal() {
 
   return (
     <>
-      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Create Post</button>
+      <button className={'createPostModal'} onClick={() => setShowModal(true)}>Create Post</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 

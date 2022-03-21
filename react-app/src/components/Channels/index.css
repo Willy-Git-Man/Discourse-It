@@ -44,9 +44,10 @@
   display: flex;
   /* flex-wrap: wrap; */
   flex-direction: column;
-  background-color: black;
+  /* background-color: black; */
   position: absolute;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  /* justify-content: flex-end; */
   /* border: 5px black solid; */
   height: 67.5vh;
   width: 25%;
@@ -55,6 +56,7 @@
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
   outline: white solid 5px;
+  min-width: 200px;
 }
 
 .userChannelMainDiv::-webkit-scrollbar {
@@ -115,7 +117,7 @@
   /* height: 80%; */
   position: absolute;
   /* height: 25%; */
-  height: 15vh;
+  height: 7.5vh;
   width: 100%;
   object-fit: cover;
   z-index: -999;
@@ -139,4 +141,20 @@
 
 .activeChannelNavTag {
   color: black;
+}
+
+
+.userChannelsOverHeaderDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-self: flex-end; */
+}
+
+
+.emptyChannelsMessage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* min-width: 500px; */
 }

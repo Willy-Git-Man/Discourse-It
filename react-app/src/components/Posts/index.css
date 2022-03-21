@@ -2,33 +2,46 @@
   outline: 5px solid black;
   width: 80%;
   margin-top: 2vh;
+  /* height: 20vh; */
 }
 
 .channelPostsMainDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: solid black 5px;
+  /* outline: solid black 5px; */
+  /* margin-left: 27.5%; */
+  /* margin-left: 250px; */
   margin-left: 27.5%;
+  margin-right: 20%;
   /* margin-top: 10vh; */
-  width: 50%;
+/* margin-right: 150px; */
+  /* min-width: 1000px; */
+  /* margin-top: 10vh; */
+  width: 60%;
   height: 80vh;
   overflow-y: scroll ;
-  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, .5);;
+  /* box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, .5);  */
+  /* min-width: 600px; */
+}
 
+.channelPostsMainDiv::-webkit-scrollbar {
+  display: none;
 }
 
 .eachPostDiv {
   width: 75%;
+  height: 20vh;
   outline: black solid 5px;
   margin-top: 1vh;
   background-color: white;
   /* display: flex; */
-  height: 25%;
+  /* height: 25%; */
   margin-top: 2.5vh;
   /* display: inline-block; */
   display: flex;
   min-width: 250px;
+  min-height: 250px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, .5);;
 }
 
@@ -101,4 +114,15 @@
 
 .editPostButton {
   height: 50%;
+}
+
+
+.createPostModal {
+  position: absolute;
+  width: 47.5%;
+  margin-left: 33.75%;
+  height: 5vh;
+  border-radius: 9999px;
+margin-top: 10px;
+background-color: rgb(255, 69, 0);
 }

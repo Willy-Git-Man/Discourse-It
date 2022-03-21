@@ -26,6 +26,8 @@ export default function UserChannels() {
     dispatch(deleteChannelThunk(id));
   };
 
+
+
   return (
     <div className="userChannelMainDiv">
       {/* <User /> */}
@@ -41,17 +43,23 @@ export default function UserChannels() {
       )}
       </div> */}
 
+<div className="userChannelsOverHeaderDiv">
+
+  {channelArray.length < 1 && (
+    <h1 className="emptyChannelsMessage">Add Channels!</h1>
+  )}
+
       {channelArray.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
           <img
             className="channelPicture"
             src={channel.channel_picture}
             alt="Broken Img URL"
-          />
+            />
           <NavLink className="channelNavTag" activeClassName='activeChannelNavTag'
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
-          >
+            >
             {channel.channel_name}
           </NavLink>
 
@@ -62,7 +70,7 @@ export default function UserChannels() {
               <button
                 className="deleteChannelButton"
                 onClick={() => handleDelete(channel.id)}
-              >
+                >
                 Delete Channel
               </button>
             </div>
@@ -70,6 +78,7 @@ export default function UserChannels() {
         </div>
       ))}
 
+      </div>
 <div className="userChannelProfileDiv">
 
 <User />

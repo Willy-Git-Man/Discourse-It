@@ -14,6 +14,7 @@ import UserChannels from "./components/Channels/userChannels";
 import Footer from "./components/Footer/footer";
 import ChannelPosts from "./components/Posts/channelPosts";
 import LogoutProfile from "./components/Nav/LogoutProfile";
+import CreatePostModal from "./components/Posts/CreatePostModal";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -69,6 +70,7 @@ function App() {
           <UserChannels />
 
           <ChannelPosts />
+          <CreatePostModal />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

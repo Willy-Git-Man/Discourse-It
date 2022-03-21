@@ -58,7 +58,7 @@ export default function ChannelPosts() {
       {/* <h1>{object[channelId].channel_name}</h1> */}
       {/* <NavLink to={`/users/${+userId}`}>Return to User</NavLink> */}
 
-      <CreatePostModal />
+      {/* <CreatePostModal /> */}
       {/* {postKeysArray?.filter((key) => postArray[key -1]?.channel_id === +channelId).map((post) => (
         <div key={post.id} className="eachChannelPostDiv">
         {post.channel_id === +channelId && (
@@ -137,6 +137,8 @@ export default function ChannelPosts() {
         </div>
       ))}
 
+      {/* <CreatePostModal /> */}
+
       {/* {postArray.map((post) => ( */}
       {/* {postArray.map((post) => (
 
@@ -160,6 +162,9 @@ export default function ChannelPosts() {
       ))} */}
 
       {/* <CreatePostForm /> */}
+
+      {/* <CreatePostModal /> */}
+
     </div>
   );
 }
