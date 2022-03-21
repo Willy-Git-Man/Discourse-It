@@ -34,7 +34,7 @@ const CreatePostForm = () => {
   return (
     <div className="createPostFormDiv">
       <form className="createPostForm" onSubmit={handleSubmit}>
-        <label htmlFor="postTitle">Channel Name: </label>
+        <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
           name="postTitle"
@@ -43,7 +43,7 @@ const CreatePostForm = () => {
           required
         />
 
-        <label htmlFor="postPicture">Channel Picture: </label>
+        <label htmlFor="postPicture">Post Picture: </label>
         <input
           type="text"
           name="postPicture"

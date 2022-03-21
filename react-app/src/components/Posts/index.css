@@ -10,7 +10,7 @@
   align-items: center;
   outline: solid black 5px;
   margin-left: 30%;
-  width: 50%;
+  width: 40%;
   height: 80vh;
   overflow-y: scroll ;
 }
@@ -20,11 +20,12 @@
   outline: black solid 5px;
   margin-top: 1vh;
   background-color: white;
-  display: flex;
-  height: 20vh;
+  display: inline-block;
+  height: 25%;
   margin-top: 2.5vh;
   /* display: inline-block; */
   display: flex;
+  min-width: 250px;
 }
 
 
@@ -53,20 +54,27 @@
   /* background-color: black; */
   display: flex;
   flex-direction: column;
+  /* position: absolute; */
 }
 
 .deletePostButton {
-  height: 5vh;
+  height: 20%;
   background-color: cornflowerblue;
 }
 
 .editPostButton {
-  height: 5vh;
+  height: 20%;
   background-color: cornflowerblue;
 }
 
 
 .createPostForm {
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 17.5%;
+  /* height: 80%; */
   /* flex-direction: column; */
 }

@@ -14,7 +14,7 @@ export default function UserChannels() {
   const id = useParams();
   const ID = id.userId;
 
-  console.log('sessionUser:', sessionUser)
+  console.log("sessionUser:", sessionUser);
   useEffect(() => {
     dispatch(getAllChannelsThunk(ID));
   }, [dispatch, ID]);
@@ -23,8 +23,7 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
-  console.log('channelArray:', channelArray)
-
+  console.log("channelArray:", channelArray);
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
@@ -42,12 +41,7 @@ export default function UserChannels() {
       )}
 
       {channelArray.map((channel) => (
-
-
-
         <div key={channel.id} className="eachUserChannelDiv">
-
-
           <img
             className="channelPicture"
             src={channel.channel_picture}
@@ -60,7 +54,6 @@ export default function UserChannels() {
             {channel.channel_name}
           </NavLink>
 
-
           {channel.user_id === sessionUser.id && (
             <div>
               <button
@@ -72,10 +65,6 @@ export default function UserChannels() {
               <EditChannelForm channelId={channel.id} />
             </div>
           )}
-
-
-
-
         </div>
       ))}
     </div>

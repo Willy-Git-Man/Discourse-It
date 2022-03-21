@@ -65,6 +65,8 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+        <LogoutProfile />
+
         <UsersList />
 
           <ChannelPosts />

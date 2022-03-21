@@ -46,8 +46,8 @@ function LogoutProfile({ user }) {
       <div className={"dropDownMenu"}>
         {showMenu && (
           <ul className="profileDropdown">
-            <h1 className="userName">{sessionUser.username}</h1>
-            <h1 className="email">{sessionUser.email}</h1>
+            <li className="userName">{sessionUser.username}</li>
+            <li className="email">{sessionUser.email}</li>
             <li>
               <button className={"logoutButton"} onClick={logout}>
                 Old Log Out

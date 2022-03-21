@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
+import { getAllChannelsThunk } from "../../store/channels";
 // import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
+import EditChannelForm from "../Channels/editChannel";
 import CreatePostForm from "./createPost";
 import EditPostForm from "./editPost";
 import "./index.css";
@@ -10,7 +12,7 @@ import "./index.css";
 export default function ChannelPosts() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const { channelId, userId } = useParams();
+  const { userId, channelId } = useParams();
 
   useEffect(() => {
     dispatch(getAllPostsThunk(channelId));
@@ -24,17 +26,25 @@ export default function ChannelPosts() {
   };
 
 
-  // useEffect(() => {
-  //   dispatch(getAllChannelsThunk(channelId));
-  // }, [dispatch, channelId]);
+  useEffect(() => {
+    dispatch(getAllChannelsThunk());
+  }, [dispatch, channelId]);
 
   // const channelKeysArray = useSelector((state) =>
   //   Object.keys(state.channels.channels)
   // );
 
-  // const channelArray = useSelector((state) =>
-  //   Object.values(state.channels.channels)
-  // );
+  const channelsArray = useSelector((state) =>
+    Object.values(state.channels.channels)
+  );
+
+  console.log('channelsArray:', channelsArray)
+
+
+
+
+
+  // const channelArrayUserPost = channelArr
 
   // const object = {};
 
@@ -53,6 +63,8 @@ export default function ChannelPosts() {
   // });
 
   // console.log('test2:', object2)
+
+
 
 
   return (
@@ -78,6 +90,35 @@ export default function ChannelPosts() {
         </p>
       </div>
       ))} */}
+
+{channelsArray.filter((channel) => channel.user_id === +userId).map((channel) =>(
+  <div key={channel.id} className="eachUserChannelDiv">
+  <img
+    className="channelPicture"
+    src={channel.channel_picture}
+    alt="Broken Img URL"
+  />
+  <NavLink
+    key={channel.id}
+    to={`/users/${channel.user_id}/${channel.id}`}
+  >
+    {channel.channel_name}
+  </NavLink>
+
+  {channel.user_id === sessionUser.id && (
+    <div>
+      <button
+        className="deleteChannelButton"
+        onClick={() => handleDelete(channel.id)}
+      >
+        Delete Channel
+      </button>
+      <EditChannelForm channelId={channel.id} />
+    </div>
+  )}
+</div>
+))}
+
 
       {postArray.map((post) => (
         <div className="eachPostDiv" key={post.id}>

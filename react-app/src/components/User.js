@@ -24,19 +24,7 @@ function User() {
   return (
     <div className="userPageHeader">
         <img className="channelPicture" src={user.profile_picture} alt="Broken Img URL"/>
-      <ul className="userHeaderUl">
-        <li>
-          <strong>User Id</strong> {userId}
-        </li>
-        <li>
-          <strong>Username</strong> {user.username}
-        </li>
-        <li>
-          <strong>Email</strong> {user.email}
-        </li>
-
-      </ul>
-      <NavLink to={`/home`}>Home</NavLink>
+     <h1>{user.username}</h1>
     </div>
   );
 }

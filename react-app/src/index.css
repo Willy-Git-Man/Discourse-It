@@ -6,3 +6,13 @@ html {
 }
 
 
+
+.createPostFormDiv {
+  width: 100%;
+  position: relative absolute;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
