@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import './homePage.css'
 // import { getAllChannelsThunk, getAllChannelsThunkTotal } from '../store/channels';
 
 function UsersList() {
@@ -19,7 +20,7 @@ function UsersList() {
 
   const userComponents = users.map((user) => {
     return (
-      <li key={user.id}>
+      <li className="eachUserLi" key={user.id}>
         <NavLink to={`/users/${user.id}`}>{user.username}</NavLink> navLink -------
 
         <a href={`/users/${user.id}`}>{user.username}</a> a tag
@@ -30,11 +31,10 @@ function UsersList() {
   });
 
   return (
-    <>
+    <div className="sideBarUsers">
     <NavLink to={`/home`}>Home</NavLink>
-      <h1>User List: </h1>
-      <ul>{userComponents}</ul>
-    </>
+      <ul className="homePageUserList">User List:{userComponents}</ul>
+    </div>
   );
 }
 

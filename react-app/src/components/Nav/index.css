@@ -1,0 +1,35 @@
+.profileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  background-color: rgb(0, 208, 255);
+  padding: 2.5%;
+  outline: solid black 5px;
+  top: 0;
+  height: 10vh;
+  font-size: 57px;
+  color: white;
+  width: 10vw;
+  z-index: 1;
+}
+
+
+.profileDropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 12.5%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 999;
+  background-color: darkslategray;
+  outline: 10px white solid;
+  left: 25%;
+  width: 50%;
+}

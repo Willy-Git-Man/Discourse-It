@@ -15,6 +15,7 @@ import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
 import Footer from "./components/Footer/footer";
 import ChannelPosts from "./components/Posts/channelPosts";
+import LogoutProfile from "./components/Nav/LogoutProfile";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -35,6 +36,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    
       <Switch>
         <Route path="/" exact={true}>
           <LoginFormModal />
@@ -46,13 +48,15 @@ function App() {
         <ProtectedRoute path="/home" exact={true}>
           <NavBar />
           <LogoutButton />
-          <h1>My Home Page</h1>
+          {/* <h1>My Home Page</h1> */}
           <UsersList />
 
         </ProtectedRoute>
 
         <ProtectedRoute path="/users" exact={true}>
           <UsersList />
+          {/* <LogoutButton /> */}
+          <LogoutProfile />
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId" exact={true}>

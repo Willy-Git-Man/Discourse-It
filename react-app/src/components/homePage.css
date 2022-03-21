@@ -1,0 +1,25 @@
+.homePageUserList {
+  list-style: none;
+  /* outline: 5px black solid; */
+  width: 100%;
+  height: 40%;
+  padding: 0;
+  margin: 0;
+  background-color: darkslategrey;
+}
+
+.eachUserLi {
+  height: 5vh;
+  /* background-color: black; */
+  background-color: grey;
+  margin-bottom: 1vh;
+}
+
+
+.sideBarUsers {
+  background-color: blue;
+  width: 25%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
