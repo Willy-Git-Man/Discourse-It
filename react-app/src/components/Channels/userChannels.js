@@ -34,7 +34,7 @@ export default function UserChannels() {
   return (
     <div className="userChannelMainDiv">
       <User />
-{/* 
+{/*
       <div className="createChannelButtonDiv">
 
       {+ID === sessionUser.id && (
@@ -53,7 +53,7 @@ export default function UserChannels() {
             src={channel.channel_picture}
             alt="Broken Img URL"
           />
-          <NavLink
+          <NavLink className="channelNavTag"
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
           >

@@ -10,7 +10,7 @@ function EditPostModal({postId}) {
 
   return (
     <>
-      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Edit</button>
+      <button className={'editPostButton'} onClick={() => setShowModal(true)}>Edit</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 

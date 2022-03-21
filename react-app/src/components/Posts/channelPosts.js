@@ -128,11 +128,14 @@ export default function ChannelPosts() {
         <div className="eachPostDiv" key={post.id}>
 
 
+
         <img
             className="postPicture"
             src={post.post_picture}
             alt="Broken Img URL"
             />
+
+<div className="postTitleAndEdit">
 
             <h2 className="postTitle">{post.post_title}: {post.id}</h2>
 
@@ -150,6 +153,8 @@ export default function ChannelPosts() {
 
             </div>
           )}
+
+          </div>
 
 
 

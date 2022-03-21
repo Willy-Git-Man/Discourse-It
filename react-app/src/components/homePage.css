@@ -48,6 +48,8 @@
 .userPageHeader {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   outline: black solid 5px;
   margin-top: 3.5%;
   margin-bottom: 3.5%;

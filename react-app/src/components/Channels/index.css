@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center; */
   outline: black solid 5px;
-  display: inline;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 10vh;
@@ -21,7 +21,12 @@
 }
 
 .deleteChannelButton {
-  margin-bottom: 10px;
+  width: 100%;
+
+}
+
+.editChannelButton {
+  width: 100%;
 }
 
 .userChannelMainDiv {
@@ -104,4 +109,15 @@
   width: 100%;
   object-fit: cover;
   z-index: -999;
+}
+
+
+.createChannelButton {
+  width: 100%;
+}
+
+
+.channelNavTag {
+  color: white;
+  font-size: 2.5em;
 }

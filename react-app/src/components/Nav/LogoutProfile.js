@@ -53,6 +53,9 @@ function LogoutProfile({ user }) {
                 Old Log Out
               </button>
             </li>
+            <li className="profileDropdownPictureLi">
+              <img className="profileDropdownPicture" src={sessionUser.profile_picture} alt="Falty Img Url" />
+            </li>
 
 
 

@@ -20,7 +20,7 @@ function CreateChannelModal() {
 
 
 
-      <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Create Channel</button>
+      <button className={'createChannelButton'} onClick={() => setShowModal(true)}>Create Channel</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 
