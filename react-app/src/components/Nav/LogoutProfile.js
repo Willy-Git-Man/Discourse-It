@@ -41,7 +41,7 @@ function LogoutProfile({ user }) {
     <>
       <button className="profileButton" onClick={openMenu}>
         {/* <i className="fas fa-user-circle" /> */}
-        G
+        <img className="profileButtonPicture" src={sessionUser.profile_picture} alt="Broken Img URL"/>
       </button>
       <div className={"dropDownMenu"}>
         {showMenu && (
