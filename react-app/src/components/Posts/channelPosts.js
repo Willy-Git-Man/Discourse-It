@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getAllChannelsThunk } from "../../store/channels";
 // import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
@@ -24,7 +24,6 @@ export default function ChannelPosts() {
     dispatch(deletePostThunk(id));
   };
 
-
   useEffect(() => {
     dispatch(getAllChannelsThunk());
   }, [dispatch, channelId]);
@@ -37,11 +36,6 @@ export default function ChannelPosts() {
   //   Object.values(state.channels.channels)
   // );
 
-
-
-
-
-
   // const channelArrayUserPost = channelArr
 
   // const object = {};
@@ -52,18 +46,12 @@ export default function ChannelPosts() {
 
   // const currentChannelKey = channelKeysArray[+channelId];
 
-
-
-
   // const object2 = {}
   // const test2 = postKeysArray.forEach((key, i) => {
   //   object2[key] = postArray[i];
   // });
 
   // ('test2:', object2)
-
-
-
 
   return (
     <div className="channelPostsMainDiv">
@@ -90,7 +78,7 @@ export default function ChannelPosts() {
         </p>
       </div>
       ))} */}
-{/*
+      {/*
 {channelsArray.filter((channel) => channel.user_id === +userId).map((channel) =>(
   <div key={channel.id} className="eachUserChannelDiv">
   <img
@@ -119,43 +107,33 @@ export default function ChannelPosts() {
 </div>
 ))} */}
 
-
       {postArray.map((post) => (
         <div className="eachPostDiv" key={post.id}>
-
-
-
-        <img
+          <img
             className="postPicture"
             src={post.post_picture}
             alt="Broken Img URL"
-            />
+          />
 
-<div className="postTitleAndEdit">
+          <div className="postTitleAndEdit">
+            <h2 className="postTitle">
+              {post.post_title}: {post.id}
+            </h2>
 
-            <h2 className="postTitle">{post.post_title}: {post.id}</h2>
+            {post.user_id === sessionUser.id && (
+              <div className="postDeleteUpdateButtons">
+                <button
+                  className="deletePostButton"
+                  onClick={() => handleDelete(post.id)}
+                >
+                  Delete Post
+                </button>
 
-        {post.user_id === sessionUser.id && (
-            <div className="postDeleteUpdateButtons">
-              <button
-                className="deletePostButton"
-                onClick={() => handleDelete(post.id)}
-              >
-                Delete Post
-              </button>
-
-              {/* <EditPostForm postId={post.id}/> */}
-              <EditPostModal postId={post.id}/>
-
-            </div>
-          )}
-
+                {/* <EditPostForm postId={post.id}/> */}
+                <EditPostModal postId={post.id} />
+              </div>
+            )}
           </div>
-
-
-
-
-
         </div>
       ))}
 
@@ -181,8 +159,7 @@ export default function ChannelPosts() {
         </div>
       ))} */}
 
-{/* <CreatePostForm /> */}
-
+      {/* <CreatePostForm /> */}
     </div>
   );
 }

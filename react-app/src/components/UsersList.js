@@ -29,8 +29,7 @@ function UsersList() {
             src={user.profile_picture}
             alt="Broken Img URL"
           />
-          NavLink:
-          <NavLink className="" to={`/users/${user.id}`}>
+          <NavLink className="userListLink" to={`/users/${user.id}`}>
             {user.username}
           </NavLink>
         </li>
@@ -47,8 +46,7 @@ function UsersList() {
             src={sessionUser.profile_picture}
             alt="Broken Img URL"
           />
-          NavLink:
-          <NavLink className="" to={`/users/${sessionUser.id}`}>
+          <NavLink className="sessionUserListLink" to={`/users/${sessionUser.id}`}>
             {sessionUser.username}
           </NavLink>
         </li>
