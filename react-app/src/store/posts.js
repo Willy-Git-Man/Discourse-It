@@ -74,8 +74,8 @@ export const updatePostThunk = (updatePostInfo) => async(dispatch) => {
   // form.append("id", id )
   form.append("user_id", user_id )
   form.append("channel_id", channel_id )
-  form.append("channel_name", post_title )
-  form.append("channel_picture", post_picture )
+  form.append("post_title", post_title )
+  form.append("post_picture", post_picture )
   const response = await fetch(`/api/posts/${updatePostInfo.id}`, {
     method: "POST",
     // headers: {'Content-Type': 'application/json'},
@@ -97,7 +97,7 @@ const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ALL_POSTS:
       newState = { ...state };
-      action.post.channels.forEach((pos) => newState.posts[pos.id] = pos);
+      action.post.posts.forEach((pos) => newState.posts[pos.id] = pos);
       return newState;
 
     case CREATE_POSTS:

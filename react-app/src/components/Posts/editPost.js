@@ -30,8 +30,10 @@ const EditPostForm = ({postId}) => {
       channel_id: +channelId,
       user_id: sessionUser.id,
       post_title: postTitle,
-      post_picture: postPicture,
+      postPicture,
     };
+
+    console.log('editedPost:', editedPost)
 
     dispatch(updatePostThunk(editedPost));
     setPostTitle("")

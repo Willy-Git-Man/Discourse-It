@@ -11,7 +11,7 @@ post_routes = Blueprint('posts', __name__)
 @login_required
 def posts(id):
   posts = Post.query.filter(Post.channel_id == id).all()
-  return {'channels': [post.to_dict() for post in posts]}
+  return {'posts': [post.to_dict() for post in posts]}
 
 
 @post_routes.route('/', methods=["POST"])
@@ -47,6 +47,9 @@ def edit_post(id):
   post = Post.query.get(id)
   post.post_title = form.post_title.data
   post.post_picture = form.post_picture.data
+
+
+  print("post route:", post)
 
   db.session.commit()
   return post.to_dict()
