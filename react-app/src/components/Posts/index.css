@@ -19,7 +19,7 @@
   /* min-width: 1000px; */
   /* margin-top: 10vh; */
   width: 60%;
-  height: 80vh;
+  height: 85vh;
   overflow-y: scroll ;
 
   /* box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, .5);  */
@@ -81,12 +81,13 @@
 
 .deletePostButton {
   height: 50%;
-  background-color: cornflowerblue;
+  background-color: rgba(255, 1, 1,.995);
 }
 
 .editPostButton {
   height: 20%;
   background-color: cornflowerblue;
+  background-color: rgba(117, 235, 14, 0.995);
 }
 
 
@@ -122,8 +123,13 @@
   position: absolute;
   width: 47.5%;
   margin-left: 33.75%;
-  height: 5vh;
+  height: 7.5vh;
   border-radius: 9999px;
-margin-top: 10px;
-background-color: rgba(255, 69, 0,.7);
+  margin-top: 5vh;
+  background-color: rgba(117, 235, 14, 0.995);
+}
+
+
+.channelPostLink {
+  background-color: white;
 }

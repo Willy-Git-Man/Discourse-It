@@ -1,30 +1,29 @@
 .eachUserChannelDiv {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  outline: black solid 5px;
-  display: inline-block;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-items: center;
-  height: 10vh;
-  min-height: 25px;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* align-items: center; */
-  /* margin-top: 3.5%; */
-  /* margin-right: 5%; */
-  /* margin-left: 5%; */
-
-  width: 100%;
-  /* height: 25%; */
-  /* margin-top: 5%; */
-  /* background-color: black; */
+  height: 3.5vh;
+  margin-bottom: 5vh;
+  margin-bottom:50px;
+  position:relative;
 }
 
-.deleteChannelButton {
+.channelPicture {
+  height: 3.5vh;
   width: 100%;
+  object-fit: cover;
+  position:absolute;
+  z-index: -999;
+}
 
+
+.deleteChannelButton {
+  position:absolute;
+  width: 50%;
+  background-color: rgb(255, 1, 1);
+  /* background-color:rgba(0,0,0,0); */
+  z-index:100;
 }
 
 /* .userChannelProfileDiv {
@@ -33,7 +32,10 @@
 } */
 
 .editChannelButton {
-  width: 100%;
+  width: 50%;
+  right:0;
+  position:absolute;
+  background-color: rgba(117, 235, 14, 0.995);
 }
 
 .editDeleteChannelDiv {
@@ -101,15 +103,6 @@
   /* width: 25vw; */
 }
 
-.channelPicture {
-  /* height: 80%; */
-  position: absolute;
-  /* height: 25%; */
-  height: 10vh;
-  width: 100%;
-  object-fit: cover;
-  z-index: -999;
-}
 
 .userPageName {
   margin: 0;
@@ -131,18 +124,23 @@
 .createChannelButton {
   width: 100%;
   height: 33.33%;
-  background-color: rgba(114, 137, 218, 1);
+  background-color: rgba(117, 235, 14, 0.995);
+  border-radius:9999px;
 
 
 }
 
 
 .channelNavTag {
+  display:flex;
+  justify-content:center;
   color: white;
   font-size: 2.5em;
 }
 
 .channelNavTag:active {
+  display:flex;
+  justify-content:center;
   color: black;
   font-size: 2.5em;
 }
@@ -156,7 +154,13 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow-y:scroll;
+  height:75%;
   /* align-self: flex-end; */
+}
+
+.userChannelsOverHeaderDiv::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -165,4 +169,16 @@
   justify-content: center;
   width: 100%;
   /* min-width: 500px; */
+}
+
+
+
+
+.channelEditDeleteDiv {
+  position:absolute;;
+  bottom:0;
+
+  background-color:black;
+  width:100%;
+  /* margin-top: 3.5vh; */
 }

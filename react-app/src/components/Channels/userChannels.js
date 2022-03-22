@@ -30,18 +30,6 @@ export default function UserChannels() {
 
   return (
     <div className="userChannelMainDiv">
-      {/* <User /> */}
-{/*
-      <div className="createChannelButtonDiv">
-
-      {+ID === sessionUser.id && (
-        <div className="createChannelModalDiv">
-          <div className="createChannelModalSmallerDiv">
-            <CreateChannelModal />
-          </div>
-        </div>
-      )}
-      </div> */}
 
 <div className="userChannelsOverHeaderDiv">
 
@@ -64,14 +52,13 @@ export default function UserChannels() {
           </NavLink>
 
           {channel.user_id === sessionUser.id && (
-            <div>
-              {/* <EditChannelForm channelId={channel.id} /> */}
+            <div className="channelEditDeleteDiv">
               <EditChannelModal channelId={channel.id}/>
               <button
                 className="deleteChannelButton"
                 onClick={() => handleDelete(channel.id)}
                 >
-                Delete Channel
+                Delete
               </button>
             </div>
           )}
