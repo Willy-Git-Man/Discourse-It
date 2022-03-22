@@ -40,7 +40,7 @@ function App() {
       <Switch>
 
 
-      <Route path="/login" exact={true}>
+      <Route path="/" exact={true}>
           <LoginFormModal />
           <SignupModal />
           <Footer />
