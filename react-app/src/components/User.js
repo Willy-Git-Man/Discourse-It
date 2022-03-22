@@ -25,7 +25,7 @@ function User() {
   return (
     <div className="userPageHeader">
         <img className="channelPictureUser" src={user.profile_picture} alt="Broken Img URL"/>
-     <h1 className="userPageName">{user.username}</h1>
+     <h2 className="userPageName">{user.username}</h2>
      <CreateChannelModal />
 
     </div>

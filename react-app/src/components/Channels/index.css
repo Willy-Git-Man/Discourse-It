@@ -1,8 +1,7 @@
 .eachUserChannelDiv {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  align-items: center;
+  justify-content:center;
   height: 3.5vh;
   margin-bottom: 5vh;
   margin-bottom:50px;
@@ -14,7 +13,8 @@
   width: 100%;
   object-fit: cover;
   position:absolute;
-  z-index: -999;
+  z-index: -99;
+  opacity: .5;
 }
 
 
@@ -107,6 +107,8 @@
 .userPageName {
   margin: 0;
   color: white;
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 
@@ -135,7 +137,9 @@
   display:flex;
   justify-content:center;
   color: white;
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 .channelNavTag:active {
@@ -143,6 +147,8 @@
   justify-content:center;
   color: black;
   font-size: 2.5em;
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 .activeChannelNavTag {
@@ -181,4 +187,8 @@
   background-color:black;
   width:100%;
   /* margin-top: 3.5vh; */
+}
+
+.channelNameLinkP {
+  margin:0;
 }

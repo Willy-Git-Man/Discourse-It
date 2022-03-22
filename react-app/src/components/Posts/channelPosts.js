@@ -44,7 +44,7 @@ export default function ChannelPosts() {
 {postArray.length < 1 && (
     <h1 className="emptyChannelsMessage">Create Posts to Discourse-It!</h1>
   )}
-      <h1>{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
+      <h1 className="channelTitleForPostPage">{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
 
       {postArray.map((post) => (
 
@@ -57,13 +57,13 @@ export default function ChannelPosts() {
           />
 
           <div className="postTitleAndEdit">
-           <NavLink to={post ? `/users/${post.user_id}` : null}><h1>{users ? users[post.user_id]?.username : null}</h1></NavLink>
+           <NavLink className="eachPostUserNavLink" to={post ? `/users/${post.user_id}` : null}><h2>{users ? users[post.user_id]?.username : null}</h2></NavLink>
 
 
 
-            <h2 className="postTitle">
-              {post.post_title}: {post.id}
-            </h2>
+            <h3 className="postTitle">
+              {post.post_title}
+            </h3>
 
             {post.user_id === sessionUser.id && (
               <div className="postDeleteUpdateButtons">

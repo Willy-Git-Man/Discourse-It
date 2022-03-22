@@ -48,7 +48,7 @@ export default function UserChannels() {
             key={channel.id}
             to={`/users/${channel.user_id}/${channel.id}`}
             >
-            {channel.channel_name}
+            <h3 className="channelNameLinkP">{channel.channel_name}</h3>
           </NavLink>
 
           {channel.user_id === sessionUser.id && (

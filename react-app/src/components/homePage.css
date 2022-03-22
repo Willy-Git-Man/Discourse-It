@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
 .sideBarUsers {
   /* background-color: blue; */
   width: 25%;
@@ -37,22 +40,27 @@
 .eachUserLi {
   height: 2.5vh;
   /* background-color: black; */
-  background-color: rgba(0,255,255,.75);
+  /* background-color: rgba(0,255,255,.75); */
+  border: 1px solid grey;
   margin-bottom: 5%;
   display: flex;
   align-items: center;
-  border-radius: 9999px;
+  border-radius: 9px;
 
   /* justify-content: space-between; */
   /* margin-left: 5vw; */
+}
+
+.eachUserLi:active {
+  background-color:white;
 }
 
 
 
 
 .userListPicture {
-  height: 2.5vh;
-  width: 4vw;
+  height: 2vh;
+  width: 2.5vw;
   border-radius: 50%;
 }
 
@@ -60,17 +68,20 @@
   display:flex;
   justify-content:center;
   width:100%;
-  font-size: 2em;
-  list-style: none;
+  font-size: 1.25em;
+  text-decoration: none;
   color: white;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .sessionUserListLink {
-  font-size: 2em;
-  list-style: none;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  font-size: 1.25em;
+  text-decoration: none;
   color: white;
-
-
+  font-family: 'Press Start 2P', cursive;
 }
 
 .activeUserListLink {
@@ -79,19 +90,20 @@
   background-color: white;
 }
 
-.sessionUserListLink:active {
-  font-size: 2em;
-  list-style: none;
-  color: black;
+/* .sessionUserListLink:active {
+  background-color: white;
+  width:100%;
 
 
-}
+
+} */
 
 .activeUserNavTag {
   display:flex;
   justify-content:center;
   width:100%;
   color: black;
+  background-color:white;
 }
 
 
@@ -100,8 +112,10 @@
 .userPageHeader {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  justify-self: flex-end;
+  /* justify-content: flex-end; */
+  /* justify-self: flex-end; */
+  justify-content:space-between;
+  align-items:center;
   position: absolute;
   bottom: 0;
   align-items: center;
