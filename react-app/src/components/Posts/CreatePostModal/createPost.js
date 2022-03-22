@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -13,10 +13,20 @@ const CreatePostForm = ({setShowModal}) => {
 
   const [postTitle, setPostTitle] = useState("");
   const [postPicture, setPostPicture] = useState("");
+  const [errors, setErrors] = useState([])
 
   const newPostTitle = (e) => setPostTitle(e.target.value);
   const newPostPicture = (e) => setPostPicture(e.target.value);
+  useEffect(() => {
+    const validationErrors = []
 
+    if (postTitle.length === 0) validationErrors.push("Post Title field is required")
+    if (postPicture.length === 0) validationErrors.push("Picture field is required")
+    if (postTitle.length > 50) validationErrors.push('Post Title must be less than 50 characters')
+    if (postPicture.length > 750) validationErrors.push('Picture must be less than 750 characters')
+
+    setErrors(validationErrors)
+  }, [postTitle, postPicture])
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,6 +45,11 @@ const CreatePostForm = ({setShowModal}) => {
   return (
     <div className="createPostFormDiv">
       <form className="createPostForm" onSubmit={handleSubmit}>
+      <ul className="errors">
+        {errors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
+      </ul>
         <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
