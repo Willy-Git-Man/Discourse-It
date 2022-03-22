@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
-import CreatePostForm from '../createPost';
+import CreatePostForm from './createPost';
 
 import '../index.css'
 

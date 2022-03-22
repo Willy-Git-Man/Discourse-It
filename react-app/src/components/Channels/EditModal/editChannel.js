@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postChannelThunk } from "../../store/channels";
+// import { useParams } from "react-router-dom";
+import { updateChannelThunk } from "../../../store/channels";
+import "../index.css";
 
-import "./index.css";
-
-const PostChannelForm = ({setShowModal}) => {
+const EditChannelForm = ({channelId, setShowModal}) => {
   const dispatch = useDispatch();
+  // const [errors, setErrors] = useState([]);
   const [channelName, setChannelName] = useState("");
   const [channelPicture, setChannelPicture] = useState("");
 
@@ -14,31 +15,38 @@ const PostChannelForm = ({setShowModal}) => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
+  // const {userid} = useParams()
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newChannel = {
+      id: channelId,
       user_id: sessionUser.id,
       channelName,
       channelPicture,
     };
-    dispatch(postChannelThunk(newChannel));
-    setChannelName("");
-    setChannelPicture("");
+
+    dispatch(updateChannelThunk(newChannel));
+    setChannelName("")
+    setChannelPicture("")
     setShowModal(false)
   };
 
-  return (
-    <div className="postChannelFormDiv">
 
-      <form className="postChannelForm" onSubmit={handleSubmit}>
+
+
+  return (
+    <div className="editChannelFormDiv">
+      <form className="editChannelForm" onSubmit={handleSubmit}>
         <label htmlFor="channelName">Channel Name: </label>
         <input
           type="text"
           name="channelName"
           value={channelName}
           onChange={newChannelName}
-          required
+          // required
         />
 
         <label htmlFor="channelPicture">Channel Picture: </label>
@@ -47,16 +55,15 @@ const PostChannelForm = ({setShowModal}) => {
           name="channelPicture"
           value={channelPicture}
           onChange={newChannelPicture}
-          required
+          // required
         />
 
         <button className="postChannelButton" type="submit">
-          Create Channel
+          Update
         </button>
       </form>
     </div>
-
   );
 };
 
-export default PostChannelForm;
+export default EditChannelForm;

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import "./index.css";
-import { createPostThunk } from "../../store/posts";
+import "../index.css";
+import { createPostThunk } from "../../../store/posts";
 
 const CreatePostForm = ({setShowModal}) => {
   const dispatch = useDispatch();

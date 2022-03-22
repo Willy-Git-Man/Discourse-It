@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Modal } from '../../context/modal';
 
-import PostChannelForm from '../postChannel';
+import PostChannelForm from './postChannel';
 
 function CreateChannelModal() {
   const [showModal, setShowModal] = useState(false);

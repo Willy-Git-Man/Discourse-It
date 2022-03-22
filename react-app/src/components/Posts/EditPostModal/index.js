@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 
 // import './index.css'
-import EditPostForm from '../editPost';
+import EditPostForm from './editPost';
 
 function EditPostModal({postId}) {
   const [showModal, setShowModal] = useState(false);
