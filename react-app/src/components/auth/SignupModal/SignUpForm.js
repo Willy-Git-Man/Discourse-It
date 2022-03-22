@@ -25,9 +25,12 @@ const SignUpForm = () => {
     if (email.length > 75) validationErrors.push('Email must be less than 50 characters')
 
     if (profilePicture.length > 750) validationErrors.push('Picture name must be less than 750 characters')
+    if (!profilePicture.match(/\.(jpeg|jpg|gif|png)$/) || !profilePicture.includes("https://")) validationErrors.push('Picture must be a valid Picture Url')
+    // if (password === !repeatPassword) validationErrors.push('Confirm Password field must be the same as the Password field')
+
 
     setErrors(validationErrors)
-  }, [username, profilePicture, setEmail])
+  }, [username, profilePicture, email, password, repeatPassword])
 
   const onSignUp = async (e) => {
     e.preventDefault();
