@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
+
 import { getAllChannelsThunk } from "../../store/channels";
 // import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
+import { getUsersThunk } from "../../store/session";
+
 import CreatePostModal from "./CreatePostModal";
 import EditPostModal from "./EditPostModal";
 import "./index.css";
@@ -15,18 +18,26 @@ export default function ChannelPosts() {
 
   useEffect(() => {
     dispatch(getAllPostsThunk(channelId));
+    dispatch(getUsersThunk())
+
+
   }, [dispatch, channelId]);
 
   const postArray = useSelector((state) => Object.values(state.posts.posts));
-  // const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
+  const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
+
+  const channelObj = useSelector((state) => state.channels.channels);
+
+  const users = useSelector((state) => state.session.users)
+  console.log("users:", users)
 
   const handleDelete = async (id) => {
     dispatch(deletePostThunk(id));
   };
 
-  useEffect(() => {
-    dispatch(getAllChannelsThunk());
-  }, [dispatch, channelId]);
+  // useEffect(() => {
+  //   dispatch(getAllChannelsThunk(channelId));
+  // }, [dispatch, channelId]);
 
   // const channelKeysArray = useSelector((state) =>
   //   Object.keys(state.channels.channels)
@@ -36,12 +47,11 @@ export default function ChannelPosts() {
   //   Object.values(state.channels.channels)
   // );
 
-  // const channelArrayUserPost = channelArr
 
   // const object = {};
 
   // const test = channelKeysArray.forEach((key, i) => {
-  //   object[key] = channelArray[i];
+  //   object[key] = channelsArray[i];
   // });
 
   // const currentChannelKey = channelKeysArray[+channelId];
@@ -51,11 +61,11 @@ export default function ChannelPosts() {
   //   object2[key] = postArray[i];
   // });
 
-  // ('test2:', object2)
 
   return (
     <div className="channelPostsMainDiv">
-      {/* <h1>{object[channelId].channel_name}</h1> */}
+
+      {/* <h1>{channelObj[channelId].channel_name}</h1> */}
       {/* <NavLink to={`/users/${+userId}`}>Return to User</NavLink> */}
 
       {/* <CreatePostModal /> */}
@@ -110,8 +120,11 @@ export default function ChannelPosts() {
 {postArray.length < 1 && (
     <h1 className="emptyChannelsMessage">Create Posts to Discourse-It!</h1>
   )}
+      <h1>{channelObj[channelId].channel_name}</h1>
 
       {postArray.map((post) => (
+
+
         <div className="eachPostDiv" key={post.id}>
           <img
             className="postPicture"
@@ -120,6 +133,9 @@ export default function ChannelPosts() {
           />
 
           <div className="postTitleAndEdit">
+            <h1>{users[post.user_id].username}</h1>
+          {/* <NavLink to={`/users/${post.user_id}`}>hello</NavLink> */}
+
             <h2 className="postTitle">
               {post.post_title}: {post.id}
             </h2>
