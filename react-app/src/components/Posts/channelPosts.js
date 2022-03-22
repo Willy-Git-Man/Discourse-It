@@ -16,9 +16,12 @@ export default function ChannelPosts() {
   const sessionUser = useSelector((state) => state.session.user);
   const { userId, channelId } = useParams();
 
+  console.log("channelId", channelId)
+
   useEffect(() => {
     dispatch(getAllPostsThunk(channelId));
     dispatch(getUsersThunk())
+    // dispatch(getAllChannelsThunk())
 
 
   }, [dispatch, channelId]);
@@ -27,7 +30,7 @@ export default function ChannelPosts() {
   const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
   const channelObj = useSelector((state) => state.channels.channels);
-
+  console.log(channelObj, "channel obj")
   const users = useSelector((state) => state.session.users)
   console.log("users:", users)
 
@@ -120,7 +123,7 @@ export default function ChannelPosts() {
 {postArray.length < 1 && (
     <h1 className="emptyChannelsMessage">Create Posts to Discourse-It!</h1>
   )}
-      <h1>{channelObj[channelId].channel_name}</h1>
+      <h1>{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
 
       {postArray.map((post) => (
 
@@ -133,8 +136,11 @@ export default function ChannelPosts() {
           />
 
           <div className="postTitleAndEdit">
-            <h1>{users[post.user_id].username}</h1>
-          {/* <NavLink to={`/users/${post.user_id}`}>hello</NavLink> */}
+             {/* <h1>{users ? users[post.user_id]?.username : null}</h1> */}
+           <NavLink to={post ? `/users/${post.user_id}` : null}><h1>{users ? users[post.user_id]?.username : null}</h1></NavLink>
+           {/* <NavLink to={`/users/${post.user_id}` : null}>{users[post.user_id].username}</NavLink> */}
+
+
 
             <h2 className="postTitle">
               {post.post_title}: {post.id}
