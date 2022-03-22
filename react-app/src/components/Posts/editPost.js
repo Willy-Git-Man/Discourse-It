@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { updatePostThunk } from "../../store/posts";
 import "./index.css";
 
-const EditPostForm = ({postId}) => {
+const EditPostForm = ({postId, setShowModal}) => {
   const dispatch = useDispatch();
   const { channelId, userId } = useParams();
 
@@ -36,6 +36,7 @@ const EditPostForm = ({postId}) => {
     dispatch(updatePostThunk(editedPost));
     setPostTitle("")
     setPostPicture("")
+    setShowModal(false)
   };
 
 

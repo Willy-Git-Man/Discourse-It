@@ -25,7 +25,7 @@ function CreateChannelModal() {
 
 
 
-          <PostChannelForm />
+          <PostChannelForm setShowModal={setShowModal} />
 
         </Modal>
       )}

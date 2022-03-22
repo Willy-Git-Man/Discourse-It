@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateChannelThunk } from "../../store/channels";
 import "./index.css";
 
-const EditChannelForm = ({channelId}) => {
+const EditChannelForm = ({channelId, setShowModal}) => {
   const dispatch = useDispatch();
   // const [errors, setErrors] = useState([]);
   const [channelName, setChannelName] = useState("");
@@ -31,6 +31,7 @@ const EditChannelForm = ({channelId}) => {
     dispatch(updateChannelThunk(newChannel));
     setChannelName("")
     setChannelPicture("")
+    setShowModal(false)
   };
 
 

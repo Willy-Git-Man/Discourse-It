@@ -4,15 +4,15 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo-lition', email='demo@aa.io', password='password', profile_picture="https://m.media-amazon.com/images/I/81aCJakI4DL._AC_SL1500_.jpg")
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password', profile_picture="https://images.theconversation.com/files/378097/original/file-20210111-23-bqsfwl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop")
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password', profile_picture="https://www.jamiesale-cartoonist.com/wp-content/uploads/dog-12.png")
+        username='Demo-lition', email='demo@aa.io', password='password', profile_picture="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEaB2pJ385I-RpDVPB1vSFo5sbS5CFEumE5A&usqp=CAU")
+    naruto = User(
+        username='Naruto', email='naruto@aa.io', password='password', profile_picture="https://cdn.vox-cdn.com/thumbor/AUK49UV2bYCSch-7fxc_IRrUAU0=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23017169/18BR_Naruto_KeyArt.jpg")
+    boruto = User(
+        username='Boruto', email='boruto@aa.io', password='password', profile_picture="https://m.media-amazon.com/images/M/MV5BMDFjYTc1ODgtNjRlNi00ZDllLTg3ZGYtMjJlYTA0NjBkYWZlXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg")
 
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(naruto)
+    db.session.add(boruto)
 
     db.session.commit()
 

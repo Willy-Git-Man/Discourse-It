@@ -14,7 +14,7 @@ function EditPostModal({postId}) {
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 
-          <EditPostForm postId={postId} />
+          <EditPostForm postId={postId} setShowModal={setShowModal}/>
         </Modal>
       )}
     </>

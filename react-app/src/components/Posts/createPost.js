@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import "./index.css";
 import { createPostThunk } from "../../store/posts";
 
-const CreatePostForm = () => {
+const CreatePostForm = ({setShowModal}) => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -29,6 +29,7 @@ const CreatePostForm = () => {
     dispatch(createPostThunk(newPost))
     setPostTitle("")
     setPostPicture("")
+    setShowModal(false)
   };
 
   return (

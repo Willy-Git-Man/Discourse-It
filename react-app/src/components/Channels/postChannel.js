@@ -4,7 +4,7 @@ import { postChannelThunk } from "../../store/channels";
 
 import "./index.css";
 
-const PostChannelForm = () => {
+const PostChannelForm = ({setShowModal}) => {
   const dispatch = useDispatch();
   const [channelName, setChannelName] = useState("");
   const [channelPicture, setChannelPicture] = useState("");
@@ -25,6 +25,7 @@ const PostChannelForm = () => {
     dispatch(postChannelThunk(newChannel));
     setChannelName("");
     setChannelPicture("");
+    setShowModal(false)
   };
 
   return (

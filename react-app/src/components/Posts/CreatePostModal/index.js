@@ -15,7 +15,7 @@ function CreatePostModal() {
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
 
-          <CreatePostForm />
+          <CreatePostForm setShowModal={setShowModal} />
         </Modal>
       )}
     </>
