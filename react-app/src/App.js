@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import LoginFormModal from "./components/auth/LoginModal/index";
 import SignupModal from "./components/auth/SignupModal/index";
@@ -20,6 +20,9 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
+  const sessionUser = useSelector((state) => state.session.user)
+  console.log(sessionUser, "sss")
+
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
@@ -32,46 +35,40 @@ function App() {
   }
 
   return (
+
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact={true}>
+
+
+      <Route path="/login" exact={true}>
           <LoginFormModal />
-          {/* <h1>gap</h1> */}
           <SignupModal />
           <Footer />
-        </Route>
+      </Route>
 
-        <ProtectedRoute path="/home" exact={true}>
-          <NavBar />
-          {/* <LogoutButton /> */}
-          <UsersList />
+
+      <ProtectedRoute path="/users/:userId" exact={true}>
           <LogoutProfile />
-
-        </ProtectedRoute>
-
-        <ProtectedRoute path="/users" exact={true}>
           <UsersList />
-          <LogoutProfile />
-        </ProtectedRoute>
-
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          {/* <User /> */}
-          <LogoutProfile />
-
-          <UsersList />
-
           <UserChannels />
-        </ProtectedRoute>
+      </ProtectedRoute>
 
-        <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
-        <LogoutProfile />
 
-        <UsersList />
+      <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+          <LogoutProfile />
+          <UsersList />
           <UserChannels />
-
           <ChannelPosts />
           <CreatePostModal />
-        </ProtectedRoute>
+      </ProtectedRoute>
+
+      <Route>
+          <div>
+              <h1>This is not the droid.. err.. page you were looking for</h1>
+          </div>
+        <UsersList />
+      </Route>
+
       </Switch>
     </BrowserRouter>
   );

@@ -30,6 +30,9 @@ const LoginForm = () => {
     return <Redirect to={`/users/${user.id}`} />;
   }
 
+  if (!user) {
+
+
   return (
     <form onSubmit={onLogin}>
       <div>
@@ -71,6 +74,10 @@ const LoginForm = () => {
         </button>
     </form>
   );
+}
+
+
+
 };
 
 export default LoginForm;
