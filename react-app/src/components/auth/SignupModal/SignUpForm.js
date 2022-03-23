@@ -20,6 +20,10 @@ const SignUpForm = () => {
 
     if (username.length === 0) validationErrors.push("Username field is required")
     if (email.length === 0) validationErrors.push("Email field is required")
+    if (!email.includes("@") || !email.includes(".com")) validationErrors.push("Email must be an email")
+    if (username.includes("@") || username.includes(".com")) validationErrors.push("Username must not be an email")
+
+
 
     if (profilePicture.length === 0) validationErrors.push("Profile Picture field is required")
     if (username.length > 50) validationErrors.push('Username must be less than 50 characters')

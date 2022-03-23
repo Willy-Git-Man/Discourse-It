@@ -37,6 +37,7 @@ export default function ChannelPosts() {
     dispatch(deletePostThunk(id));
   };
 
+  const revPostArr = postArray.reverse()
   return (
     <div className="channelPostsMainDiv">
 
@@ -46,7 +47,7 @@ export default function ChannelPosts() {
   )}
       <h1 className="channelTitleForPostPage">{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
 
-      {postArray.map((post) => (
+      {revPostArr.map((post) => (
 
 
         <div className="eachPostDiv" key={post.id}>
