@@ -21,6 +21,8 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
+  const revChannelArr = channelArray.reverse()
+
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
@@ -37,7 +39,7 @@ export default function UserChannels() {
     <h1 className="emptyChannelsMessage">Add Channels!</h1>
   )}
 
-      {channelArray.map((channel) => (
+      {revChannelArr.map((channel) => (
         <div key={channel.id} className="eachUserChannelDiv">
           <img
             className="channelPicture"

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Modal } from '../../context/modal';
 
 import PostChannelForm from './postChannel';
+import '../index.css'
 
 function CreateChannelModal() {
   const [showModal, setShowModal] = useState(false);

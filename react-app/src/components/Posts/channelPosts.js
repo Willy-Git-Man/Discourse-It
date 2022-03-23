@@ -58,7 +58,7 @@ export default function ChannelPosts() {
           />
 
           <div className="postTitleAndEdit">
-           <NavLink className="eachPostUserNavLink" to={post ? `/users/${post.user_id}` : null}><h2>{users ? users[post.user_id]?.username : null}</h2></NavLink>
+           <NavLink className="eachPostUserNavLink" to={post ? `/users/${post.user_id}` : null}><h4 className="postUserNavLinkTitle">{users ? users[post.user_id]?.username : null}</h4></NavLink>
 
 
 
