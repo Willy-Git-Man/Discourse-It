@@ -6,15 +6,19 @@ import "../index.css";
 
 const EditChannelForm = ({channelId, setShowModal}) => {
   const dispatch = useDispatch();
+  const updateChannelInputState = useSelector((state) => state.channels.channels[channelId])
   // const [errors, setErrors] = useState([]);
-  const [channelName, setChannelName] = useState("");
-  const [channelPicture, setChannelPicture] = useState("");
+  const [channelName, setChannelName] = useState(updateChannelInputState.channel_name);
+  const [channelPicture, setChannelPicture] = useState(updateChannelInputState.channel_picture);
   const [errors, setErrors] = useState([])
 
   const newChannelName = (e) => setChannelName(e.target.value);
   const newChannelPicture = (e) => setChannelPicture(e.target.value);
 
   const sessionUser = useSelector((state) => state.session.user);
+
+  console.log('test edit:', updateChannelInputState)
+
 
   // const {userid} = useParams()
 

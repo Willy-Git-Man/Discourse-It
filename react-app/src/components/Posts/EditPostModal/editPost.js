@@ -9,9 +9,13 @@ const EditPostForm = ({postId, setShowModal}) => {
   const dispatch = useDispatch();
   const { channelId, userId } = useParams();
 
+  const updatePostInputState = useSelector((state) => state.posts.posts[postId])
+  console.log("post update test:", updatePostInputState)
 
-  const [postTitle, setPostTitle] = useState("");
-  const [postPicture, setPostPicture] = useState("");
+
+
+  const [postTitle, setPostTitle] = useState(updatePostInputState.post_title);
+  const [postPicture, setPostPicture] = useState(updatePostInputState.post_picture);
   const [errors, setErrors] = useState([])
 
   const newPostTitle = (e) => setPostTitle(e.target.value);
