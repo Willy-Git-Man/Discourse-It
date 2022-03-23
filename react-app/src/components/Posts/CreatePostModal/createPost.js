@@ -52,6 +52,7 @@ const CreatePostForm = ({setShowModal}) => {
           <li key={error}>{error}</li>
         ))}
       </ul> */}
+      <div className="formLabelInputDiv">
         <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
@@ -60,8 +61,10 @@ const CreatePostForm = ({setShowModal}) => {
           onChange={newPostTitle}
           required
         />
+        </div>
 
-        <label htmlFor="postPicture">Post Picture: </label>
+        <div className="formLabelInputDiv">
+        <label htmlFor="postPicture">Picture: </label>
         <input
           type="text"
           name="postPicture"
@@ -69,8 +72,9 @@ const CreatePostForm = ({setShowModal}) => {
           onChange={newPostPicture}
           required
         />
+        </div>
 
-        <button className="createPostButton" type="submit"  disabled={errors.length}>
+        <button className="formMainButton" type="submit"  disabled={errors.length}>
           Create Post
         </button>
 

@@ -67,11 +67,23 @@
 }
 
 .editPostForm {
-  /* background-color: black; */
   display: flex;
   flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#f7f7f7;
+  height:100%;
+  font-family: 'Press Start 2P', cursive;
+
   /* width: 100%; */
   /* position: absolute; */
+}
+
+
+.editPostFormDiv {
+  width: 100%;
+  height:100%;
+  min-height: 200px;
 }
 
 .deletePostButton {
@@ -79,16 +91,18 @@
   background-color: rgba(255, 1, 1,.995);
 }
 
-.editPostButton {
-  height: 20%;
-  background-color: rgba(117, 235, 14, 0.995);
-}
+
 
 
 .createPostForm {
   display: flex;
   flex-direction: column;
   justify-content:space-between;
+  align-items:center;
+  background-color:#f7f7f7;
+  height:100%;
+  font-family: 'Press Start 2P', cursive;
+
   /* background-color:black; */
   /* height:100%; */
   /* position: absolute;
@@ -114,7 +128,9 @@
 
 
 .editPostButton {
-  height: 50%;
+  width:100%;
+  background-color: rgba(117, 235, 14, 0.995);
+
 }
 
 
@@ -167,13 +183,40 @@
   padding:0;
   list-style:none;
   position:absolute;
-  margin-left: 15vw;
+  margin-left: 31vw;
   background-color:red;
   box-shadow: 7.5px 7.5px 1px 0px rgba(0, 0, 0, .5);
   padding:2.5%;
+  font-family:none;
   /* height:100%; */
 }
 
 .errorLi {
   width:15vw;
+}
+
+/*
+.editPostFormDiv {
+  width: 100%;
+  height:100%;
+  min-height: 200px;
+} */
+
+.editChannelFormDiv {
+  width: 100%;
+  height:100%;
+  min-height: 200px;
+}
+
+
+.formMainButton {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:80%;
+  border-radius:999px;
+  font-family: 'Press Start 2P', cursive;
+  height: 15%;
+  background-color: rgba(117, 235, 14, 0.995);
+margin-bottom:2.5%;
 }

@@ -63,6 +63,8 @@ const EditChannelForm = ({channelId, setShowModal}) => {
           <li key={error}>{error}</li>
         ))}
       </ul> */}
+
+<div className="formLabelInputDiv">
         <label htmlFor="channelName">Channel Name: </label>
         <input
           type="text"
@@ -71,8 +73,11 @@ const EditChannelForm = ({channelId, setShowModal}) => {
           onChange={newChannelName}
           required
         />
+        </div>
 
-        <label htmlFor="channelPicture">Channel Picture: </label>
+
+        <div className="formLabelInputDiv">
+        <label htmlFor="channelPicture">Picture: </label>
         <input
           type="text"
           name="channelPicture"
@@ -80,8 +85,9 @@ const EditChannelForm = ({channelId, setShowModal}) => {
           onChange={newChannelPicture}
           required
         />
+        </div>
 
-        <button className="postChannelButton" type="submit"  disabled={errors.length}>
+        <button className="formMainButton" type="submit"  disabled={errors.length}>
           Update
         </button>
 

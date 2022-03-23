@@ -86,7 +86,12 @@
 .editChannelForm {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#f7f7f7;
+  height:100%;
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 .postChannelFormDiv {
@@ -100,6 +105,12 @@
 .postChannelForm {
   display: flex;
   flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#f7f7f7;
+  height:100%;
+  font-family: 'Press Start 2P', cursive;
+
   /* width: 25vw; */
 }
 
@@ -195,5 +206,14 @@
 
 .errorLi {
   width:15vw;
-  
+
+}
+
+
+.formLabelInputDiv {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  margin-top:1vh;
 }
