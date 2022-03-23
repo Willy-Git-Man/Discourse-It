@@ -50,9 +50,11 @@
 
 
 .postPicture {
-  display: inline-block;
+  /* display: inline-block;
     height:100%;
-    width: 34%;
+    width: 34%; */
+    width:250px;
+    height:250px;
 
 }
 
@@ -160,13 +162,14 @@
   justify-content:center;
   font-family: 'Press Start 2P', cursive;
   color: rgba(255,0,0,1);
+  background-color:rgba(0,0,0,.9);
   text-decoration:none;
 
 }
 
 .postTitle {
   width: 100%;
-  background-color: lightgoldenrodyellow;
+  background-color: rgba(0,0,0,.75);
   height: 100%;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
