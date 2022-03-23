@@ -58,11 +58,11 @@ const EditChannelForm = ({channelId, setShowModal}) => {
   return (
     <div className="editChannelFormDiv">
       <form className="editChannelForm" onSubmit={handleSubmit}>
-      <ul className="errors">
+      {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
         <label htmlFor="channelName">Channel Name: </label>
         <input
           type="text"
@@ -84,6 +84,12 @@ const EditChannelForm = ({channelId, setShowModal}) => {
         <button className="postChannelButton" type="submit">
           Update
         </button>
+
+        <ul className="errors">
+        {errors.length > 0 && errors.map((error) => (
+          <li className="errorLi" key={error}>{error}</li>
+          ))}
+      </ul>
       </form>
     </div>
   );

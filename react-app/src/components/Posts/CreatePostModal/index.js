@@ -13,7 +13,7 @@ function CreatePostModal() {
     <>
       <button className={'createPostModal'} onClick={() => setShowModal(true)}>Create Post</button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false) }>
+        <Modal className="hello"   onClose={() => setShowModal(false) }>
 
           <CreatePostForm setShowModal={setShowModal} />
         </Modal>

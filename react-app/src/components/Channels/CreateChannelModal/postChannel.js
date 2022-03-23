@@ -44,14 +44,14 @@ const PostChannelForm = ({setShowModal}) => {
   };
 
   return (
-    <div className="postChannelFormDiv">
+    <div className="createPostFormDiv">
 
       <form className="postChannelForm" onSubmit={handleSubmit}>
-      <ul className="errors">
+      {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
         <label htmlFor="channelName">Channel Name: </label>
         <input
           type="text"
@@ -73,6 +73,12 @@ const PostChannelForm = ({setShowModal}) => {
         <button className="postChannelButton" type="submit" disabled={errors.length}>
           Create Channel
         </button>
+
+        <ul className="errors">
+        {errors.length > 0 && errors.map((error) => (
+          <li className="errorLi" key={error}>{error}</li>
+          ))}
+      </ul>
       </form>
     </div>
 

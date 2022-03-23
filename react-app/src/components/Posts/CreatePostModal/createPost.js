@@ -47,11 +47,11 @@ const CreatePostForm = ({setShowModal}) => {
   return (
     <div className="createPostFormDiv">
       <form className="createPostForm" onSubmit={handleSubmit}>
-      <ul className="errors">
+      {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
         <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
@@ -73,6 +73,12 @@ const CreatePostForm = ({setShowModal}) => {
         <button className="createPostButton" type="submit">
           Create Post
         </button>
+
+          <ul className="errors">
+        {errors.length > 0 && errors.map((error) => (
+          <li className="errorLi" key={error}>{error}</li>
+          ))}
+      </ul>
       </form>
     </div>
   );

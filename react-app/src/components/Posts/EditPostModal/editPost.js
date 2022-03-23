@@ -61,11 +61,11 @@ const EditPostForm = ({postId, setShowModal}) => {
   return (
     <div className="editPostFormDiv">
       <form className="editPostForm" onSubmit={handleSubmit}>
-      <ul className="errors">
+      {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
-      </ul>
+      </ul> */}
         <label htmlFor="postTitle">Post Title: </label>
         <input
           type="text"
@@ -87,6 +87,12 @@ const EditPostForm = ({postId, setShowModal}) => {
         <button className="editPostButton" type="submit">
           Update
         </button>
+
+        <ul className="errors">
+        {errors.length > 0 && errors.map((error) => (
+          <li className="errorLi" key={error}>{error}</li>
+          ))}
+      </ul>
       </form>
     </div>
   );
