@@ -16,6 +16,8 @@ import ChannelPosts from "./components/Posts/channelPosts";
 import LogoutProfile from "./components/Nav/LogoutProfile";
 import CreatePostModal from "./components/Posts/CreatePostModal";
 
+import SplashPage from './components/Splash/SplashPage'
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -41,9 +43,10 @@ function App() {
 
 
       <Route path="/" exact={true}>
-          <LoginFormModal />
+        <SplashPage />
+          {/* <LoginFormModal />
           <SignupModal />
-          <Footer />
+          <Footer /> */}
       </Route>
 
 

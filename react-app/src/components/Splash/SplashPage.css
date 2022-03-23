@@ -1,0 +1,6 @@
+.SplashMainDiv {
+  height: 100vh;
+  /* background-image: url("../../pictures/splash.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
