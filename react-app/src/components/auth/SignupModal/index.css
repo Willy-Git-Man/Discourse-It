@@ -1,0 +1,9 @@
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#f7f7f7;
+  height:100%;
+  font-family: 'Press Start 2P', cursive;
+}

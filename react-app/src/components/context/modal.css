@@ -24,6 +24,6 @@
   background-color:white;
   outline: solid black 2px;
   box-shadow: 0 5px 15px lightgray;
-  height: 15vh;
+  height: object-fit;
   width: 15vw;
 }

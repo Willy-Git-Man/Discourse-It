@@ -9,7 +9,7 @@ function LoginFormModal() {
 
 
   return (
-    <>
+    <div>
       <button className={'loginModalButton'} onClick={() => setShowModal(true)}>Signup</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false) }>
@@ -17,7 +17,7 @@ function LoginFormModal() {
           <SignUpForm />
         </Modal>
       )}
-    </>
+    </div>
   );
 }
 

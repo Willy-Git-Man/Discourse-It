@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../../store/session';
+import './index.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -17,8 +18,8 @@ const SignUpForm = () => {
   useEffect(() => {
     const validationErrors = []
 
-    if (username.length === 0) validationErrors.push("Post Title field is required")
-    if (email.length === 0) validationErrors.push("Post Title field is required")
+    if (username.length === 0) validationErrors.push("Username field is required")
+    if (email.length === 0) validationErrors.push("Email field is required")
 
     if (profilePicture.length === 0) validationErrors.push("Profile Picture field is required")
     if (username.length > 50) validationErrors.push('Username must be less than 50 characters')
@@ -68,7 +69,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
+    <form className="signupForm" onSubmit={onSignUp}>
        {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>

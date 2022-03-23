@@ -3,3 +3,14 @@
   height: 15%;
   margin: 0;
 }
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+    background-color:#f7f7f7;
+    height:100%;
+    font-family: 'Press Start 2P', cursive;
+  }
+
