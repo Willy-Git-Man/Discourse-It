@@ -4,6 +4,9 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../../store/session';
 import './index.css'
 
+import SignupModal from "../SignupModal/index";
+
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -62,11 +65,11 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
+        <button className="loginButton" type='submit'>Login</button>
       </div>
 
       <button
-          className={"demoButton"}
+          className="demoButton"
           type="submit"
           onClick={() => {
             setEmail("demo@aa.io");
@@ -84,6 +87,7 @@ const LoginForm = () => {
         ))}
     </ul>
         )}
+        <SignupModal />
     </form>
   );
 }

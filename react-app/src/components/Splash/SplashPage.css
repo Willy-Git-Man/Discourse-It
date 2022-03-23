@@ -1,6 +1,10 @@
 .SplashMainDiv {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   height: 100vh;
-  background-image: url("../../pictures/splash.png");
+  /* background-image: url("../../pictures/splash.png"); */
   background-repeat: no-repeat;
   background-size: cover;
 

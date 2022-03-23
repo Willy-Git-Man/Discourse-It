@@ -7,3 +7,17 @@
   height:100%;
   font-family: 'Press Start 2P', cursive;
 }
+
+
+.signupModalButton {
+  position:absolute;
+  right:50%;
+  bottom:35%;
+  height: 2.5vh;
+  border: 5px solid #00ff3e;
+  font-family: 'Press Start 2P', cursive;
+  color: #00ff3e;
+  font-size: 1.25em;
+  background-color: rgba(0,0,0,.95);
+  border-radius: 0;
+}
