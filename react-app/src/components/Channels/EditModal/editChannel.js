@@ -81,15 +81,18 @@ const EditChannelForm = ({channelId, setShowModal}) => {
           required
         />
 
-        <button className="postChannelButton" type="submit">
+        <button className="postChannelButton" type="submit"  disabled={errors.length}>
           Update
         </button>
 
-        <ul className="errors">
-        {errors.length > 0 && errors.map((error) => (
-          <li className="errorLi" key={error}>{error}</li>
-          ))}
-      </ul>
+        {errors.length > 0 && (
+
+<ul className="errors">
+      {errors.map((error) => (
+        <li className="errorLi" key={error}>{error}</li>
+        ))}
+    </ul>
+        )}
       </form>
     </div>
   );

@@ -35,6 +35,7 @@ const EditPostForm = ({postId, setShowModal}) => {
 
 
     setErrors(validationErrors)
+    console.log(errors)
   }, [postTitle, postPicture])
 
   const handleSubmit = (e) => {
@@ -54,6 +55,8 @@ const EditPostForm = ({postId, setShowModal}) => {
     setPostPicture("")
     setShowModal(false)
   };
+
+  console.log("errors",errors)
 
 
 
@@ -84,15 +87,19 @@ const EditPostForm = ({postId, setShowModal}) => {
           required
         />
 
-        <button className="editPostButton" type="submit">
+        <button className="editPostButton" type="submit"  disabled={errors.length}>
           Update
         </button>
 
+
+        {errors.length > 0 && (
+
         <ul className="errors">
-        {errors.length > 0 && errors.map((error) => (
+        {errors.map((error) => (
           <li className="errorLi" key={error}>{error}</li>
           ))}
       </ul>
+        )}
       </form>
     </div>
   );
