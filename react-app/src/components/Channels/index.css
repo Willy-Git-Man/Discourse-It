@@ -59,8 +59,8 @@
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
   outline: white solid 5px;
-  min-width: 200px;
-  min-height: 700px;
+  /* min-width: 200px;
+  min-height: 700px; */
 
 }
 
