@@ -69,7 +69,7 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp}>
-       <ul className="errors">
+       {/* <ul className="errors">
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
@@ -78,8 +78,9 @@ const SignUpForm = () => {
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
-      </div>
-      <div>
+      </div> */}
+      <div className="formLabelInputDiv">
+
         <label>User Name</label>
         <input
           type='text'
@@ -88,7 +89,8 @@ const SignUpForm = () => {
           value={username}
         ></input>
       </div>
-      <div>
+      <div className="formLabelInputDiv">
+
         <label>Email</label>
         <input
           type='text'
@@ -97,7 +99,8 @@ const SignUpForm = () => {
           value={email}
         ></input>
       </div>
-      <div>
+      <div className="formLabelInputDiv">
+
         <label>Password</label>
         <input
           type='password'
@@ -106,7 +109,8 @@ const SignUpForm = () => {
           value={password}
         ></input>
       </div>
-      <div>
+      <div className="formLabelInputDiv">
+
         <label>Repeat Password</label>
         <input
           type='password'
@@ -116,7 +120,8 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
+      <div className="formLabelInputDiv">
+
         <label>Profile Picture</label>
         <input
           type='text'
@@ -126,6 +131,14 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
+      {errors.length > 0 && (
+
+<ul className="errors">
+      {errors.map((error) => (
+        <li className="errorLi" key={error}>{error}</li>
+        ))}
+    </ul>
+        )}
       <button type='submit'>Sign Up</button>
     </form>
   );
