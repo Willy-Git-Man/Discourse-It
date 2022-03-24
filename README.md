@@ -4,7 +4,7 @@ Discourse-It is a fun combination clone where users can create channels like Dis
 
 ## Features
 
-1.Users can signup, login with their account, or use the Demo login provided to them.
+1. Users can signup, login with their account, or use the Demo login provided to them.
 
 2. Create, Read, Update, Delete Channels
 
