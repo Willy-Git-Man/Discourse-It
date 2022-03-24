@@ -144,7 +144,7 @@ const SignUpForm = () => {
         ))}
     </ul>
         )}
-      <button type='submit'>Sign Up</button>
+      <button className="signupButtonSubmit" type='submit' disabled={errors}>Sign Up</button>
     </form>
   );
 };
