@@ -44,9 +44,9 @@ function App() {
 
       <Route path="/" exact={true}>
         <SplashPage />
-          {/* <LoginFormModal />
+          {/* <LoginFormModal /> */}
           <SignupModal />
-          <Footer /> */}
+          {/* <Footer /> */}
       </Route>
 
 

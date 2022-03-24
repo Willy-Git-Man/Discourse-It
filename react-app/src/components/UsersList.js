@@ -39,7 +39,9 @@ function UsersList() {
 
   return (
     <div className="sideBarUsers">
+
       <ul className="homePageUserList">
+          <h1 className="emptyChannelsMessage">Users</h1>
         <li className="eachUserLi" key={sessionUser.id}>
           <img
             className="userListPicture"

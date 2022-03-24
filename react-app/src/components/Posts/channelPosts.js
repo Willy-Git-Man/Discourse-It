@@ -42,9 +42,7 @@ export default function ChannelPosts() {
     <div className="channelPostsMainDiv">
 
 
-{postArray.length < 1 && (
-    <h1 className="emptyChannelsMessage">Create Posts to Discourse-It!</h1>
-  )}
+
       <h1 className="channelTitleForPostPage">{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
 
       {revPostArr.map((post) => (
@@ -72,7 +70,7 @@ export default function ChannelPosts() {
                   className="deletePostButton"
                   onClick={() => handleDelete(post.id)}
                 >
-                  Delete Post
+                  Delete
                 </button>
 
                 <EditPostModal postId={post.id} />

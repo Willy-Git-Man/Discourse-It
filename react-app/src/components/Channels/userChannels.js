@@ -21,58 +21,52 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
-  const revChannelArr = channelArray.reverse()
+  console.log('channelArray:', channelArray)
 
+  const revChannelArr = channelArray.reverse();
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
   };
 
-
-
   return (
     <div className="userChannelMainDiv">
+      <div className="userChannelsOverHeaderDiv">
+          <h1 className="emptyChannelsMessage">Channel List</h1>
 
-<div className="userChannelsOverHeaderDiv">
-
-  {channelArray.length < 1 && (
-    <h1 className="emptyChannelsMessage">Add Channels!</h1>
-  )}
-
-      {revChannelArr.map((channel) => (
-        <div key={channel.id} className="eachUserChannelDiv">
-          <img
-            className="channelPicture"
-            src={channel.channel_picture}
-            alt="Broken Img URL"
+        {revChannelArr.map((channel) => (
+          <div key={channel.id} className="eachUserChannelDiv">
+            <img
+              className="channelPicture"
+              src={channel.channel_picture}
+              alt="Broken Img URL"
             />
-          <NavLink className="channelNavTag" activeClassName='activeChannelNavTag'
-            key={channel.id}
-            to={`/users/${channel.user_id}/${channel.id}`}
+            <NavLink
+              className="channelNavTag"
+              activeClassName="activeChannelNavTag"
+              key={channel.id}
+              to={`/users/${channel.user_id}/${channel.id}`}
             >
-            <h3 className="channelNameLinkP">{channel.channel_name}</h3>
-          </NavLink>
+              <h3 className="channelNameLinkP">{channel.channel_name}</h3>
+            </NavLink>
 
-          {channel.user_id === sessionUser.id && (
-            <div className="channelEditDeleteDiv">
-              <EditChannelModal channelId={channel.id}/>
-              <button
-                className="deleteChannelButton"
-                onClick={() => handleDelete(channel.id)}
+            {channel.user_id === sessionUser.id && (
+              <div className="channelEditDeleteDiv">
+                <EditChannelModal channelId={channel.id} />
+                <button
+                  className="deleteChannelButton"
+                  onClick={() => handleDelete(channel.id)}
                 >
-                Delete
-              </button>
-            </div>
-          )}
-        </div>
-      ))}
-
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-<div className="userChannelProfileDiv">
-
-<User />
-</div>
-
+      <div className="userChannelProfileDiv">
+        <User />
+      </div>
     </div>
   );
 }

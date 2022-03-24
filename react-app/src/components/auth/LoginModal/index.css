@@ -7,22 +7,24 @@
 .loginForm {
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content:space-around;
     position:relative;
     align-items:center;
     background-color:#f7f7f7;
     /* height:100%; */
     font-family: 'Press Start 2P', cursive;
-    height:75%;
-    width:50%;
-    border: 5px solid #00ff3e
+    height:50%;
+    width:40%;
+    border: 5px solid #00ff3e;
+    background-color: rgba(0, 0, 0, .95);
   }
 
   .demoButton {
     position:absolute;
-    right:50%;
-    bottom:30%;
+    /* right:50%; */
+    bottom:5%;
     height: 2.5vh;
+    width: 50%;
     border: 5px solid #00ff3e;
     font-family: 'Press Start 2P', cursive;
     color: #00ff3e;
@@ -33,14 +35,35 @@
 
   .loginButton {
     position:absolute;
-    right:50%;
-    bottom:25%;
+    width:50%;
+    /* right:50%; */
+    bottom:12.5%;
     /* bottom:0; */
     height: 2.5vh;
     border: 5px solid #00ff3e;
     font-family: 'Press Start 2P', cursive;
+
     color: #00ff3e;
     font-size: 1.25em;
     background-color: rgba(0,0,0,.95);
     border-radius: 0;
+  }
+
+  .loginFormEmailPasswordDiv {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    height:30%;
+  }
+
+
+  .loginFormLabel {
+    color: #00ff3e;
+  }
+
+  .loginFormInput {
+    border: 2.5px solid #00ff3e;
+    font-family: 'Press Start 2P', cursive;
+
+
   }
