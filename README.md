@@ -1,26 +1,64 @@
-# Flask React Project
+# Discourse-It
 
-This is the starter for the Flask React project.
+Discourse-It is a fun combination clone where users can create channels like Discord in which users can make posts like you would see on Reddit. Users can enter channels they identify with and join in on the discourse. 
 
-## Getting started
+## Features
 
-1. Clone this repository (only this branch)
+1. Users can signup, login with their account, or use the Demo login provided to them.
 
+2. Create, Read, Update, Delete Channels
+
+3. Create, Read, Update, Delete Posts within Channels
+ 
+4. (Bonus/Upcoming): Users will be able to direct message other users via a Websocket
+
+## Technologies Used
+  ```bash
+   React
+   ```  
    ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
+   Redux
+   ``` 
+   ```bash
+   Python
+   ``` 
+   ```bash
+   Flask SQLAlchemy
+   ```  
+   ```bash
+   PostgreSQL
    ```
 
-2. Install dependencies
+
+
+## Installation
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/Willy-Git-Man/Discourse-It
+   ```
+
+2. CD into root of project and install project dependencies
 
       ```bash
       pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
       ```
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+3. Create a **.env** file in the root of your project and add the following lines into the file:
+   ```bash
+   SECRET_KEY=<your-secret-key-value>
+   DATABASE_URL=postgresql://<your-database-user>:<your-user-password>@localhost/<your-database-name>>
+   ```
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file. Use the following commands in your terminal:
+   ```bash
+   A. psql - Enter psql command line
+   B. CREATE USER <your-database-user> WITH PASSWORD '<your-user-password>';
+   C. CREATE DATABASE <your-database-name> WITH OWNER <your-database-user>
+   D. /q - Exit psql command line
+   ```
+
+5. Get into your pipenv shell, migrate your database, seed your database, and run your flask app
 
    ```bash
    pipenv shell
@@ -38,97 +76,16 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-6. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
-
-***
-*IMPORTANT!*
-   If you add any python dependencies to your pipfiles, you'll need to regenerate your requirements.txt before deployment.
-   You can do this by running:
+6. Open up a second terminal, and cd into react-app directory. Use npm install to install required dependecies from package.json
 
    ```bash
-   pipenv lock -r > requirements.txt
+   npm install
    ```
 
-*ALSO IMPORTANT!*
-   psycopg2-binary MUST remain a dev dependency because you can't install it on apline-linux.
-   There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
-***
-
-## Deploy to Heroku
-
-1. Before you deploy, don't forget to run the following command in order to
-ensure that your production environment has all of your up-to-date
-dependencies. You only have to run this command when you have installed new
-Python packages since your last deployment, but if you aren't sure, it won't
-hurt to run it again.
+7. Run the server using npm start in the second terminal. The default server runs on localhost:3000. Navigate to localhost:3000 in your browser (if it does not open automatically)
 
    ```bash
-   pipenv lock -r > requirements.txt
+   npm start
    ```
 
-2. Create a new project on Heroku
-3. Under Resources click "Find more add-ons" and add the add on called "Heroku Postgres"
-4. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)
-5. Run
-
-   ```bash
-   heroku login
-   ```
-
-6. Login to the heroku container registry
-
-   ```bash
-   heroku container:login
-   ```
-
-7. Update the `REACT_APP_BASE_URL` variable in the Dockerfile.
-   This should be the full URL of your Heroku app: i.e. "https://flask-react-aa.herokuapp.com"
-8. Push your docker container to heroku from the root directory of your project.
-   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
-   This will build the Dockerfile and push the image to your heroku container registry.
-
-   ```bash
-   heroku container:push web -a {NAME_OF_HEROKU_APP}
-   ```
-
-9. Release your docker container to heroku
-
-      ```bash
-      heroku container:release web -a {NAME_OF_HEROKU_APP}
-      ```
-
-10. set up your database
-
-      ```bash
-      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
-      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
-      ```
-
-11. Under Settings find "Config Vars" and add any additional/secret .env
-variables.
-
-12. profit
-
-### For M1 Mac users
-   
-(Replaces **Step 8**)
-
-1. Build image with linux platform for heroku servers. Replace
-{NAME_OF_HEROKU_APP} with your own tag:
-
-   ```bash=
-   docker buildx build --platform linux/amd64 -t {NAME_OF_HEROKU_APP} .
-   ```
-
-2. Tag your app with the url for your apps registry. Make sure to use the name
-of your Heroku app in the url and tag name:
-
-   ```bash=2
-   docker tag {NAME_OF_HEROKU_APP} registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
-
-3. Use docker to push the image to the Heroku container registry:
-
-   ```bash=3
-   docker push registry.heroku.com/{NAME_OF_HEROKU_APP}/web
-   ```
+8. Login to the site using the demo user, or sign up for you own account, and explore the site!
