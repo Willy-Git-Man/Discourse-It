@@ -6,21 +6,26 @@
   display: flex;
   flex-direction: column;
   position: absolute;
+  /* padding: 2.5vh; */
+
 }
 
 .homePageUserList {
   list-style: none;
-  width: 100%;
-  height: 30vh;
+  /* width: 100%; */
+  height: 26.5vh;
   padding: 0;
   margin: 0;
   display: inline-block;
   overflow-y: scroll;
-  outline: white 5px solid;
+  outline: 5px solid white;
+
   background-color: lightgoldenrodyellow;
   background-color: rgba(114, 137, 218, 1);
   background-color: rgba(0,0,0,.9);
   min-width: 200px;
+  padding-top: 3.5vh;
+  min-width: 250px;
 }
 
 .homePageUserList::-webkit-scrollbar {
@@ -68,6 +73,7 @@
 }
 
 .sessionUserListLink {
+  margin-top: 5vh;
   display:flex;
   justify-content:center;
   width:100%;
@@ -104,27 +110,16 @@
 
 .userPageHeader {
   display: flex;
-  flex-direction: column;
-  /* justify-content: flex-end; */
-  /* justify-self: flex-end; */
-  justify-content:space-between;
-  align-items:center;
+  justify-content:space-around;
   position: absolute;
   bottom: 0;
   align-items: center;
   outline: black solid 5px;
-  margin-top: 3.5%;
-  /* margin-bottom: 3.5%; */
-
-  /* margin-right: 5%; */
-  /* margin-left: 5%; */
-
+  /* margin-top: 3.5%; */
   width: 100%;
   height: 7.5vh;
-  /* min-height: 15vh; */
 }
 
 .userHeaderUl {
   list-style-type: none;
 }
-

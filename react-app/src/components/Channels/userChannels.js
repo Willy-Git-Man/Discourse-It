@@ -31,8 +31,8 @@ export default function UserChannels() {
 
   return (
     <div className="userChannelMainDiv">
-      <div className="userChannelsOverHeaderDiv">
           <h1 className="emptyChannelsMessage">Channel List</h1>
+      <div className="userChannelsOverHeaderDiv">
 
         {revChannelArr.map((channel) => (
           <div key={channel.id} className="eachUserChannelDiv">

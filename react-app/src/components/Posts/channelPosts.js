@@ -16,38 +16,33 @@ export default function ChannelPosts() {
   const sessionUser = useSelector((state) => state.session.user);
   const { userId, channelId } = useParams();
 
-  console.log("channelId", channelId)
+  console.log("channelId", channelId);
 
   useEffect(() => {
     dispatch(getAllPostsThunk(channelId));
-    dispatch(getUsersThunk())
-
-
+    dispatch(getUsersThunk());
   }, [dispatch, channelId]);
 
   const postArray = useSelector((state) => Object.values(state.posts.posts));
   const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
   const channelObj = useSelector((state) => state.channels.channels);
-  console.log(channelObj, "channel obj")
-  const users = useSelector((state) => state.session.users)
-  console.log("users:", users)
+  console.log(channelObj, "channel obj");
+  const users = useSelector((state) => state.session.users);
+  console.log("users:", users);
 
   const handleDelete = async (id) => {
     dispatch(deletePostThunk(id));
   };
 
-  const revPostArr = postArray.reverse()
+  const revPostArr = postArray.reverse();
   return (
     <div className="channelPostsMainDiv">
-
-
-
-      <h1 className="channelTitleForPostPage">{channelObj && channelId ? channelObj[channelId]?.channel_name : null}</h1>
+      <h1 className="channelTitleForPostPage">
+        {channelObj && channelId ? channelObj[channelId]?.channel_name : null}
+      </h1>
 
       {revPostArr.map((post) => (
-
-
         <div className="eachPostDiv" key={post.id}>
           <img
             className="postPicture"
@@ -56,13 +51,16 @@ export default function ChannelPosts() {
           />
 
           <div className="postTitleAndEdit">
-           <NavLink className="eachPostUserNavLink" to={post ? `/users/${post.user_id}` : null}><h4 className="postUserNavLinkTitle">{users ? users[post.user_id]?.username : null}</h4></NavLink>
+            <NavLink
+              className="eachPostUserNavLink"
+              to={post ? `/users/${post.user_id}` : null}
+            >
+              <h4 className="postUserNavLinkTitle">
+                {users ? users[post.user_id]?.username : null}
+              </h4>
+            </NavLink>
 
-
-
-            <h3 className="postTitle">
-              {post.post_title}
-            </h3>
+            <h3 className="postTitle">{post.post_title}</h3>
 
             {post.user_id === sessionUser.id && (
               <div className="postDeleteUpdateButtons">
@@ -79,9 +77,6 @@ export default function ChannelPosts() {
           </div>
         </div>
       ))}
-
-
-
     </div>
   );
 }

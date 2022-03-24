@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content:center;
   height: 3.5vh;
+  min-height: 50px;
   margin-bottom: 5vh;
   margin-bottom:50px;
   position:relative;
@@ -53,24 +54,16 @@
 }
 
 .userChannelMainDiv {
-  /* background-color: black; */
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
-  /* background-color: black; */
   position: absolute;
-  /* justify-content: space-between; */
-  /* justify-content: flex-end; */
-  /* border: 5px black solid; */
   height: 67.5vh;
   width: 25%;
-  /* margin-left: 30%; */
   margin-top: 32.5vh;
   background-color: rgba(0, 0, 0, .3);
   overflow: hidden scroll;
   outline: white solid 5px;
-  /* min-width: 200px;
-  min-height: 700px; */
+  min-width: 250px;
 
 }
 
@@ -158,7 +151,7 @@
   display:flex;
   justify-content:center;
   color: black;
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
   font-family: 'Press Start 2P', cursive;
 
 }
@@ -174,6 +167,9 @@
   justify-content: flex-start;
   overflow-y:scroll;
   height:75%;
+  margin-top: 5vh;
+  min-width: 250px;
+
   /* align-self: flex-end; */
 }
 
@@ -187,16 +183,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  width: 25%;
   margin: 0;
-  width:100%;
+  /* width:100%; */
   height: 2.5vh;
-  border: 5px solid #00ff3e;
+  outline: 5px solid #00ff3e;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
   font-size: 1.25em;
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
   /* margin-bottom: 5%; */
+  z-index: 99;
+  min-width: 250px;
+
+  /* margin-bottom: 5vh; */
   /* min-width: 500px; */
 }
 
