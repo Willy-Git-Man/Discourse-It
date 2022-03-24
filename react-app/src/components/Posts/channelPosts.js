@@ -36,6 +36,10 @@ export default function ChannelPosts() {
   };
 
   const revPostArr = postArray.reverse();
+
+  const handlePicture = (e) => {
+    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
+  }
   return (
     <div className="channelPostsMainDiv">
       <h1 className="channelTitleForPostPage">
@@ -48,6 +52,8 @@ export default function ChannelPosts() {
             className="postPicture"
             src={post.post_picture}
             alt="Broken Img URL"
+            onError={handlePicture}
+
           />
 
           <div className="postTitleAndEdit">

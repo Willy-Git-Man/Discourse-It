@@ -29,6 +29,10 @@ export default function UserChannels() {
     dispatch(deleteChannelThunk(id));
   };
 
+  const handlePicture = (e) => {
+    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
+  }
+
   return (
     <div className="userChannelMainDiv">
           <h1 className="emptyChannelsMessage">Channel List</h1>
@@ -40,6 +44,7 @@ export default function UserChannels() {
               className="channelPicture"
               src={channel.channel_picture}
               alt="Broken Img URL"
+              onError={handlePicture}
             />
             <NavLink
               className="channelNavTag"

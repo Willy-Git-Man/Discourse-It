@@ -37,11 +37,16 @@ function LogoutProfile({ user }) {
     history.push("/");
   };
 
+
+  const handlePicture = (e) => {
+    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
+  }
+
   return (
     <>
       <button className="profileButton" onClick={openMenu}>
         {/* <i className="fas fa-user-circle" /> */}
-        <img className="profileButtonPicture" src={sessionUser.profile_picture} alt="Broken Img URL"/>
+        <img className="profileButtonPicture" src={sessionUser.profile_picture} alt="Broken Img URL" onError={handlePicture}/>
       </button>
       <div className={"dropDownMenu"}>
         {showMenu && (

@@ -72,6 +72,8 @@ const SignUpForm = () => {
     return <Redirect to={`/users/${user.id}`} />;
   }
 
+
+
   return (
     <form className="signupForm" onSubmit={onSignUp}>
        {/* <ul className="errors">
@@ -144,7 +146,7 @@ const SignUpForm = () => {
         ))}
     </ul>
         )}
-      <button className="signupButtonSubmit" type='submit' disabled={errors}>Sign Up</button>
+      <button className="signupButtonSubmit" type='submit' disabled={errors.length > 0}>Sign Up</button>
     </form>
   );
 };
