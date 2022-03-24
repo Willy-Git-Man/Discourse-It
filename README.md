@@ -13,11 +13,22 @@ Discourse-It is a fun combination clone where users can create channels like Dis
 4. (Bonus/Upcoming): Users will be able to direct message other users via a Websocket
 
 ## Technologies Used
--React
--Redux
--Python
--Flask SQLAlchemy
--PostgreSQL
+  ```bash
+   React
+   ```  
+   ```bash
+   Redux
+   ``` 
+   ```bash
+   Python
+   ``` 
+   ```bash
+   Flask SQLAlchemy
+   ```  
+   ```bash
+   PostgreSQL
+   ```
+
 
 
 ## Installation
