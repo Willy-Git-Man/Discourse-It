@@ -9,8 +9,8 @@ Discourse-It is a fun combination clone where users can create channels like Dis
 2. Create, Read, Update, Delete Channels
 
 3. Create, Read, Update, Delete Posts within Channels
-4. 
-5. (Bonus/Upcoming): Users will be able to direct message other users via a Websocket
+ 
+4. (Bonus/Upcoming): Users will be able to direct message other users via a Websocket
 
 ## Technologies Used
 -React
