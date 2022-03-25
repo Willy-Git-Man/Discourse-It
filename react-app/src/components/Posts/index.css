@@ -300,3 +300,18 @@
   /* min-width: 350px; */
 
 }
+
+
+.formMainButton:disabled {
+  /* right:50%; */
+  /* bottom:5%; */
+  margin-top: 5%;
+
+  width: 80%;
+  border: 5px solid grey;
+  font-family: 'Press Start 2P', cursive;
+  color: grey;
+  font-size: 1.25em;
+  background-color: rgba(0,0,0,.95);
+  border-radius: 0;
+}

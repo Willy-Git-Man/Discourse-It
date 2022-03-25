@@ -20,7 +20,7 @@ const PostChannelForm = ({setShowModal}) => {
 
     if (channelName.length === 0) validationErrors.push("Channel name required")
     if (channelPicture.length === 0) validationErrors.push("Picture required")
-    if (channelName.length > 50) validationErrors.push('Channel name must be less than 50 characters')
+    if (channelName.length > 15) validationErrors.push('Channel name must be less than 15 characters')
     if (channelPicture.length > 750) validationErrors.push('Picture must be less than 750 characters')
     if (!channelPicture.match(/\.(jpeg|jpg|gif|png)$/) || !channelPicture.includes("https://")) validationErrors.push('Invalid Img URL')
 

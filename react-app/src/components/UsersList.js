@@ -20,6 +20,9 @@ function UsersList() {
     fetchData();
   }, [dispatch]);
 
+  const handlePicture = (e) => {
+    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
+  }
   const userComponents = users.map((user) => {
     if (user.id !== sessionUser.id)
       return (
@@ -28,6 +31,7 @@ function UsersList() {
             className="userListPicture"
             src={user.profile_picture}
             alt="Broken Img URL"
+            onError={handlePicture}
           />
           <NavLink className="userListLink" activeClassName='activeUserListLink'to={`/users/${user.id}`}>
             {user.username}
@@ -37,9 +41,6 @@ function UsersList() {
       else return null
   });
 
-  const handlePicture = (e) => {
-    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
-  }
 
   return (
     <div className="sideBarUsers">
