@@ -13,7 +13,7 @@
   margin-left: 33.75%;
   height: 85vh;
   overflow-y: scroll ;
-  min-width: 500px;
+  min-width: 350px;
 }
 
 .createPostModal {
@@ -30,6 +30,8 @@
   font-size:1.25em;
   background-color: rgba(0,0,0,.3);
   min-width: 400px;
+  min-height: 50px;
+
 
   /* min-width: 350px; */
 
@@ -43,14 +45,11 @@
 .eachPostDiv {
   width: 75%;
   min-width: 500px;
-  /* height: 20vh; */
-  outline: black solid 5px;
+  position: relative;
+  /* outline: black solid 5px; */
   margin-top: 1vh;
-  background-color: white;
-  /* display: flex; */
-  /* height: 25%; */
+  background-color: #f7f7f7;
   margin-top: 2.5vh;
-  /* display: inline-block; */
   display: flex;
   min-width: 250px;
   min-height: 250px;
@@ -64,7 +63,7 @@
   /* display: inline-block;
     height:100%;
     width: 34%; */
-    width:250px;
+    width:50%;
     height:250px;
 
 }
@@ -76,6 +75,8 @@
   flex-direction: column;
   justify-content: flex-end;
   position:relative;
+  position: absolute;
+  bottom: 0;
   width: 100%;
   /* height: 50%; */
 }
@@ -102,12 +103,15 @@
 .deletePostButton {
   position:absolute;
   width: 50%;
+  min-width: 75px;
   height: 2.5vh;
   border: 5px solid red;
   font-family: 'Press Start 2P', cursive;
   color: red;
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
+  min-height: 35px;
+
 }
 
 
@@ -142,13 +146,19 @@
 .postTitleAndEdit {
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  right: 0;
 }
 
 
 .editPostButton {
   /* position: absolute; */
   position:absolute;
+  /* margin-left: 50%; */
   width: 50%;
   bottom:0;
   right:0;
@@ -158,6 +168,10 @@
   color: #00ff3e;
   background-color: rgba(0,0,0,.95);
   border-radius:0;
+  min-height: 35px;
+  min-width: 75px;
+
+
 
 }
 
@@ -198,9 +212,15 @@
   /* min-width: 300px; */
   background-color: rgba(0,0,0,.75);
   height: 100%;
+  width: 100%;
+  /* width: 100%; */
   margin: 0;
   font-family: 'Press Start 2P', cursive;
   color:white;
+  min-width: 100px;
+  position: relative;
+  text-overflow: clip;
+
 
 }
 

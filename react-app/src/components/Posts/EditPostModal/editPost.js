@@ -27,11 +27,11 @@ const EditPostForm = ({postId, setShowModal}) => {
   useEffect(() => {
     const validationErrors = []
 
-    if (postTitle.length === 0) validationErrors.push("Post Title field is required")
-    if (postPicture.length === 0) validationErrors.push("Picture field is required")
+    if (postTitle.length === 0) validationErrors.push("Post Title required")
+    if (postPicture.length === 0) validationErrors.push("Picture required")
     if (postTitle.length > 50) validationErrors.push('Post Title must be less than 50 characters')
     if (postPicture.length > 750) validationErrors.push('Picture must be less than 750 characters')
-    if (!postPicture.match(/\.(jpeg|jpg|gif|png)$/) || !postPicture.includes("https://")) validationErrors.push('Picture must be a valid Picture Url')
+    if (!postPicture.match(/\.(jpeg|jpg|gif|png)$/) || !postPicture.includes("https://")) validationErrors.push('Invalid Img URL')
 
 
     setErrors(validationErrors)

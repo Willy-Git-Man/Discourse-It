@@ -21,7 +21,7 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
-  console.log('channelArray:', channelArray)
+  console.log('channelArray test:', channelArray)
 
   const revChannelArr = channelArray.reverse();
 

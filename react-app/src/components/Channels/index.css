@@ -1,21 +1,25 @@
 .eachUserChannelDiv {
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  height: 3.5vh;
+  /* justify-content:center; */
+  justify-content: space-around;
+  height: 5vh;
   min-height: 50px;
-  margin-bottom: 5vh;
-  margin-bottom:50px;
+  /* margin-bottom: 5vh; */
+  margin-bottom:30px;
   position:relative;
+  border: solid 1px #00ff3e;
 }
 
 .channelPicture {
-  height: 3.5vh;
+  height: 5vh;
   width: 100%;
   object-fit: cover;
+  min-height: 50px;
+
   position:absolute;
   z-index: -99;
-  opacity: .5;
+  opacity: .65;
 }
 
 
@@ -29,6 +33,8 @@
   /* font-size: 1em; */
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
+  min-height: 25px;
+
 }
 
 /* .userChannelProfileDiv {
@@ -47,10 +53,13 @@
   /* font-size: 1.25em; */
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
+  min-height: 25px;
 }
 
 .editDeleteChannelDiv {
   width: 100%;
+  /* position: absolute; */
+  top: 0;
 }
 
 .userChannelMainDiv {
@@ -98,14 +107,17 @@
 }
 
 .postChannelFormDiv {
-  display: flex;
+  /* display: flex;
   justify-content: center;
+  min-width: 200px; */
+
   /* height: 100px; */
   /* width: 50vw; */
   /* background-color: black; */
 }
 
 .postChannelForm {
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   justify-content:space-between;
@@ -151,13 +163,14 @@
   display:flex;
   justify-content:center;
   color: black;
-  /* font-size: 2.5em; */
+  background-color: white;
   font-family: 'Press Start 2P', cursive;
 
 }
 
 .activeChannelNavTag {
-  color: black;
+  color: #00ff3e;
+  /* background-color: white; */
 }
 
 
@@ -189,14 +202,17 @@
   /* width:100%; */
   height: 2.5vh;
   outline: 5px solid #00ff3e;
+  outline: 5px solid white;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
+  color: white;
   font-size: 1.25em;
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
   /* margin-bottom: 5%; */
   z-index: 99;
   min-width: 250px;
+  min-height: 30px;
 
   /* margin-bottom: 5vh; */
   /* min-width: 500px; */
@@ -206,8 +222,8 @@
 
 
 .channelEditDeleteDiv {
-  position:absolute;;
-  bottom:0;
+  /* position:absolute;; */
+  bottom:50%;
 
   background-color:black;
   width:100%;
@@ -215,6 +231,11 @@
 }
 
 .channelNameLinkP {
+  display: flex;
+  justify-content: center;
+  /* position: absolute;   */
+  width: 100%;
+  top: 0;
   margin:0;
 }
 
@@ -247,4 +268,5 @@
   font-size: 1.25em;
   background-color: rgba(0,0,0,1);
   border-radius:0;
+  min-height: 50px;
 }

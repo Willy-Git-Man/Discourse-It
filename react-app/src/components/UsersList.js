@@ -37,6 +37,10 @@ function UsersList() {
       else return null
   });
 
+  const handlePicture = (e) => {
+    e.target.src= "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png"
+  }
+
   return (
     <div className="sideBarUsers">
 
@@ -47,6 +51,7 @@ function UsersList() {
             className="userListPicture"
             src={sessionUser.profile_picture}
             alt="Broken Img URL"
+            onError={handlePicture}
           />
           <NavLink className="userListLink" activeClassName='activeUserNavTag' to={`/users/${sessionUser.id}`}>
             {sessionUser.username}

@@ -55,7 +55,7 @@ function LogoutProfile({ user }) {
             <li className="email">{sessionUser.email}</li>
 
             <li className="profileDropdownPictureLi">
-              <img className="profileDropdownPicture" src={sessionUser.profile_picture} alt="Falty Img Url" />
+              <img className="profileDropdownPicture" src={sessionUser.profile_picture} alt="Falty Img Url" onError={handlePicture}/>
             </li>
 
 

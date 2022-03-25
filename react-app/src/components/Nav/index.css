@@ -11,6 +11,9 @@
   z-index: 1;
   border-radius: 999px;
   border: 4.5px solid #00ff3e;
+  min-height: 70px;
+
+
 }
 
 .profileButtonPicture {
@@ -25,10 +28,14 @@
   width: 75px;
   opacity: .4;
   height: 4vh;
+  min-height: 50px;
+  min-height: 70px;
+
 
 }
 
 .profileDropdown {
+  min-width: 150px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
