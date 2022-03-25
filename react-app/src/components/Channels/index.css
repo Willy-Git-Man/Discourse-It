@@ -106,6 +106,8 @@
   background-color:#f7f7f7;
   height:100%;
   font-family: 'Press Start 2P', cursive;
+  padding-top: 5%;
+  /* padding-bottom: 5%; */
 
 }
 
@@ -128,6 +130,7 @@
   background-color:#f7f7f7;
   height:100%;
   font-family: 'Press Start 2P', cursive;
+  padding-top: 5%;
 
   /* width: 25vw; */
 }

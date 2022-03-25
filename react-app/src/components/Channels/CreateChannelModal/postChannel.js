@@ -84,7 +84,7 @@ const PostChannelForm = ({setShowModal}) => {
 
 <ul className="errors">
       {errors.map((error) => (
-        <li className="errorLi" key={error}>{error}</li>
+        <li className="errorLi" key={error}>* {error}</li>
         ))}
     </ul>
         )}

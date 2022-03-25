@@ -90,6 +90,8 @@
   background-color:#f7f7f7;
   height:100%;
   font-family: 'Press Start 2P', cursive;
+  padding-top: 5%;
+  /* padding-bottom: 5%; */
 
   /* width: 100%; */
   /* position: absolute; */
@@ -126,6 +128,8 @@
   background-color:#f7f7f7;
   /* height:100%; */
   font-family: 'Press Start 2P', cursive;
+  padding-top: 5%;
+  /* padding-bottom: 5%; */
 
   /* background-color:black; */
   /* height:100%; */
@@ -249,19 +253,21 @@
   padding:0;
   list-style:none;
   position:absolute;
-  margin-left: 46vw;
+  /* margin-left: 32.5vw; */
+  bottom: 110%;
   background-color:rgba(0,0,0,1);
   box-shadow: 7.5px 7.5px 1px 0px rgba(0, 0, 0, .5);
   padding:2.5%;
   font-family:none;
   border: 5px solid #00ff3e;
   font-family: 'Press Start 2P', cursive;
+  /* width: 15vw; */
   /* height:100%; */
 }
 
 .errorLi {
   display: flex;
-  width:30vw;
+  width:20vw;
   margin-top: 1vh;
 }
 
@@ -272,10 +278,10 @@
   min-height: 200px;
 } */
 
-.editChannelFormDiv {
+/* .editChannelFormDiv {
   width: 100%;
   height:fit;
-}
+} */
 
 
 .formMainButton {
