@@ -1,13 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
-
-import { getAllChannelsThunk } from "../../store/channels";
-// import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import { deletePostThunk, getAllPostsThunk } from "../../store/posts";
 import { getUsersThunk } from "../../store/session";
-
-import CreatePostModal from "./CreatePostModal";
 import EditPostModal from "./EditPostModal";
 import "./index.css";
 
@@ -16,7 +11,6 @@ export default function ChannelPosts() {
   const sessionUser = useSelector((state) => state.session.user);
   const { userId, channelId } = useParams();
 
-  console.log("channelId", channelId);
 
   useEffect(() => {
     dispatch(getAllPostsThunk(channelId));
@@ -24,12 +18,10 @@ export default function ChannelPosts() {
   }, [dispatch, channelId]);
 
   const postArray = useSelector((state) => Object.values(state.posts.posts));
-  const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
+  // const postKeysArray = useSelector((state) => Object.keys(state.posts.posts));
 
   const channelObj = useSelector((state) => state.channels.channels);
-  console.log(channelObj, "channel obj");
   const users = useSelector((state) => state.session.users);
-  console.log("users:", users);
 
   const handleDelete = async (id) => {
     dispatch(deletePostThunk(id));

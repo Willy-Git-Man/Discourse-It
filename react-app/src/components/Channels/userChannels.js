@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useHistory, useParams } from "react-router-dom";
 import { deleteChannelThunk, getAllChannelsThunk } from "../../store/channels";
 import User from "../User";
 import EditChannelModal from "./EditModal";
@@ -9,6 +9,7 @@ import "./index.css";
 
 export default function UserChannels() {
   const dispatch = useDispatch();
+  const history = useHistory()
   const sessionUser = useSelector((state) => state.session.user);
   const id = useParams();
   const ID = id.userId;
@@ -21,12 +22,12 @@ export default function UserChannels() {
     Object.values(state.channels.channels)
   );
 
-  console.log('channelArray test:', channelArray)
 
   const revChannelArr = channelArray.reverse();
 
   const handleDelete = async (id) => {
     dispatch(deleteChannelThunk(id));
+    history.push(`/users/${+ID}`)
   };
 
   const handlePicture = (e) => {

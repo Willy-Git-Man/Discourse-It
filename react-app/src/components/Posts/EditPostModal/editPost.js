@@ -10,7 +10,6 @@ const EditPostForm = ({postId, setShowModal}) => {
   const { channelId, userId } = useParams();
 
   const updatePostInputState = useSelector((state) => state.posts.posts[postId])
-  console.log("post update test:", updatePostInputState)
 
 
 
@@ -35,7 +34,6 @@ const EditPostForm = ({postId, setShowModal}) => {
 
 
     setErrors(validationErrors)
-    console.log(errors)
   }, [postTitle, postPicture])
 
   const handleSubmit = (e) => {
@@ -56,7 +54,6 @@ const EditPostForm = ({postId, setShowModal}) => {
     setShowModal(false)
   };
 
-  console.log("errors",errors)
 
 
 

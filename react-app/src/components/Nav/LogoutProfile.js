@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
-import * as sessionActions from "../../store/session";
+import { useSelector } from "react-redux";
 import LogoutButton from "../auth/LogoutButton";
 
 import './index.css'
@@ -9,8 +7,6 @@ import './index.css'
 function LogoutProfile({ user }) {
   const [showMenu, setShowMenu] = useState(false);
 
-  const dispatch = useDispatch();
-  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -31,11 +27,7 @@ function LogoutProfile({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  const logout = (e) => {
-    e.preventDefault();
-    dispatch(sessionActions.logout());
-    history.push("/");
-  };
+
 
 
   const handlePicture = (e) => {

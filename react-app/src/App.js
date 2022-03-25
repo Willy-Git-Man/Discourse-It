@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 
-import LoginFormModal from "./components/auth/LoginModal/index";
 import SignupModal from "./components/auth/SignupModal/index";
 
-
-import NavBar from "./components/Nav/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import { authenticate } from "./store/session";
 import UserChannels from "./components/Channels/userChannels";
-import Footer from "./components/Footer/footer";
 import ChannelPosts from "./components/Posts/channelPosts";
 import LogoutProfile from "./components/Nav/LogoutProfile";
 import CreatePostModal from "./components/Posts/CreatePostModal";
 
-import SplashPage from './components/Splash/SplashPage'
+import SplashPage from "./components/Splash/SplashPage";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
-
-  const sessionUser = useSelector((state) => state.session.user)
-  console.log(sessionUser, "sss")
 
   useEffect(() => {
     (async () => {
@@ -37,41 +30,35 @@ function App() {
   }
 
   return (
-
     <BrowserRouter>
       <Switch>
-
-
-      <Route path="/" exact={true}>
-        <SplashPage />
+        <Route path="/" exact={true}>
+          <SplashPage />
           {/* <LoginFormModal /> */}
           <SignupModal />
           {/* <Footer /> */}
-      </Route>
+        </Route>
 
-
-      <ProtectedRoute path="/users/:userId" exact={true}>
+        <ProtectedRoute path="/users/:userId" exact={true}>
           <LogoutProfile />
           <UsersList />
           <UserChannels />
-      </ProtectedRoute>
+        </ProtectedRoute>
 
-
-      <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
+        <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
           <LogoutProfile />
           <UsersList />
           <UserChannels />
           <ChannelPosts />
           <CreatePostModal />
-      </ProtectedRoute>
+        </ProtectedRoute>
 
-      <Route>
+        <Route>
           <div>
-              <h1>This is not the droid.. err.. page you were looking for</h1>
+            <h1>This is not the droid.. err.. page you were looking for</h1>
           </div>
-        <UsersList />
-      </Route>
-
+          <UsersList />
+        </Route>
       </Switch>
     </BrowserRouter>
   );

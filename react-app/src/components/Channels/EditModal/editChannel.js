@@ -17,8 +17,6 @@ const EditChannelForm = ({channelId, setShowModal}) => {
 
   const sessionUser = useSelector((state) => state.session.user);
 
-  console.log('test edit:', updateChannelInputState)
-
 
   // const {userid} = useParams()
 

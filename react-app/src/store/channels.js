@@ -101,7 +101,7 @@ export const updateChannelThunk = (updateChannelInfo) => async(dispatch) => {
   }
 }
 
-const initialState = { channels: {} };
+const initialState = { channels: {}};
 
 const channelsReducer = (state = initialState, action) => {
   let newState;
@@ -120,7 +120,7 @@ const channelsReducer = (state = initialState, action) => {
       return newState
 
     case DELETE_CHANNELS:
-      newState = {...state, channels: {...state.channels}}
+      newState = {...state, channels: {...state.channels}, posts: {...state.posts}}
       const id = action.channel.id
       delete newState.channels[id]
       return newState

@@ -4,9 +4,6 @@ import { Redirect } from "react-router-dom";
 import { login } from "../../../store/session";
 import "./index.css";
 
-import SignupModal from "../SignupModal/index";
-import Footer from "../../Footer/footer";
-
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
