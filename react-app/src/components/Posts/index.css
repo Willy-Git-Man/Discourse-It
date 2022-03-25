@@ -106,7 +106,6 @@
   border: 5px solid red;
   font-family: 'Press Start 2P', cursive;
   color: red;
-  font-size: 1.25em;
   background-color: rgba(0,0,0,.95);
   border-radius: 0;
 }
@@ -157,7 +156,6 @@
   border: 5px solid #00ff3e;
   font-family: 'Press Start 2P', cursive;
   color: #00ff3e;
-  font-size: 1.25em;
   background-color: rgba(0,0,0,.95);
   border-radius:0;
 
@@ -211,21 +209,26 @@
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  align-items: center;
   color: white;
   margin:0;
   padding:0;
   list-style:none;
   position:absolute;
-  margin-left: 31vw;
-  background-color:red;
+  margin-left: 46vw;
+  background-color:rgba(0,0,0,1);
   box-shadow: 7.5px 7.5px 1px 0px rgba(0, 0, 0, .5);
   padding:2.5%;
   font-family:none;
+  border: 5px solid #00ff3e;
+  font-family: 'Press Start 2P', cursive;
   /* height:100%; */
 }
 
 .errorLi {
-  width:15vw;
+  display: flex;
+  width:30vw;
+  margin-top: 1vh;
 }
 
 /*

@@ -110,7 +110,9 @@
 
 .userPageHeader {
   display: flex;
-  justify-content:space-around;
+  flex-direction: column;
+  /* justify-content:center; */
+  /* align-items: flex-end; */
   position: absolute;
   bottom: 0;
   align-items: center;
