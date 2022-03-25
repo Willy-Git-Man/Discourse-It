@@ -26,6 +26,7 @@
     border: 5px solid #00ff3e;
     background-color: rgba(0, 0, 0, .95);
     padding-top: 5%;
+    min-width: 300px;
   }
 
   .demoButton {
