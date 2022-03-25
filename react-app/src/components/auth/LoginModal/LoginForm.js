@@ -37,6 +37,7 @@ const LoginForm = () => {
   if (!user) {
     return (
       <form className="loginForm" onSubmit={onLogin}>
+        <h2 className="loginFormMessage">Login to Discourse-It!</h2>
         {/* <Footer /> */}
         {/* <div>
         {errors.map((error, ind) => (
@@ -63,10 +64,10 @@ const LoginForm = () => {
               value={password}
               onChange={updatePassword}
             />
+          </div>
             <button className="loginButton" type="submit">
               Login
             </button>
-          </div>
         </div>
 
         <button
