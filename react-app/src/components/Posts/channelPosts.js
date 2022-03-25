@@ -35,9 +35,9 @@ export default function ChannelPosts() {
   };
   return (
     <div className="channelPostsMainDiv">
-      <h1 className="channelTitleForPostPage">
+      <h4 className="channelTitleForPostPage">
         {channelObj && channelId ? channelObj[channelId]?.channel_name : null}
-      </h1>
+      </h4>
 
       {revPostArr.map((post) => (
         <div className="eachPostDiv" key={post.id}>
