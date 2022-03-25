@@ -193,7 +193,7 @@
   font-family: 'Press Start 2P', cursive;
   color:white;
   background-color: black;
-  width: 40%;
+  width: 47.5%;
   position: absolute;
   top: 0;
   z-index: 99;
@@ -233,6 +233,7 @@
   min-width: 100px;
   position: relative;
   text-overflow: clip;
+  word-wrap: break-word;
 
 
 }

@@ -54,6 +54,8 @@
   right: 1.75%;
   width: 15%;
   height: 240px;
+  text-overflow: clip;
+  word-wrap: break-word;
 }
 
 
@@ -88,11 +90,14 @@
 
 .userName {
   color: white;
-  font-size: 2em;
+  font-size: 1.5em;
+  text-overflow: clip;
+  word-wrap: break-word;
+  margin-bottom: 20%;
 }
 
 .email {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 25px;
 }

@@ -26,7 +26,7 @@ const SignUpForm = () => {
 
 
     if (profilePicture.length === 0) validationErrors.push("Profile Picture field is required")
-    if (username.length > 50) validationErrors.push('Username must be less than 50 characters')
+    if (username.length > 20) validationErrors.push('Username must be less than 20 characters')
     if (email.length > 75) validationErrors.push('Email must be less than 50 characters')
 
     if (profilePicture.length > 750) validationErrors.push('Picture name must be less than 750 characters')

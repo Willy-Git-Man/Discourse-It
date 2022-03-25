@@ -10,6 +10,8 @@
   margin-bottom:50px;
   position:relative;
   border: solid 1px #00ff3e;
+  text-overflow: clip;
+  ap: break-word;
 }
 
 .channelPicture {
@@ -235,9 +237,11 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  width: 100%;
+  /* width: 100%; */
   top: 0;
   margin:0;
+  text-overflow: clip;
+  word-wrap: break-word;
 }
 
 .errorLi {

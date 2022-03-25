@@ -29,7 +29,7 @@ function User() {
   return (
     <div className="userPageHeader">
         <img className="channelPictureUser" src={user.profile_picture} alt="Broken Img URL" onError={handlePicture}/>
-     <h2 className="userPageName">{user.username}</h2>
+     <h3 className="userPageName">{user.username}</h3>
      <CreateChannelModal />
 
     </div>
