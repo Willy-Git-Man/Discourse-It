@@ -7,20 +7,45 @@
 
 .searchInput {
   height: 5vh;
-  width: 25vw;
+  width: 20vw;
   position: absolute;
+  margin-left: 72.5vw;
   margin-left: 37.5vw;
 }
 
 .searchDivWithResults {
   height: 30vh;
-  width: 25vw;
+  width: 20vw;
   position: absolute;
-  margin-top: 5vh;
+  margin-top: 7.5vh;
+  margin-left: 72.5vw;
   margin-left: 37.5vw;
+
   overflow-y: scroll;
+  /* margin-top: 26vh; */
+
 }
 
 .searchDivWithResults::-webkit-scrollbar {
   display: none;
+}
+
+.searchBarNavLink {
+  display:flex;
+  align-items:center;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  height:fill;
+  font-size: 1.25em;
+  text-decoration: none;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+  background-color: black;
+  margin-bottom: .5vh;
+}
+
+.eachSearchResultUserDiv {
+  display: flex;
 }

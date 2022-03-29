@@ -4,12 +4,11 @@ import { NavLink } from "react-router-dom";
 import "./index.css";
 
 const SearchBar = () => {
-  const [search, setSearch] = useState("");
+  const [searchValue, setSearchValue] = useState("");
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(getAllChannelsThunk())
     async function fetchData() {
       const response = await fetch("/api/users/");
       const responseData = await response.json();
@@ -18,37 +17,42 @@ const SearchBar = () => {
     fetchData();
   }, [dispatch]);
 
-  console.log(users);
+  const handlePicture = (e) => {
+    e.target.src =
+      "https://cdn.pixabay.com/photo/2020/07/19/20/48/broken-5421234_1280.png";
+  };
 
   return (
     <div className="searchBarMainDiv">
-      {/* <h1>Hello</h1> */}
       <div>
         <input
           className="searchInput"
-          id=""
-          type="text"
-          placeholder="Search..."
+          placeholder="Search Users..."
           onChange={(e) => {
-            setSearch(e.target.value);
+            setSearchValue(e.target.value);
           }}
         />
       </div>
       <div className="searchDivWithResults">
         {users
-          .filter((ele) => {
-            if (search === "") {
-              return ele;
-            } else if (
-              ele.username.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return ele;
-            }
+          .filter((user) => {
+            if (searchValue === "") return null;
+            else if (user.username.toLowerCase().includes(searchValue.toLowerCase()))
+              return user;
           })
-          .map((el) => (
-
+          .map((user) => (
             <div className="searchDivEachResult">
-              <NavLink to={`/users/${el.id}`}>{el.username}</NavLink>
+              <div className="eachSearchResultUserDiv">
+                <img
+                  className="userListPicture"
+                  src={user.profile_picture}
+                  alt="Broken Img URL"
+                  onError={handlePicture}
+                />
+                <NavLink className="searchBarNavLink" to={`/users/${user.id}`}>
+                  {user.username}
+                </NavLink>
+              </div>
             </div>
           ))}
       </div>

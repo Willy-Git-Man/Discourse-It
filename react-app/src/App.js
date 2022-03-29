@@ -55,13 +55,15 @@ function App() {
           <UserChannels />
           <ChannelPosts />
           <CreatePostModal />
+          {/* <SearchBar /> */}
+
         </ProtectedRoute>
 
         <Route>
           <div>
             <h1>This is not the droid.. err.. page you were looking for</h1>
           </div>
-          <SearchBar />
+          {/* <SearchBar /> */}
 
           <UsersList />
         </Route>
