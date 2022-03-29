@@ -1,0 +1,26 @@
+.searchBarMainDiv {
+  /* height: 5vh; */
+  height: 40vh;
+  overflow: hidden;
+}
+
+
+.searchInput {
+  height: 5vh;
+  width: 25vw;
+  position: absolute;
+  margin-left: 37.5vw;
+}
+
+.searchDivWithResults {
+  height: 30vh;
+  width: 25vw;
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: 37.5vw;
+  overflow-y: scroll;
+}
+
+.searchDivWithResults::-webkit-scrollbar {
+  display: none;
+}
