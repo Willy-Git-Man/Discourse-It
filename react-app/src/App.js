@@ -13,6 +13,7 @@ import LogoutProfile from "./components/Nav/LogoutProfile";
 import CreatePostModal from "./components/Posts/CreatePostModal";
 
 import SplashPage from "./components/Splash/SplashPage";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,6 +44,9 @@ function App() {
           <LogoutProfile />
           <UsersList />
           <UserChannels />
+          <SearchBar />
+
+          {/* <SearchBar /> */}
         </ProtectedRoute>
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
@@ -51,12 +55,16 @@ function App() {
           <UserChannels />
           <ChannelPosts />
           <CreatePostModal />
+          {/* <SearchBar /> */}
+
         </ProtectedRoute>
 
         <Route>
           <div>
             <h1>This is not the droid.. err.. page you were looking for</h1>
           </div>
+          {/* <SearchBar /> */}
+
           <UsersList />
         </Route>
       </Switch>
