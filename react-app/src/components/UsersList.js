@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./homePage.css";
+import SearchBar from "./SearchBar/SearchBar";
 // import { getAllChannelsThunk, getAllChannelsThunkTotal } from '../store/channels';
 
 function UsersList() {
@@ -46,6 +47,7 @@ function UsersList() {
     <div className="sideBarUsers">
 
           <h1 className="emptyChannelsMessage">Users</h1>
+
       <ul className="homePageUserList">
         <li className="eachUserLi" key={sessionUser.id}>
           <img
