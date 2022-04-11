@@ -40,7 +40,9 @@ const CreatePostForm = ({setShowModal}) => {
     formData.append("user_id", sessionUser.id);
     formData.append("channel_id", +channelId);
     formData.append("post_title", postTitle);
-    formData.append("img_src", img_src);
+    // formData.append("img_src", img_src);
+    formData.append("post_picture", postPicture);
+
 
     console.log("formdata:", formData)
     const results = dispatch(createPostThunk(formData))
@@ -68,7 +70,8 @@ const CreatePostForm = ({setShowModal}) => {
         // }
         // setImageLoading(false)
         setShowModal(false)
-    }else{
+    }
+    else{
         const data = results.json()
         setErrors([data.errors])
     }
