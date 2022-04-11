@@ -35,12 +35,16 @@ export const getAllPostsThunk = (id) => async (dispatch) => {
 
 
 export const createPostThunk = (post) => async(dispatch) => {
-  const {user_id, channel_id, post_title, post_picture} = post
+  const {user_id, channel_id, post_title, img_src} = post
+  // const {user_id, channel_id, post_title, post_picture} = post
+
   const form = new FormData()
   form.append('user_id', user_id)
   form.append('channel_id', channel_id)
   form.append('post_title', post_title)
-  form.append('post_picture', post_picture)
+  // form.append('post_picture', post_picture)
+  form.append("img_src", img_src);
+
 
   const response = await fetch("/api/posts/", {
     method: "POST",
