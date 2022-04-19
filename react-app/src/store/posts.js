@@ -8,7 +8,7 @@ const getAllPosts = (post) => ({
   post,
 });
 
-const createPost = (post) => ({
+export const createPost = (post) => ({
   type: CREATE_POSTS,
   post,
 });

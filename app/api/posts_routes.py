@@ -36,15 +36,20 @@ def posts(id):
 @post_routes.route('/', methods=["POST"])
 @login_required
 def create_post():
-  if "img_src" not in request.files:
+  if "post_picture" not in request.files:
+        print("@@@@@@",request.files["post_picture"])
 
         return {"errors": "image required"}, 400
 
-  img_src = request.files['img_src']
+  user_id = request.form["user_id"]
+  channel_id = request.form["channel_id"]
+  post_title = request.form["post_title"]
+  img_src = request.files["post_picture"]
+  print('img src', request.files)
+  print('post', channel_id,user_id,post_title, img_src)
 
 
   if not allowed_file(img_src.filename):
-
         return {"errors": "file type not permitted"}, 400
 
   img_src.filename = get_unique_filename(img_src.filename)
@@ -52,17 +57,20 @@ def create_post():
   upload = upload_file_to_s3(img_src)
 
   if "url" not in upload:
+      print('Vern is helping me do AWS', upload)
 
       return upload, 400
+
+  image = upload['url']
 
   form = PostForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
     post = Post(
-      channel_id = form.data['channel_id'],
-      user_id = form.data['user_id'],
-      post_title = form.data['post_title'],
-      post_picture = img_src
+      channel_id = channel_id,
+      user_id = user_id,
+      post_title = post_title,
+      post_picture = image
     )
     db.session.add(post)
     db.session.commit()
