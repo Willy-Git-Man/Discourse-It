@@ -57,7 +57,7 @@ def create_post():
   upload = upload_file_to_s3(img_src)
 
   if "url" not in upload:
-      print('Vern is helping me do AWS', upload)
+      print('url is not in the upload', upload)
 
       return upload, 400
 

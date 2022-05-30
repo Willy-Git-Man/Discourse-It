@@ -24,7 +24,7 @@
   background-color: rgba(114, 137, 218, 1);
   background-color: rgba(0,0,0,.9);
   min-width: 200px;
-  padding-top: 3.5vh;
+  /* padding-top: 3.5vh; */
   min-width: 250px;
 }
 
@@ -124,6 +124,7 @@
 .userPageHeader {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* justify-content:center; */
   /* align-items: flex-end; */
   /* position: absolute; */
@@ -133,6 +134,8 @@
   /* margin-top: 3.5%; */
   width: 100%;
   height: 7.5vh;
+  background-size: cover;
+
 }
 
 .userHeaderUl {
