@@ -2,6 +2,7 @@
 
 html {
   background-color: rgba(0,0,0,.9);
+  height:100vh;
 
 }
 
@@ -12,4 +13,14 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+
+.sideBarAllDiv {
+  height: 100vh;
+  width: 25%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
 }

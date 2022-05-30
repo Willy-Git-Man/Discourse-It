@@ -42,8 +42,11 @@ function App() {
 
         <ProtectedRoute path="/users/:userId" exact={true}>
           <LogoutProfile />
+          <div className="sideBarAllDiv">
+
           <UsersList />
           <UserChannels />
+          </div>
           <SearchBar />
 
           {/* <SearchBar /> */}
@@ -51,8 +54,11 @@ function App() {
 
         <ProtectedRoute path="/users/:userId/:channelId" exact={true}>
           <LogoutProfile />
+          <div className="sideBarAllDiv">
+
           <UsersList />
           <UserChannels />
+          </div>
           <ChannelPosts />
           <CreatePostModal />
           {/* <SearchBar /> */}
